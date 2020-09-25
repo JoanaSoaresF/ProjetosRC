@@ -1,3 +1,9 @@
+
+/**
+ * @autor Goncalo Lourenco 55780 e Joana Faria 55754
+ */
+
+
 import java.util.Arrays;
 import cnss.simulator.*;
 import cnss.lib.*;
@@ -16,22 +22,19 @@ public class SenderNode extends AbstractApplicationAlgorithm {
 	}
 
   public void on_clock_tick(int now) {
-      ByteBuffer msg = ByteBuffer.allocate(10);
+      int size = (int) (Math.random()*100.0 + 50);
+      ByteBuffer msg = ByteBuffer.allocate(size);
       msg.putInt(now);
-      //byte[] msg = bigIntToByteArray(now);
-
+      
       self.send( self.createDataPacket( 1, msg.array()));
       
     }
   public void on_receive( int now, DataPacket p ) {
     int start = ByteBuffer.wrap(p.getPayload()).getInt();
     int rtt = now - start;
-    log( now, "took: " + rtt); 
+    log( now, "RTT: " + rtt + "\n\tDetails: "+ p); 
+    
     
   }
 
-  /*private byte[] bigIntToByteArray(int i ) {
-    BigInteger bigInt = BigInteger.valueOf(i);      
-    return bigInt.toByteArray();
-}*/
 } 

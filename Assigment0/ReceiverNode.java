@@ -1,3 +1,9 @@
+
+/**
+ * @autor Goncalo Lourenco 55780 e Joana Faria 55754
+ */
+
+
 import java.util.Arrays;
 import cnss.simulator.*;
 import cnss.lib.*;
