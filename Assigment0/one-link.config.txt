@@ -1,0 +1,6 @@
+node 0 1 cnss.lib.EndSystemControl SenderNode 
+node 1 1 cnss.lib.EndSystemControl ReceiverNode
+
+link 0.0 1.0 1000000 125 0 0
+
+parameter stop 100000
