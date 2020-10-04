@@ -7,12 +7,12 @@ import cnss.simulator.Node;
 import cnss.simulator.Packet;
 import cnss.simulator.DataPacket;
 
-public class NaifWindSender extends AbstractApplicationAlgorithm {
+public class NaifMincSender extends AbstractApplicationAlgorithm {
 
 	public static int BLOCKSIZE = 10000; // 10000*8 = 80000 bits
-	public static int TOTAL_PACKETSIZE = BLOCKSIZE+Packet.HEADERSIZE; // 10000*8 = 80160 bits
+	public static int TOTAL_PACKETSIZE = BLOCKSIZE + Packet.HEADERSIZE; // 10000*8 = 80160 bits
 
-	public NaifWindSender() {
+	public NaifMincSender() {
 		super(true, "naif-sw-sender-p");
 	}
 
