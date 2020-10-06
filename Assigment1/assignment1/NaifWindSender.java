@@ -13,7 +13,7 @@ public class NaifWindSender extends AbstractApplicationAlgorithm {
 	public static int TOTAL_PACKETSIZE = BLOCKSIZE+Packet.HEADERSIZE; // 10000*8 = 80160 bits
 
 	public NaifWindSender() {
-		super(true, "naif-sw-sender-p");
+		super(true, "naif-window-sender");
 	}
 
 	int totSent;
@@ -22,31 +22,34 @@ public class NaifWindSender extends AbstractApplicationAlgorithm {
 	int transferTime;
 	int totBytesTransferred;
 	int e2eTransferRate;
-
-	boolean mayProceed = false;
+	int window;
+	int mayProceed = 0;
+	int ack;
 
 	public int initialise(int now, int node_id, Node self, String[] args) {
 		super.initialise(now, node_id, self, args);
-		if ( args.length != 1 ) {
+		if (args.length != 2) {
 			System.err.println("files-sender: missing argument time "+now+"\n\n");
 			System.exit(-1);
 		}
 		totalBlocks = Integer.parseInt(args[0]);
+		window = Integer.parseInt(args[1]);
 		log(0, "starting");
 		startTime = now;
 		totSent = 0;
-		mayProceed = true;
+		mayProceed = window;
+		ack = 0;
 		return 1;	
 	}
 
 	public void on_clock_tick(int now) {
-		if ( mayProceed && totSent < totalBlocks) {
+		if (mayProceed > 0 && totSent < totalBlocks) {
 			totSent++;
 			byte[] pl = new byte[BLOCKSIZE];
 			pl[0]= (byte) ( totSent & 0xff ); 
 			self.send( self.createDataPacket( 1, pl ));
 			log(now, "sent packet of size "+TOTAL_PACKETSIZE+" n. "+totSent);
-			mayProceed = false;
+			mayProceed--;
 		}
 	}
 
@@ -57,8 +60,9 @@ public class NaifWindSender extends AbstractApplicationAlgorithm {
 
 	public void on_receive(int now, DataPacket p) {
 		log(now, "ack packet: "+p+" pl: "+new String(p.getPayload()));
-		mayProceed = true;
-		if (totSent == totalBlocks ) {
+		mayProceed++;
+		ack++;
+		if (ack == totalBlocks) {
 			transferTime = now - startTime;
 			totBytesTransferred = TOTAL_PACKETSIZE*totalBlocks;
 			float transferTimeInSeconds = (float)transferTime / 1000;
