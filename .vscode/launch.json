@@ -6,10 +6,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Simulator",
+            "request": "launch",
+            "mainClass": "cnss.simulator.Simulator",
+            "projectName": "ProjetosRC_b1b98b82",
+            "args": "Assigment1\\configs\\config1.10.txt  > teste10.txt"
+        },
+        {
+            "type": "java",
             "name": "Debug Simulator",
             "request": "launch",
             "mainClass": "Assigment1\\cnss.simulator.Simulator",
-            "projectName": "Prática 1_32723580",
+            "projectName": "ProjetosRC_b1b98b82",
             "args": "Assigment1\\configs\\config1.8.txt"
         }
     ]

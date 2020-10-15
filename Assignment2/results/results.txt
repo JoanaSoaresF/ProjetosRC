@@ -1,0 +1,377 @@
+Loading configuration : configs/config-2.1.txt
+Reading file
+Created Node 0: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: FT20ClientSW
+Created Node 1: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: FT20Server
+Added link to node 0 - Link (Node1:0 I1:0)<-->(Node2:1 I2:0) bwd: 2000000 bps lat: 20 ms error: 0.15 jit: 0.0 up
+Added link to node 1 - Link (Node1:0 I1:0)<-->(Node2:1 I2:0) bwd: 2000000 bps lat: 20 ms error: 0.15 jit: 0.0 up
+
+simulation starts - first processing step with clock = 0
+
+log: FT20-ClientSW time 0 node 0 SENDING: UPLOAD<earth.jpg, 0>
+log:    FT20-Server time 20 node 1 GOT: UPLOAD<earth.jpg, 0>
+log:    FT20-Server time 20 node 1 SENDING: ACK<0, 0, 0>
+log: FT20-ClientSW time 40 node 0 GOT: ACK<0, 0, 0>
+log: FT20-ClientSW time 40 node 0 SENDING: DATA<1, 40, len: 1000>
+log:    FT20-Server time 64 node 1 GOT: DATA<1, 40, len: 1000>
+log:    FT20-Server time 64 node 1 SENDING: ACK<1, 1, 40>
+log: FT20-ClientSW time 84 node 0 GOT: ACK<1, 1, 40>
+log: FT20-ClientSW time 84 node 0 SENDING: DATA<2, 84, len: 1000>
+log:    FT20-Server time 108 node 1 GOT: DATA<2, 84, len: 1000>
+log:    FT20-Server time 108 node 1 SENDING: ACK<2, 2, 84>
+log: FT20-ClientSW time 128 node 0 GOT: ACK<2, 2, 84>
+log: FT20-ClientSW time 128 node 0 SENDING: DATA<3, 128, len: 1000>
+log:    FT20-Server time 152 node 1 GOT: DATA<3, 128, len: 1000>
+log:    FT20-Server time 152 node 1 SENDING: ACK<3, 3, 128>
+log: FT20-ClientSW time 172 node 0 GOT: ACK<3, 3, 128>
+log: FT20-ClientSW time 172 node 0 SENDING: DATA<4, 172, len: 1000>
+log: FT20-ClientSW time 1172 node 0 TIMEOUT...
+log: FT20-ClientSW time 1172 node 0 SENDING: DATA<4, 1172, len: 1000>
+log:    FT20-Server time 1196 node 1 GOT: DATA<4, 1172, len: 1000>
+log:    FT20-Server time 1196 node 1 SENDING: ACK<4, 4, 1172>
+log: FT20-ClientSW time 1216 node 0 GOT: ACK<4, 4, 1172>
+log: FT20-ClientSW time 1216 node 0 SENDING: DATA<5, 1216, len: 1000>
+log:    FT20-Server time 1240 node 1 GOT: DATA<5, 1216, len: 1000>
+log:    FT20-Server time 1240 node 1 SENDING: ACK<5, 5, 1216>
+log: FT20-ClientSW time 1260 node 0 GOT: ACK<5, 5, 1216>
+log: FT20-ClientSW time 1260 node 0 SENDING: DATA<6, 1260, len: 1000>
+log:    FT20-Server time 1284 node 1 GOT: DATA<6, 1260, len: 1000>
+log:    FT20-Server time 1284 node 1 SENDING: ACK<6, 6, 1260>
+log: FT20-ClientSW time 1304 node 0 GOT: ACK<6, 6, 1260>
+log: FT20-ClientSW time 1304 node 0 SENDING: DATA<7, 1304, len: 1000>
+log: FT20-ClientSW time 2304 node 0 TIMEOUT...
+log: FT20-ClientSW time 2304 node 0 SENDING: DATA<7, 2304, len: 1000>
+log:    FT20-Server time 2328 node 1 GOT: DATA<7, 2304, len: 1000>
+log:    FT20-Server time 2328 node 1 SENDING: ACK<7, 7, 2304>
+log: FT20-ClientSW time 2348 node 0 GOT: ACK<7, 7, 2304>
+log: FT20-ClientSW time 2348 node 0 SENDING: DATA<8, 2348, len: 1000>
+log:    FT20-Server time 2372 node 1 GOT: DATA<8, 2348, len: 1000>
+log:    FT20-Server time 2372 node 1 SENDING: ACK<8, 8, 2348>
+log: FT20-ClientSW time 2392 node 0 GOT: ACK<8, 8, 2348>
+log: FT20-ClientSW time 2392 node 0 SENDING: DATA<9, 2392, len: 1000>
+log:    FT20-Server time 2416 node 1 GOT: DATA<9, 2392, len: 1000>
+log:    FT20-Server time 2416 node 1 SENDING: ACK<9, 9, 2392>
+log: FT20-ClientSW time 2436 node 0 GOT: ACK<9, 9, 2392>
+log: FT20-ClientSW time 2436 node 0 SENDING: DATA<10, 2436, len: 1000>
+log:    FT20-Server time 2460 node 1 GOT: DATA<10, 2436, len: 1000>
+log:    FT20-Server time 2460 node 1 SENDING: ACK<10, 10, 2436>
+log: FT20-ClientSW time 2480 node 0 GOT: ACK<10, 10, 2436>
+log: FT20-ClientSW time 2480 node 0 SENDING: DATA<11, 2480, len: 1000>
+log:    FT20-Server time 2504 node 1 GOT: DATA<11, 2480, len: 1000>
+log:    FT20-Server time 2504 node 1 SENDING: ACK<11, 11, 2480>
+log: FT20-ClientSW time 2524 node 0 GOT: ACK<11, 11, 2480>
+log: FT20-ClientSW time 2524 node 0 SENDING: DATA<12, 2524, len: 1000>
+log:    FT20-Server time 2548 node 1 GOT: DATA<12, 2524, len: 1000>
+log:    FT20-Server time 2548 node 1 SENDING: ACK<12, 12, 2524>
+log: FT20-ClientSW time 2568 node 0 GOT: ACK<12, 12, 2524>
+log: FT20-ClientSW time 2568 node 0 SENDING: DATA<13, 2568, len: 1000>
+log: FT20-ClientSW time 3568 node 0 TIMEOUT...
+log: FT20-ClientSW time 3568 node 0 SENDING: DATA<13, 3568, len: 1000>
+log:    FT20-Server time 3592 node 1 GOT: DATA<13, 3568, len: 1000>
+log:    FT20-Server time 3592 node 1 SENDING: ACK<13, 13, 3568>
+log: FT20-ClientSW time 3612 node 0 GOT: ACK<13, 13, 3568>
+log: FT20-ClientSW time 3612 node 0 SENDING: DATA<14, 3612, len: 1000>
+log:    FT20-Server time 3636 node 1 GOT: DATA<14, 3612, len: 1000>
+log:    FT20-Server time 3636 node 1 SENDING: ACK<14, 14, 3612>
+log: FT20-ClientSW time 3656 node 0 GOT: ACK<14, 14, 3612>
+log: FT20-ClientSW time 3656 node 0 SENDING: DATA<15, 3656, len: 1000>
+log:    FT20-Server time 3680 node 1 GOT: DATA<15, 3656, len: 1000>
+log:    FT20-Server time 3680 node 1 SENDING: ACK<15, 15, 3656>
+log: FT20-ClientSW time 4656 node 0 TIMEOUT...
+log: FT20-ClientSW time 4656 node 0 SENDING: DATA<15, 4656, len: 1000>
+log:    FT20-Server time 4680 node 1 GOT: DATA<15, 4656, len: 1000>
+log:    FT20-Server time 4680 node 1 SENDING: ACK<15, -1, 4656>
+log: FT20-ClientSW time 4700 node 0 GOT: ACK<15, -1, 4656>
+log: FT20-ClientSW time 4700 node 0 SENDING: DATA<16, 4700, len: 1000>
+log: FT20-ClientSW time 5700 node 0 TIMEOUT...
+log: FT20-ClientSW time 5700 node 0 SENDING: DATA<16, 5700, len: 1000>
+log:    FT20-Server time 5724 node 1 GOT: DATA<16, 5700, len: 1000>
+log:    FT20-Server time 5724 node 1 SENDING: ACK<16, 16, 5700>
+log: FT20-ClientSW time 6700 node 0 TIMEOUT...
+log: FT20-ClientSW time 6700 node 0 SENDING: DATA<16, 6700, len: 1000>
+log:    FT20-Server time 6724 node 1 GOT: DATA<16, 6700, len: 1000>
+log:    FT20-Server time 6724 node 1 SENDING: ACK<16, -1, 6700>
+log: FT20-ClientSW time 6744 node 0 GOT: ACK<16, -1, 6700>
+log: FT20-ClientSW time 6744 node 0 SENDING: DATA<17, 6744, len: 1000>
+log:    FT20-Server time 6768 node 1 GOT: DATA<17, 6744, len: 1000>
+log:    FT20-Server time 6768 node 1 SENDING: ACK<17, 17, 6744>
+log: FT20-ClientSW time 6788 node 0 GOT: ACK<17, 17, 6744>
+log: FT20-ClientSW time 6788 node 0 SENDING: DATA<18, 6788, len: 1000>
+log:    FT20-Server time 6812 node 1 GOT: DATA<18, 6788, len: 1000>
+log:    FT20-Server time 6812 node 1 SENDING: ACK<18, 18, 6788>
+log: FT20-ClientSW time 6832 node 0 GOT: ACK<18, 18, 6788>
+log: FT20-ClientSW time 6832 node 0 SENDING: DATA<19, 6832, len: 1000>
+log:    FT20-Server time 6856 node 1 GOT: DATA<19, 6832, len: 1000>
+log:    FT20-Server time 6856 node 1 SENDING: ACK<19, 19, 6832>
+log: FT20-ClientSW time 6876 node 0 GOT: ACK<19, 19, 6832>
+log: FT20-ClientSW time 6876 node 0 SENDING: DATA<20, 6876, len: 1000>
+log:    FT20-Server time 6900 node 1 GOT: DATA<20, 6876, len: 1000>
+log:    FT20-Server time 6900 node 1 SENDING: ACK<20, 20, 6876>
+log: FT20-ClientSW time 6920 node 0 GOT: ACK<20, 20, 6876>
+log: FT20-ClientSW time 6920 node 0 SENDING: DATA<21, 6920, len: 1000>
+log: FT20-ClientSW time 7920 node 0 TIMEOUT...
+log: FT20-ClientSW time 7920 node 0 SENDING: DATA<21, 7920, len: 1000>
+log: FT20-ClientSW time 8920 node 0 TIMEOUT...
+log: FT20-ClientSW time 8920 node 0 SENDING: DATA<21, 8920, len: 1000>
+log:    FT20-Server time 8944 node 1 GOT: DATA<21, 8920, len: 1000>
+log:    FT20-Server time 8944 node 1 SENDING: ACK<21, 21, 8920>
+log: FT20-ClientSW time 8964 node 0 GOT: ACK<21, 21, 8920>
+log: FT20-ClientSW time 8964 node 0 SENDING: DATA<22, 8964, len: 1000>
+log:    FT20-Server time 8988 node 1 GOT: DATA<22, 8964, len: 1000>
+log:    FT20-Server time 8988 node 1 SENDING: ACK<22, 22, 8964>
+log: FT20-ClientSW time 9008 node 0 GOT: ACK<22, 22, 8964>
+log: FT20-ClientSW time 9008 node 0 SENDING: DATA<23, 9008, len: 1000>
+log:    FT20-Server time 9032 node 1 GOT: DATA<23, 9008, len: 1000>
+log:    FT20-Server time 9032 node 1 SENDING: ACK<23, 23, 9008>
+log: FT20-ClientSW time 9052 node 0 GOT: ACK<23, 23, 9008>
+log: FT20-ClientSW time 9052 node 0 SENDING: DATA<24, 9052, len: 1000>
+log:    FT20-Server time 9076 node 1 GOT: DATA<24, 9052, len: 1000>
+log:    FT20-Server time 9076 node 1 SENDING: ACK<24, 24, 9052>
+log: FT20-ClientSW time 9096 node 0 GOT: ACK<24, 24, 9052>
+log: FT20-ClientSW time 9096 node 0 SENDING: DATA<25, 9096, len: 1000>
+log:    FT20-Server time 9120 node 1 GOT: DATA<25, 9096, len: 1000>
+log:    FT20-Server time 9120 node 1 SENDING: ACK<25, 25, 9096>
+log: FT20-ClientSW time 9140 node 0 GOT: ACK<25, 25, 9096>
+log: FT20-ClientSW time 9140 node 0 SENDING: DATA<26, 9140, len: 1000>
+log:    FT20-Server time 9164 node 1 GOT: DATA<26, 9140, len: 1000>
+log:    FT20-Server time 9164 node 1 SENDING: ACK<26, 26, 9140>
+log: FT20-ClientSW time 9184 node 0 GOT: ACK<26, 26, 9140>
+log: FT20-ClientSW time 9184 node 0 SENDING: DATA<27, 9184, len: 1000>
+log:    FT20-Server time 9208 node 1 GOT: DATA<27, 9184, len: 1000>
+log:    FT20-Server time 9208 node 1 SENDING: ACK<27, 27, 9184>
+log: FT20-ClientSW time 9228 node 0 GOT: ACK<27, 27, 9184>
+log: FT20-ClientSW time 9228 node 0 SENDING: DATA<28, 9228, len: 1000>
+log:    FT20-Server time 9252 node 1 GOT: DATA<28, 9228, len: 1000>
+log:    FT20-Server time 9252 node 1 SENDING: ACK<28, 28, 9228>
+log: FT20-ClientSW time 9272 node 0 GOT: ACK<28, 28, 9228>
+log: FT20-ClientSW time 9272 node 0 SENDING: DATA<29, 9272, len: 1000>
+log:    FT20-Server time 9296 node 1 GOT: DATA<29, 9272, len: 1000>
+log:    FT20-Server time 9296 node 1 SENDING: ACK<29, 29, 9272>
+log: FT20-ClientSW time 9316 node 0 GOT: ACK<29, 29, 9272>
+log: FT20-ClientSW time 9316 node 0 SENDING: DATA<30, 9316, len: 1000>
+log:    FT20-Server time 9340 node 1 GOT: DATA<30, 9316, len: 1000>
+log:    FT20-Server time 9340 node 1 SENDING: ACK<30, 30, 9316>
+log: FT20-ClientSW time 9360 node 0 GOT: ACK<30, 30, 9316>
+log: FT20-ClientSW time 9360 node 0 SENDING: DATA<31, 9360, len: 1000>
+log: FT20-ClientSW time 10360 node 0 TIMEOUT...
+log: FT20-ClientSW time 10360 node 0 SENDING: DATA<31, 10360, len: 1000>
+log:    FT20-Server time 10384 node 1 GOT: DATA<31, 10360, len: 1000>
+log:    FT20-Server time 10384 node 1 SENDING: ACK<31, 31, 10360>
+log: FT20-ClientSW time 10404 node 0 GOT: ACK<31, 31, 10360>
+log: FT20-ClientSW time 10404 node 0 SENDING: DATA<32, 10404, len: 1000>
+log: FT20-ClientSW time 11404 node 0 TIMEOUT...
+log: FT20-ClientSW time 11404 node 0 SENDING: DATA<32, 11404, len: 1000>
+log:    FT20-Server time 11428 node 1 GOT: DATA<32, 11404, len: 1000>
+log:    FT20-Server time 11428 node 1 SENDING: ACK<32, 32, 11404>
+log: FT20-ClientSW time 11448 node 0 GOT: ACK<32, 32, 11404>
+log: FT20-ClientSW time 11448 node 0 SENDING: DATA<33, 11448, len: 1000>
+log:    FT20-Server time 11472 node 1 GOT: DATA<33, 11448, len: 1000>
+log:    FT20-Server time 11472 node 1 SENDING: ACK<33, 33, 11448>
+log: FT20-ClientSW time 11492 node 0 GOT: ACK<33, 33, 11448>
+log: FT20-ClientSW time 11492 node 0 SENDING: DATA<34, 11492, len: 1000>
+log: FT20-ClientSW time 12492 node 0 TIMEOUT...
+log: FT20-ClientSW time 12492 node 0 SENDING: DATA<34, 12492, len: 1000>
+log: FT20-ClientSW time 13492 node 0 TIMEOUT...
+log: FT20-ClientSW time 13492 node 0 SENDING: DATA<34, 13492, len: 1000>
+log:    FT20-Server time 13516 node 1 GOT: DATA<34, 13492, len: 1000>
+log:    FT20-Server time 13516 node 1 SENDING: ACK<34, 34, 13492>
+log: FT20-ClientSW time 13536 node 0 GOT: ACK<34, 34, 13492>
+log: FT20-ClientSW time 13536 node 0 SENDING: DATA<35, 13536, len: 1000>
+log:    FT20-Server time 13560 node 1 GOT: DATA<35, 13536, len: 1000>
+log:    FT20-Server time 13560 node 1 SENDING: ACK<35, 35, 13536>
+log: FT20-ClientSW time 13580 node 0 GOT: ACK<35, 35, 13536>
+log: FT20-ClientSW time 13580 node 0 SENDING: DATA<36, 13580, len: 1000>
+log:    FT20-Server time 13604 node 1 GOT: DATA<36, 13580, len: 1000>
+log:    FT20-Server time 13604 node 1 SENDING: ACK<36, 36, 13580>
+log: FT20-ClientSW time 13624 node 0 GOT: ACK<36, 36, 13580>
+log: FT20-ClientSW time 13624 node 0 SENDING: DATA<37, 13624, len: 1000>
+log: FT20-ClientSW time 14624 node 0 TIMEOUT...
+log: FT20-ClientSW time 14624 node 0 SENDING: DATA<37, 14624, len: 1000>
+log:    FT20-Server time 14648 node 1 GOT: DATA<37, 14624, len: 1000>
+log:    FT20-Server time 14648 node 1 SENDING: ACK<37, 37, 14624>
+log: FT20-ClientSW time 14668 node 0 GOT: ACK<37, 37, 14624>
+log: FT20-ClientSW time 14668 node 0 SENDING: DATA<38, 14668, len: 1000>
+log:    FT20-Server time 14692 node 1 GOT: DATA<38, 14668, len: 1000>
+log:    FT20-Server time 14692 node 1 SENDING: ACK<38, 38, 14668>
+log: FT20-ClientSW time 14712 node 0 GOT: ACK<38, 38, 14668>
+log: FT20-ClientSW time 14712 node 0 SENDING: DATA<39, 14712, len: 1000>
+log:    FT20-Server time 14736 node 1 GOT: DATA<39, 14712, len: 1000>
+log:    FT20-Server time 14736 node 1 SENDING: ACK<39, 39, 14712>
+log: FT20-ClientSW time 14756 node 0 GOT: ACK<39, 39, 14712>
+log: FT20-ClientSW time 14756 node 0 SENDING: DATA<40, 14756, len: 1000>
+log:    FT20-Server time 14780 node 1 GOT: DATA<40, 14756, len: 1000>
+log:    FT20-Server time 14780 node 1 SENDING: ACK<40, 40, 14756>
+log: FT20-ClientSW time 14800 node 0 GOT: ACK<40, 40, 14756>
+log: FT20-ClientSW time 14800 node 0 SENDING: DATA<41, 14800, len: 1000>
+log:    FT20-Server time 14824 node 1 GOT: DATA<41, 14800, len: 1000>
+log:    FT20-Server time 14824 node 1 SENDING: ACK<41, 41, 14800>
+log: FT20-ClientSW time 14844 node 0 GOT: ACK<41, 41, 14800>
+log: FT20-ClientSW time 14844 node 0 SENDING: DATA<42, 14844, len: 1000>
+log:    FT20-Server time 14868 node 1 GOT: DATA<42, 14844, len: 1000>
+log:    FT20-Server time 14868 node 1 SENDING: ACK<42, 42, 14844>
+log: FT20-ClientSW time 15844 node 0 TIMEOUT...
+log: FT20-ClientSW time 15844 node 0 SENDING: DATA<42, 15844, len: 1000>
+log: FT20-ClientSW time 16844 node 0 TIMEOUT...
+log: FT20-ClientSW time 16844 node 0 SENDING: DATA<42, 16844, len: 1000>
+log:    FT20-Server time 16868 node 1 GOT: DATA<42, 16844, len: 1000>
+log:    FT20-Server time 16868 node 1 SENDING: ACK<42, -1, 16844>
+log: FT20-ClientSW time 16888 node 0 GOT: ACK<42, -1, 16844>
+log: FT20-ClientSW time 16888 node 0 SENDING: DATA<43, 16888, len: 1000>
+log:    FT20-Server time 16912 node 1 GOT: DATA<43, 16888, len: 1000>
+log:    FT20-Server time 16912 node 1 SENDING: ACK<43, 43, 16888>
+log: FT20-ClientSW time 17888 node 0 TIMEOUT...
+log: FT20-ClientSW time 17888 node 0 SENDING: DATA<43, 17888, len: 1000>
+log:    FT20-Server time 17912 node 1 GOT: DATA<43, 17888, len: 1000>
+log:    FT20-Server time 17912 node 1 SENDING: ACK<43, -1, 17888>
+log: FT20-ClientSW time 17932 node 0 GOT: ACK<43, -1, 17888>
+log: FT20-ClientSW time 17932 node 0 SENDING: DATA<44, 17932, len: 1000>
+log:    FT20-Server time 17956 node 1 GOT: DATA<44, 17932, len: 1000>
+log:    FT20-Server time 17956 node 1 SENDING: ACK<44, 44, 17932>
+log: FT20-ClientSW time 17976 node 0 GOT: ACK<44, 44, 17932>
+log: FT20-ClientSW time 17976 node 0 SENDING: DATA<45, 17976, len: 1000>
+log:    FT20-Server time 18000 node 1 GOT: DATA<45, 17976, len: 1000>
+log:    FT20-Server time 18000 node 1 SENDING: ACK<45, 45, 17976>
+log: FT20-ClientSW time 18020 node 0 GOT: ACK<45, 45, 17976>
+log: FT20-ClientSW time 18020 node 0 SENDING: DATA<46, 18020, len: 1000>
+log:    FT20-Server time 18044 node 1 GOT: DATA<46, 18020, len: 1000>
+log:    FT20-Server time 18044 node 1 SENDING: ACK<46, 46, 18020>
+log: FT20-ClientSW time 19020 node 0 TIMEOUT...
+log: FT20-ClientSW time 19020 node 0 SENDING: DATA<46, 19020, len: 1000>
+log:    FT20-Server time 19044 node 1 GOT: DATA<46, 19020, len: 1000>
+log:    FT20-Server time 19044 node 1 SENDING: ACK<46, -1, 19020>
+log: FT20-ClientSW time 20020 node 0 TIMEOUT...
+log: FT20-ClientSW time 20020 node 0 SENDING: DATA<46, 20020, len: 1000>
+log:    FT20-Server time 20044 node 1 GOT: DATA<46, 20020, len: 1000>
+log:    FT20-Server time 20044 node 1 SENDING: ACK<46, -1, 20020>
+log: FT20-ClientSW time 20064 node 0 GOT: ACK<46, -1, 20020>
+log: FT20-ClientSW time 20064 node 0 SENDING: DATA<47, 20064, len: 1000>
+log: FT20-ClientSW time 21064 node 0 TIMEOUT...
+log: FT20-ClientSW time 21064 node 0 SENDING: DATA<47, 21064, len: 1000>
+log:    FT20-Server time 21088 node 1 GOT: DATA<47, 21064, len: 1000>
+log:    FT20-Server time 21088 node 1 SENDING: ACK<47, 47, 21064>
+log: FT20-ClientSW time 21108 node 0 GOT: ACK<47, 47, 21064>
+log: FT20-ClientSW time 21108 node 0 SENDING: DATA<48, 21108, len: 1000>
+log:    FT20-Server time 21132 node 1 GOT: DATA<48, 21108, len: 1000>
+log:    FT20-Server time 21132 node 1 SENDING: ACK<48, 48, 21108>
+log: FT20-ClientSW time 21152 node 0 GOT: ACK<48, 48, 21108>
+log: FT20-ClientSW time 21152 node 0 SENDING: DATA<49, 21152, len: 1000>
+log:    FT20-Server time 21176 node 1 GOT: DATA<49, 21152, len: 1000>
+log:    FT20-Server time 21176 node 1 SENDING: ACK<49, 49, 21152>
+log: FT20-ClientSW time 22152 node 0 TIMEOUT...
+log: FT20-ClientSW time 22152 node 0 SENDING: DATA<49, 22152, len: 1000>
+log:    FT20-Server time 22176 node 1 GOT: DATA<49, 22152, len: 1000>
+log:    FT20-Server time 22176 node 1 SENDING: ACK<49, -1, 22152>
+log: FT20-ClientSW time 22196 node 0 GOT: ACK<49, -1, 22152>
+log: FT20-ClientSW time 22196 node 0 SENDING: DATA<50, 22196, len: 1000>
+log:    FT20-Server time 22220 node 1 GOT: DATA<50, 22196, len: 1000>
+log:    FT20-Server time 22220 node 1 SENDING: ACK<50, 50, 22196>
+log: FT20-ClientSW time 22240 node 0 GOT: ACK<50, 50, 22196>
+log: FT20-ClientSW time 22240 node 0 SENDING: DATA<51, 22240, len: 1000>
+log:    FT20-Server time 22264 node 1 GOT: DATA<51, 22240, len: 1000>
+log:    FT20-Server time 22264 node 1 SENDING: ACK<51, 51, 22240>
+log: FT20-ClientSW time 22284 node 0 GOT: ACK<51, 51, 22240>
+log: FT20-ClientSW time 22284 node 0 SENDING: DATA<52, 22284, len: 1000>
+log:    FT20-Server time 22308 node 1 GOT: DATA<52, 22284, len: 1000>
+log:    FT20-Server time 22308 node 1 SENDING: ACK<52, 52, 22284>
+log: FT20-ClientSW time 22328 node 0 GOT: ACK<52, 52, 22284>
+log: FT20-ClientSW time 22328 node 0 SENDING: DATA<53, 22328, len: 1000>
+log:    FT20-Server time 22352 node 1 GOT: DATA<53, 22328, len: 1000>
+log:    FT20-Server time 22352 node 1 SENDING: ACK<53, 53, 22328>
+log: FT20-ClientSW time 22372 node 0 GOT: ACK<53, 53, 22328>
+log: FT20-ClientSW time 22372 node 0 SENDING: DATA<54, 22372, len: 1000>
+log:    FT20-Server time 22396 node 1 GOT: DATA<54, 22372, len: 1000>
+log:    FT20-Server time 22396 node 1 SENDING: ACK<54, 54, 22372>
+log: FT20-ClientSW time 22416 node 0 GOT: ACK<54, 54, 22372>
+log: FT20-ClientSW time 22416 node 0 SENDING: DATA<55, 22416, len: 1000>
+log: FT20-ClientSW time 23416 node 0 TIMEOUT...
+log: FT20-ClientSW time 23416 node 0 SENDING: DATA<55, 23416, len: 1000>
+log:    FT20-Server time 23440 node 1 GOT: DATA<55, 23416, len: 1000>
+log:    FT20-Server time 23440 node 1 SENDING: ACK<55, 55, 23416>
+log: FT20-ClientSW time 23460 node 0 GOT: ACK<55, 55, 23416>
+log: FT20-ClientSW time 23460 node 0 SENDING: DATA<56, 23460, len: 1000>
+log:    FT20-Server time 23484 node 1 GOT: DATA<56, 23460, len: 1000>
+log:    FT20-Server time 23484 node 1 SENDING: ACK<56, 56, 23460>
+log: FT20-ClientSW time 23504 node 0 GOT: ACK<56, 56, 23460>
+log: FT20-ClientSW time 23504 node 0 SENDING: DATA<57, 23504, len: 1000>
+log:    FT20-Server time 23528 node 1 GOT: DATA<57, 23504, len: 1000>
+log:    FT20-Server time 23528 node 1 SENDING: ACK<57, 57, 23504>
+log: FT20-ClientSW time 23548 node 0 GOT: ACK<57, 57, 23504>
+log: FT20-ClientSW time 23548 node 0 SENDING: DATA<58, 23548, len: 1000>
+log:    FT20-Server time 23572 node 1 GOT: DATA<58, 23548, len: 1000>
+log:    FT20-Server time 23572 node 1 SENDING: ACK<58, 58, 23548>
+log: FT20-ClientSW time 23592 node 0 GOT: ACK<58, 58, 23548>
+log: FT20-ClientSW time 23592 node 0 SENDING: DATA<59, 23592, len: 1000>
+log:    FT20-Server time 23616 node 1 GOT: DATA<59, 23592, len: 1000>
+log:    FT20-Server time 23616 node 1 SENDING: ACK<59, 59, 23592>
+log: FT20-ClientSW time 23636 node 0 GOT: ACK<59, 59, 23592>
+log: FT20-ClientSW time 23636 node 0 SENDING: DATA<60, 23636, len: 1000>
+log:    FT20-Server time 23660 node 1 GOT: DATA<60, 23636, len: 1000>
+log:    FT20-Server time 23660 node 1 SENDING: ACK<60, 60, 23636>
+log: FT20-ClientSW time 23680 node 0 GOT: ACK<60, 60, 23636>
+log: FT20-ClientSW time 23680 node 0 SENDING: DATA<61, 23680, len: 1000>
+log:    FT20-Server time 23704 node 1 GOT: DATA<61, 23680, len: 1000>
+log:    FT20-Server time 23704 node 1 SENDING: ACK<61, 61, 23680>
+log: FT20-ClientSW time 23724 node 0 GOT: ACK<61, 61, 23680>
+log: FT20-ClientSW time 23724 node 0 SENDING: DATA<62, 23724, len: 1000>
+log:    FT20-Server time 23748 node 1 GOT: DATA<62, 23724, len: 1000>
+log:    FT20-Server time 23748 node 1 SENDING: ACK<62, 62, 23724>
+log: FT20-ClientSW time 23768 node 0 GOT: ACK<62, 62, 23724>
+log: FT20-ClientSW time 23768 node 0 SENDING: DATA<63, 23768, len: 1000>
+log:    FT20-Server time 23792 node 1 GOT: DATA<63, 23768, len: 1000>
+log:    FT20-Server time 23792 node 1 SENDING: ACK<63, 63, 23768>
+log: FT20-ClientSW time 23812 node 0 GOT: ACK<63, 63, 23768>
+log: FT20-ClientSW time 23812 node 0 SENDING: DATA<64, 23812, len: 1000>
+log:    FT20-Server time 23836 node 1 GOT: DATA<64, 23812, len: 1000>
+log:    FT20-Server time 23836 node 1 SENDING: ACK<64, 64, 23812>
+log: FT20-ClientSW time 23856 node 0 GOT: ACK<64, 64, 23812>
+log: FT20-ClientSW time 23856 node 0 SENDING: DATA<65, 23856, len: 1000>
+log:    FT20-Server time 23878 node 1 GOT: DATA<65, 23856, len: 645>
+log:    FT20-Server time 23878 node 1 SENDING: ACK<65, 65, 23856>
+log: FT20-ClientSW time 24856 node 0 TIMEOUT...
+log: FT20-ClientSW time 24856 node 0 SENDING: DATA<65, 24856, len: 1000>
+log:    FT20-Server time 24878 node 1 GOT: DATA<65, 24856, len: 645>
+log:    FT20-Server time 24878 node 1 SENDING: ACK<65, -1, 24856>
+log: FT20-ClientSW time 24898 node 0 GOT: ACK<65, -1, 24856>
+log: FT20-ClientSW time 24898 node 0 SENDING: FIN<66, 24898>
+log:    FT20-Server time 24918 node 1 GOT: FIN<66, 24898>
+
++++++++++++++++++++++++++++++++++++++++++
+   FT20-Server STATS
+
+COUNTERS:
+Inbound: {FT20_FinPacket=1, FT20_DataPacket=73, bytes=74470, FT20_UploadPacket=1}
+Outbound: {bytes=2442, FT20_AckPacket=74}
+------------------------------------
+RTT/Timeout Stats:
+RTT (max/avg/min/#samples) : ?, ?, ?, ?
+Timeout (max/avg/min/#samples) : ?, ?, ?, ?
+timeout events: 0
+------------------------------------
+Transfer Rates:
+Inbound mean transfer rate: 23.91 Kbit/s
+Outbound mean transfer rate: 0.78 Kbit/s
++++++++++++++++++++++++++++++++++++++++++
+
+log:    FT20-Server time 24918 node 1 SENDING: ACK<66, 66, 24898>
+log: FT20-ClientSW time 24938 node 0 GOT: ACK<66, 66, 24898>
+log: FT20-ClientSW time 24938 node 0 All Done. Transfer complete...
+
++++++++++++++++++++++++++++++++++++++++++
+FT20-ClientSW STATS
+
+COUNTERS:
+Inbound: {bytes=2211, FT20_AckPacket=67}
+Outbound: {FT20_FinPacket=1, FT20_DataPacket=87, bytes=88876, FT20_UploadPacket=1}
+------------------------------------
+RTT/Timeout Stats:
+RTT (max/avg/min/#samples) : ?, ?, ?, ?
+Timeout (max/avg/min/#samples) : ?, ?, ?, ?
+timeout events: 22
+------------------------------------
+Transfer Rates:
+Inbound mean transfer rate: 0.71 Kbit/s
+Outbound mean transfer rate: 28.51 Kbit/s
++++++++++++++++++++++++++++++++++++++++++
+
+
+simulation ended - last processing step with clock = 25898
+
