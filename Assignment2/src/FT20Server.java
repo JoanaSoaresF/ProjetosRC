@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 
@@ -21,8 +22,8 @@ public class FT20Server extends FT20AbstractApplication implements FT20_PacketHa
 	@Override
 	public int initialise(int now, int nodeId, Node self, String[] args) {
 		super.initialise(now, nodeId, self, args, this);
-		if (args.length != 1) {
-			System.err.println(this.getClass().getSimpleName() + " missing windowSize argument [in config file]");
+		if( args.length != 1 ) {
+			System.err.println( this.getClass().getSimpleName() + " missing windowSize argument [in config file]");
 			System.exit(-1);
 		}
 		this.windowSize = Integer.parseInt(args[0]);
@@ -45,15 +46,15 @@ public class FT20Server extends FT20AbstractApplication implements FT20_PacketHa
 
 	@Override
 	public void on_receive_data(int now, int client, FT20_DataPacket data) {
-
+		
 		// outside the window.
 		if (data.seqN < nextSeqN || data.seqN > nextSeqN + windowSize)
 			super.sendPacket(now, client, new FT20_AckPacket(nextSeqN - 1, -1, data.timestamp));
 		else {
-
+			
 			window.putIfAbsent(data.seqN, data.block);
-
-			// try to slide window and flush to disk.
+			
+			//try to slide window and flush to disk.
 			byte[] block;
 			while ((block = window.remove(nextSeqN)) != null) {
 				writeBlockToFile(block);
@@ -66,7 +67,7 @@ public class FT20Server extends FT20AbstractApplication implements FT20_PacketHa
 	@Override
 	public void on_receive_fin(int now, int client, FT20_FinPacket fin) {
 		if (window.isEmpty() && nextSeqN == fin.seqN)
-			super.printReport(now);
+			super.printReport( now );
 
 		super.sendPacket(now, client, new FT20_AckPacket(fin.seqN, fin.seqN, fin.timestamp));
 	}

@@ -3,7 +3,7 @@ import java.io.*;
 import ft20.*;
 import cnss.simulator.*;
 
-public class FT20ClientSW extends FT20AbstractApplication implements FT20_PacketHandler {
+public class FT20ClientGBN extends FT20AbstractApplication implements FT20_PacketHandler {
 
 	static int SERVER = 1;
 
@@ -20,8 +20,8 @@ public class FT20ClientSW extends FT20AbstractApplication implements FT20_Packet
 
 	private State state;
 
-	public FT20ClientSW() {
-		super(true, "FT20-ClientSW");
+	public FT20ClientGBN() {
+		super(true, "FT20-ClientGBN");
 	}
 
 	public int initialise(int now, int node_id, Node nodeObj, String[] args) {
