@@ -17,6 +17,10 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 	private RandomAccessFile raf;
 	private int BlockSize;
 	private int nextPacketSeqN, lastPacketSeqN;
+	private int windowSize;
+	private int windowState; // free places on the window
+	private int firstWindowPacket; // fist packet of the window
+	private int lastWindowPacket;
 
 	private State state;
 
@@ -30,12 +34,25 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 		raf = null;
 		file = new File(args[0]);
 		BlockSize = Integer.parseInt(args[1]);
+		windowSize = Integer.parseInt(args[2]);
+		windowState = 0;
+		firstWindowPacket = 0;
+		nextPacketSeqN = 1;
 
 		state = State.BEGINNING;
 		lastPacketSeqN = (int) Math.ceil(file.length() / (double) BlockSize);
 
 		sendNextPacket(now);
-		return 0;
+		return 1;
+	}
+
+	@Override
+	public void on_clock_tick(int now) {
+		// super.on_clock_tick(now);
+		if (nextPacketSeqN <= firstWindowPacket + windowSize - windowState && windowState > 0
+				&& (nextPacketSeqN <= lastPacketSeqN || state == State.FINISHING)) {
+			sendNextPacket(now);
+		}
 	}
 
 	private void sendNextPacket(int now) {
@@ -45,17 +62,23 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 				break;
 			case UPLOADING:
 				super.sendPacket(now, SERVER, readDataPacket(file, nextPacketSeqN, now));
+				nextPacketSeqN++;
+				windowState--;
 				break;
 			case FINISHING:
 				super.sendPacket(now, SERVER, new FT20_FinPacket(nextPacketSeqN, now));
+				windowState = 0;
 				break;
 		}
 		self.set_timeout(DEFAULT_TIMEOUT);
+
 	}
 
 	public void on_timeout(int now) {
 		super.on_timeout(now);
-		sendNextPacket(now);
+		// send complete window from beginning
+		nextPacketSeqN = firstWindowPacket;
+		windowState = windowSize;
 	}
 
 	@Override
@@ -63,17 +86,25 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 		switch (state) {
 			case BEGINNING:
 				state = State.UPLOADING;
+				windowState = windowSize - 1;
 			case UPLOADING:
-				nextPacketSeqN = ack.cSeqN + 1;
+				firstWindowPacket = ack.cSeqN + 1;
+				/* nextPacketSeqN >= firstWindowPacket + windowSize - windowState || */
+				if (nextPacketSeqN < firstWindowPacket)
+					nextPacketSeqN = firstWindowPacket;
 				if (nextPacketSeqN > lastPacketSeqN)
 					state = State.FINISHING;
+				// TODO confirmar se nao da casos a menos
+				if (windowState < windowSize)
+					windowState++; // more free space on the window
 				break;
 			case FINISHING:
 				super.log(now, "All Done. Transfer complete...");
 				super.printReport(now);
 				return;
 		}
-		sendNextPacket(now);
+		// sendNextPacket(now);
+
 	}
 
 	private FT20_DataPacket readDataPacket(File file, int seqN, int timestamp) {
