@@ -49,7 +49,8 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 	@Override
 	public void on_clock_tick(int now) {
 		// super.on_clock_tick(now);
-		if (nextPacketSeqN <= firstWindowPacket + windowSize - windowState && windowState > 0
+		if (nextPacketSeqN <= firstWindowPacket + windowSize - windowState && 
+				windowState > 0
 				&& (nextPacketSeqN <= lastPacketSeqN || state == State.FINISHING)) {
 			sendNextPacket(now);
 		}
@@ -89,10 +90,13 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 				windowState = windowSize - 1;
 			case UPLOADING:
 				firstWindowPacket = ack.cSeqN + 1;
-				/* nextPacketSeqN >= firstWindowPacket + windowSize - windowState || */
-				if (nextPacketSeqN < firstWindowPacket)
+
+				if (nextPacketSeqN >= firstWindowPacket + windowSize)
+					self.set_timeout(DEFAULT_TIMEOUT);
+				else if (nextPacketSeqN < firstWindowPacket)
 					nextPacketSeqN = firstWindowPacket;
-				if (nextPacketSeqN > lastPacketSeqN)
+
+				if (firstWindowPacket > lastPacketSeqN)
 					state = State.FINISHING;
 				// TODO confirmar se nao da casos a menos
 				if (windowState < windowSize)
