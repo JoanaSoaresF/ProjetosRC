@@ -36,7 +36,6 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 
 		state = State.BEGINNING;
 		lastPacketSeqN = (int) Math.ceil(file.length() / (double) BlockSize);
-		System.out.println(lastPacketSeqN);
 		sendNextPacket(now);
 		return 1;
 	}
@@ -92,8 +91,10 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 				}
 				break;
 			case FINISHING:
-				super.log(now, "All Done. Transfer complete...");
-				super.printReport(now);
+				if(ack.cSeqN == lastPacketSeqN +1) {
+					super.log(now, "All Done. Transfer complete...");
+					super.printReport(now);
+				}
 				return;
 		}
 		self.set_timeout(DEFAULT_TIMEOUT);
