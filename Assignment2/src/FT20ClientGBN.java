@@ -17,7 +17,8 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 	private RandomAccessFile raf;
 	private int BlockSize;
 	private int nextPacketSeqN, lastPacketSeqN;
-	private int firstPacketWindow, lastPacketWindow, windowSize;
+	private int firstPacketWindow, lastPacketWindow; // fist and last packets on the window
+	private int windowSize;
 
 	private State state;
 
@@ -41,6 +42,10 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 	}
 
 	public void on_clock_tick(int now) {
+		/**
+		 * If the next packet do send can fit in the window we send it (if does not pass
+		 * the last one)
+		 */
 		if ((nextPacketSeqN < lastPacketWindow && nextPacketSeqN >= firstPacketWindow)
 				&& nextPacketSeqN <= lastPacketSeqN) {
 			sendNextPacket(now);
@@ -55,6 +60,7 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 				break;
 			case UPLOADING:
 				super.sendPacket(now, SERVER, readDataPacket(file, nextPacketSeqN, now));
+				// increment the next packet to send
 				nextPacketSeqN++;
 				break;
 			case FINISHING:
@@ -70,6 +76,7 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 	@Override
 	public void on_timeout(int now) {
 		super.on_timeout(now);
+		// send the entire window from the beginning
 		nextPacketSeqN = firstPacketWindow;
 		sendNextPacket(now);
 
@@ -82,21 +89,30 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 				state = State.UPLOADING;
 				nextPacketSeqN = 1;
 			case UPLOADING:
+				// move the window to the next packet from the cumulative ack
 				firstPacketWindow = ack.cSeqN + 1;
 				lastPacketWindow = firstPacketWindow + windowSize;
-
+				/**
+				 * If the beginning of the window is bigger then the last packet to send then
+				 * the sending is done. Send the final packet
+				 */
 				if (firstPacketWindow > lastPacketSeqN) {
 					state = State.FINISHING;
 					sendNextPacket(now);
 				}
 				break;
 			case FINISHING:
+				/**
+				 * print the statistics of the server only when the ack of the FIN packet is
+				 * received
+				 */
 				if(ack.cSeqN == lastPacketSeqN +1) {
 					super.log(now, "All Done. Transfer complete...");
 					super.printReport(now);
 				}
 				return;
 		}
+		// rearm timeout after receiving a ack
 		self.set_timeout(DEFAULT_TIMEOUT);
 	}
 

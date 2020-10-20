@@ -91,10 +91,25 @@ log: FT20-ClienteGBN time 1192 node 0 SENDING: FIN<16, 1192>
 log:    FT20-Server time 1192 node 1 GOT: DATA<14, 1154, len: 1000>
 log:    FT20-Server time 1192 node 1 SENDING: ACK<15, -1, 1154>
 log: FT20-ClienteGBN time 1196 node 0 GOT: ACK<15, -1, 1148>
+15
+16
+16
 log: FT20-ClienteGBN time 1200 node 0 GOT: ACK<15, -1, 1149>
+15
+16
+16
 log: FT20-ClienteGBN time 1204 node 0 GOT: ACK<15, -1, 1151>
+15
+16
+16
 log: FT20-ClienteGBN time 1208 node 0 GOT: ACK<15, -1, 1152>
+15
+16
+16
 log: FT20-ClienteGBN time 1212 node 0 GOT: ACK<15, -1, 1154>
+15
+16
+16
 log:    FT20-Server time 1212 node 1 GOT: FIN<16, 1192>
 
 +++++++++++++++++++++++++++++++++++++++++
@@ -116,6 +131,9 @@ Outbound mean transfer rate: 4.57 Kbit/s
 
 log:    FT20-Server time 1212 node 1 SENDING: ACK<16, 16, 1192>
 log: FT20-ClienteGBN time 1232 node 0 GOT: ACK<16, 16, 1192>
+16
+16
+16
 log: FT20-ClienteGBN time 1232 node 0 All Done. Transfer complete...
 
 +++++++++++++++++++++++++++++++++++++++++

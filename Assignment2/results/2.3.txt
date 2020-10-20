@@ -1,0 +1,338 @@
+Loading configuration : configs/config-2.3.txt
+Reading file
+Created Node 0: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: FT20ClientSR
+Created Node 1: 1 interf.s, ctr code: cnss.lib.EndSystemControl app code: FT20Server
+Added link to node 0 - Link (Node1:0 I1:0)<-->(Node2:1 I2:0) bwd: 2000000 bps lat: 20 ms error: 0.15 jit: 0.0 up
+Added link to node 1 - Link (Node1:0 I1:0)<-->(Node2:1 I2:0) bwd: 2000000 bps lat: 20 ms error: 0.15 jit: 0.0 up
+
+simulation starts - first processing step with clock = 0
+
+log: FT20-ClienteGBN time 0 node 0 SENDING: UPLOAD<earth.jpg, 0>
+log:    FT20-Server time 20 node 1 GOT: UPLOAD<earth.jpg, 0>
+log:    FT20-Server time 20 node 1 SENDING: ACK<0, 0, 0>
+log: FT20-ClienteGBN time 40 node 0 GOT: ACK<0, 0, 0>
+log: FT20-ClienteGBN time 40 node 0 SENDING: DATA<1, 40, len: 1000>
+log: FT20-ClienteGBN time 41 node 0 SENDING: DATA<2, 41, len: 1000>
+log: FT20-ClienteGBN time 42 node 0 SENDING: DATA<3, 42, len: 1000>
+log: FT20-ClienteGBN time 43 node 0 SENDING: DATA<4, 43, len: 1000>
+log: FT20-ClienteGBN time 44 node 0 SENDING: DATA<5, 44, len: 1000>
+log: FT20-ClienteGBN time 45 node 0 SENDING: DATA<6, 45, len: 1000>
+log: FT20-ClienteGBN time 46 node 0 SENDING: DATA<7, 46, len: 1000>
+log: FT20-ClienteGBN time 47 node 0 SENDING: DATA<8, 47, len: 1000>
+log: FT20-ClienteGBN time 48 node 0 SENDING: DATA<9, 48, len: 1000>
+log: FT20-ClienteGBN time 49 node 0 SENDING: DATA<10, 49, len: 1000>
+log:    FT20-Server time 64 node 1 GOT: DATA<1, 40, len: 1000>
+log:    FT20-Server time 64 node 1 SENDING: ACK<1, 1, 40>
+log:    FT20-Server time 68 node 1 GOT: DATA<2, 41, len: 1000>
+log:    FT20-Server time 68 node 1 SENDING: ACK<2, 2, 41>
+log:    FT20-Server time 72 node 1 GOT: DATA<3, 42, len: 1000>
+log:    FT20-Server time 72 node 1 SENDING: ACK<3, 3, 42>
+log:    FT20-Server time 76 node 1 GOT: DATA<4, 43, len: 1000>
+log:    FT20-Server time 76 node 1 SENDING: ACK<4, 4, 43>
+log:    FT20-Server time 80 node 1 GOT: DATA<5, 44, len: 1000>
+log:    FT20-Server time 80 node 1 SENDING: ACK<5, 5, 44>
+log: FT20-ClienteGBN time 84 node 0 GOT: ACK<1, 1, 40>
+log: FT20-ClienteGBN time 84 node 0 SENDING: DATA<11, 84, len: 1000>
+log:    FT20-Server time 84 node 1 GOT: DATA<6, 45, len: 1000>
+log:    FT20-Server time 84 node 1 SENDING: ACK<6, 6, 45>
+log: FT20-ClienteGBN time 88 node 0 GOT: ACK<2, 2, 41>
+log: FT20-ClienteGBN time 88 node 0 SENDING: DATA<12, 88, len: 1000>
+log:    FT20-Server time 88 node 1 GOT: DATA<8, 47, len: 1000>
+log:    FT20-Server time 88 node 1 SENDING: ACK<6, 8, 47>
+log: FT20-ClienteGBN time 92 node 0 GOT: ACK<3, 3, 42>
+log: FT20-ClienteGBN time 92 node 0 SENDING: DATA<13, 92, len: 1000>
+log:    FT20-Server time 92 node 1 GOT: DATA<9, 48, len: 1000>
+log:    FT20-Server time 92 node 1 SENDING: ACK<6, 9, 48>
+log:    FT20-Server time 96 node 1 GOT: DATA<10, 49, len: 1000>
+log:    FT20-Server time 96 node 1 SENDING: ACK<6, 10, 49>
+log: FT20-ClienteGBN time 100 node 0 GOT: ACK<5, 5, 44>
+log: FT20-ClienteGBN time 100 node 0 SENDING: DATA<14, 100, len: 1000>
+log: FT20-ClienteGBN time 101 node 0 SENDING: DATA<15, 101, len: 1000>
+log: FT20-ClienteGBN time 104 node 0 GOT: ACK<6, 6, 45>
+log: FT20-ClienteGBN time 104 node 0 SENDING: DATA<16, 104, len: 1000>
+log: FT20-ClienteGBN time 108 node 0 GOT: ACK<6, 8, 47>
+log:    FT20-Server time 108 node 1 GOT: DATA<11, 84, len: 1000>
+log:    FT20-Server time 108 node 1 SENDING: ACK<6, 11, 84>
+log: FT20-ClienteGBN time 112 node 0 GOT: ACK<6, 9, 48>
+log:    FT20-Server time 112 node 1 GOT: DATA<12, 88, len: 1000>
+log:    FT20-Server time 112 node 1 SENDING: ACK<6, 12, 88>
+log: FT20-ClienteGBN time 116 node 0 GOT: ACK<6, 10, 49>
+log:    FT20-Server time 116 node 1 GOT: DATA<13, 92, len: 1000>
+log:    FT20-Server time 116 node 1 SENDING: ACK<6, 13, 92>
+log:    FT20-Server time 124 node 1 GOT: DATA<14, 100, len: 1000>
+log:    FT20-Server time 124 node 1 SENDING: ACK<6, 14, 100>
+log: FT20-ClienteGBN time 128 node 0 GOT: ACK<6, 11, 84>
+log:    FT20-Server time 128 node 1 GOT: DATA<15, 101, len: 1000>
+log:    FT20-Server time 128 node 1 SENDING: ACK<6, 15, 101>
+log:    FT20-Server time 132 node 1 GOT: DATA<16, 104, len: 1000>
+log:    FT20-Server time 132 node 1 SENDING: ACK<6, 16, 104>
+log: FT20-ClienteGBN time 136 node 0 GOT: ACK<6, 13, 92>
+log: FT20-ClienteGBN time 144 node 0 GOT: ACK<6, 14, 100>
+log: FT20-ClienteGBN time 148 node 0 GOT: ACK<6, 15, 101>
+log: FT20-ClienteGBN time 152 node 0 GOT: ACK<6, 16, 104>
+log: FT20-ClienteGBN time 1152 node 0 TIMEOUT...
+log: FT20-ClienteGBN time 1152 node 0 SENDING: DATA<7, 1152, len: 1000>
+log:    FT20-Server time 1176 node 1 GOT: DATA<7, 1152, len: 1000>
+log:    FT20-Server time 1176 node 1 SENDING: ACK<16, 7, 1152>
+log: FT20-ClienteGBN time 2152 node 0 TIMEOUT...
+log: FT20-ClienteGBN time 2152 node 0 SENDING: DATA<7, 2152, len: 1000>
+log:    FT20-Server time 2176 node 1 GOT: DATA<7, 2152, len: 1000>
+log:    FT20-Server time 2176 node 1 SENDING: ACK<16, -1, 2152>
+log: FT20-ClienteGBN time 2196 node 0 GOT: ACK<16, -1, 2152>
+log: FT20-ClienteGBN time 2196 node 0 SENDING: DATA<17, 2196, len: 1000>
+log: FT20-ClienteGBN time 2197 node 0 SENDING: DATA<18, 2197, len: 1000>
+log: FT20-ClienteGBN time 2198 node 0 SENDING: DATA<19, 2198, len: 1000>
+log: FT20-ClienteGBN time 2199 node 0 SENDING: DATA<20, 2199, len: 1000>
+log: FT20-ClienteGBN time 2200 node 0 SENDING: DATA<21, 2200, len: 1000>
+log: FT20-ClienteGBN time 2201 node 0 SENDING: DATA<22, 2201, len: 1000>
+log: FT20-ClienteGBN time 2202 node 0 SENDING: DATA<23, 2202, len: 1000>
+log: FT20-ClienteGBN time 2203 node 0 SENDING: DATA<24, 2203, len: 1000>
+log: FT20-ClienteGBN time 2204 node 0 SENDING: DATA<25, 2204, len: 1000>
+log: FT20-ClienteGBN time 2205 node 0 SENDING: DATA<26, 2205, len: 1000>
+log:    FT20-Server time 2221 node 1 GOT: DATA<18, 2197, len: 1000>
+log:    FT20-Server time 2221 node 1 SENDING: ACK<16, 18, 2197>
+log:    FT20-Server time 2225 node 1 GOT: DATA<20, 2199, len: 1000>
+log:    FT20-Server time 2225 node 1 SENDING: ACK<16, 20, 2199>
+log:    FT20-Server time 2229 node 1 GOT: DATA<21, 2200, len: 1000>
+log:    FT20-Server time 2229 node 1 SENDING: ACK<16, 21, 2200>
+log:    FT20-Server time 2233 node 1 GOT: DATA<22, 2201, len: 1000>
+log:    FT20-Server time 2233 node 1 SENDING: ACK<16, 22, 2201>
+log:    FT20-Server time 2237 node 1 GOT: DATA<23, 2202, len: 1000>
+log:    FT20-Server time 2237 node 1 SENDING: ACK<16, 23, 2202>
+log: FT20-ClienteGBN time 2241 node 0 GOT: ACK<16, 18, 2197>
+log:    FT20-Server time 2241 node 1 GOT: DATA<24, 2203, len: 1000>
+log:    FT20-Server time 2241 node 1 SENDING: ACK<16, 24, 2203>
+log: FT20-ClienteGBN time 2245 node 0 GOT: ACK<16, 20, 2199>
+log:    FT20-Server time 2245 node 1 GOT: DATA<25, 2204, len: 1000>
+log:    FT20-Server time 2245 node 1 SENDING: ACK<16, 25, 2204>
+log: FT20-ClienteGBN time 2249 node 0 GOT: ACK<16, 21, 2200>
+log:    FT20-Server time 2249 node 1 GOT: DATA<26, 2205, len: 1000>
+log:    FT20-Server time 2249 node 1 SENDING: ACK<16, 26, 2205>
+log: FT20-ClienteGBN time 2261 node 0 GOT: ACK<16, 24, 2203>
+log: FT20-ClienteGBN time 2265 node 0 GOT: ACK<16, 25, 2204>
+log: FT20-ClienteGBN time 2269 node 0 GOT: ACK<16, 26, 2205>
+log: FT20-ClienteGBN time 3269 node 0 TIMEOUT...
+log: FT20-ClienteGBN time 3269 node 0 SENDING: DATA<17, 3269, len: 1000>
+log:    FT20-Server time 3293 node 1 GOT: DATA<17, 3269, len: 1000>
+log:    FT20-Server time 3293 node 1 SENDING: ACK<18, 17, 3269>
+log: FT20-ClienteGBN time 3313 node 0 GOT: ACK<18, 17, 3269>
+log: FT20-ClienteGBN time 3313 node 0 SENDING: DATA<27, 3313, len: 1000>
+log: FT20-ClienteGBN time 3314 node 0 SENDING: DATA<28, 3314, len: 1000>
+log:    FT20-Server time 3337 node 1 GOT: DATA<27, 3313, len: 1000>
+log:    FT20-Server time 3337 node 1 SENDING: ACK<18, 27, 3313>
+log:    FT20-Server time 3341 node 1 GOT: DATA<28, 3314, len: 1000>
+log:    FT20-Server time 3341 node 1 SENDING: ACK<18, 28, 3314>
+log: FT20-ClienteGBN time 3357 node 0 GOT: ACK<18, 27, 3313>
+log: FT20-ClienteGBN time 3361 node 0 GOT: ACK<18, 28, 3314>
+log: FT20-ClienteGBN time 4361 node 0 TIMEOUT...
+log: FT20-ClienteGBN time 4361 node 0 SENDING: DATA<19, 4361, len: 1000>
+log:    FT20-Server time 4385 node 1 GOT: DATA<19, 4361, len: 1000>
+log:    FT20-Server time 4385 node 1 SENDING: ACK<28, 19, 4361>
+log: FT20-ClienteGBN time 4405 node 0 GOT: ACK<28, 19, 4361>
+log: FT20-ClienteGBN time 4405 node 0 SENDING: DATA<29, 4405, len: 1000>
+log: FT20-ClienteGBN time 4406 node 0 SENDING: DATA<30, 4406, len: 1000>
+log: FT20-ClienteGBN time 4407 node 0 SENDING: DATA<31, 4407, len: 1000>
+log: FT20-ClienteGBN time 4408 node 0 SENDING: DATA<32, 4408, len: 1000>
+log: FT20-ClienteGBN time 4409 node 0 SENDING: DATA<33, 4409, len: 1000>
+log: FT20-ClienteGBN time 4410 node 0 SENDING: DATA<34, 4410, len: 1000>
+log: FT20-ClienteGBN time 4411 node 0 SENDING: DATA<35, 4411, len: 1000>
+log: FT20-ClienteGBN time 4412 node 0 SENDING: DATA<36, 4412, len: 1000>
+log: FT20-ClienteGBN time 4413 node 0 SENDING: DATA<37, 4413, len: 1000>
+log: FT20-ClienteGBN time 4414 node 0 SENDING: DATA<38, 4414, len: 1000>
+log:    FT20-Server time 4429 node 1 GOT: DATA<29, 4405, len: 1000>
+log:    FT20-Server time 4429 node 1 SENDING: ACK<29, 29, 4405>
+log:    FT20-Server time 4433 node 1 GOT: DATA<30, 4406, len: 1000>
+log:    FT20-Server time 4433 node 1 SENDING: ACK<30, 30, 4406>
+log:    FT20-Server time 4437 node 1 GOT: DATA<31, 4407, len: 1000>
+log:    FT20-Server time 4437 node 1 SENDING: ACK<31, 31, 4407>
+log:    FT20-Server time 4441 node 1 GOT: DATA<32, 4408, len: 1000>
+log:    FT20-Server time 4441 node 1 SENDING: ACK<32, 32, 4408>
+log:    FT20-Server time 4445 node 1 GOT: DATA<33, 4409, len: 1000>
+log:    FT20-Server time 4445 node 1 SENDING: ACK<33, 33, 4409>
+log: FT20-ClienteGBN time 4449 node 0 GOT: ACK<29, 29, 4405>
+log: FT20-ClienteGBN time 4449 node 0 SENDING: DATA<39, 4449, len: 1000>
+log:    FT20-Server time 4449 node 1 GOT: DATA<34, 4410, len: 1000>
+log:    FT20-Server time 4449 node 1 SENDING: ACK<34, 34, 4410>
+log: FT20-ClienteGBN time 4453 node 0 GOT: ACK<30, 30, 4406>
+log: FT20-ClienteGBN time 4453 node 0 SENDING: DATA<40, 4453, len: 1000>
+log:    FT20-Server time 4453 node 1 GOT: DATA<35, 4411, len: 1000>
+log:    FT20-Server time 4453 node 1 SENDING: ACK<35, 35, 4411>
+log:    FT20-Server time 4457 node 1 GOT: DATA<36, 4412, len: 1000>
+log:    FT20-Server time 4457 node 1 SENDING: ACK<36, 36, 4412>
+log: FT20-ClienteGBN time 4461 node 0 GOT: ACK<32, 32, 4408>
+log: FT20-ClienteGBN time 4461 node 0 SENDING: DATA<41, 4461, len: 1000>
+log:    FT20-Server time 4461 node 1 GOT: DATA<37, 4413, len: 1000>
+log:    FT20-Server time 4461 node 1 SENDING: ACK<37, 37, 4413>
+log: FT20-ClienteGBN time 4462 node 0 SENDING: DATA<42, 4462, len: 1000>
+log: FT20-ClienteGBN time 4465 node 0 GOT: ACK<33, 33, 4409>
+log: FT20-ClienteGBN time 4465 node 0 SENDING: DATA<43, 4465, len: 1000>
+log: FT20-ClienteGBN time 4469 node 0 GOT: ACK<34, 34, 4410>
+log: FT20-ClienteGBN time 4469 node 0 SENDING: DATA<44, 4469, len: 1000>
+log:    FT20-Server time 4473 node 1 GOT: DATA<39, 4449, len: 1000>
+log:    FT20-Server time 4473 node 1 SENDING: ACK<37, 39, 4449>
+log: FT20-ClienteGBN time 4477 node 0 GOT: ACK<36, 36, 4412>
+log: FT20-ClienteGBN time 4477 node 0 SENDING: DATA<45, 4477, len: 1000>
+log: FT20-ClienteGBN time 4478 node 0 SENDING: DATA<46, 4478, len: 1000>
+log: FT20-ClienteGBN time 4481 node 0 GOT: ACK<37, 37, 4413>
+log: FT20-ClienteGBN time 4481 node 0 SENDING: DATA<47, 4481, len: 1000>
+log:    FT20-Server time 4485 node 1 GOT: DATA<41, 4461, len: 1000>
+log:    FT20-Server time 4485 node 1 SENDING: ACK<37, 41, 4461>
+log:    FT20-Server time 4489 node 1 GOT: DATA<42, 4462, len: 1000>
+log:    FT20-Server time 4489 node 1 SENDING: ACK<37, 42, 4462>
+log:    FT20-Server time 4493 node 1 GOT: DATA<43, 4465, len: 1000>
+log:    FT20-Server time 4493 node 1 SENDING: ACK<37, 43, 4465>
+log:    FT20-Server time 4497 node 1 GOT: DATA<44, 4469, len: 1000>
+log:    FT20-Server time 4497 node 1 SENDING: ACK<37, 44, 4469>
+log:    FT20-Server time 4501 node 1 GOT: DATA<45, 4477, len: 1000>
+log:    FT20-Server time 4501 node 1 SENDING: ACK<37, 45, 4477>
+log: FT20-ClienteGBN time 4505 node 0 GOT: ACK<37, 41, 4461>
+log:    FT20-Server time 4505 node 1 GOT: DATA<46, 4478, len: 1000>
+log:    FT20-Server time 4505 node 1 SENDING: ACK<37, 46, 4478>
+log: FT20-ClienteGBN time 4509 node 0 GOT: ACK<37, 42, 4462>
+log:    FT20-Server time 4509 node 1 GOT: DATA<47, 4481, len: 1000>
+log:    FT20-Server time 4509 node 1 SENDING: ACK<37, 47, 4481>
+log: FT20-ClienteGBN time 4513 node 0 GOT: ACK<37, 43, 4465>
+log: FT20-ClienteGBN time 4517 node 0 GOT: ACK<37, 44, 4469>
+log: FT20-ClienteGBN time 4521 node 0 GOT: ACK<37, 45, 4477>
+log: FT20-ClienteGBN time 4525 node 0 GOT: ACK<37, 46, 4478>
+log: FT20-ClienteGBN time 4529 node 0 GOT: ACK<37, 47, 4481>
+log: FT20-ClienteGBN time 5529 node 0 TIMEOUT...
+log: FT20-ClienteGBN time 5529 node 0 SENDING: DATA<38, 5529, len: 1000>
+log:    FT20-Server time 5553 node 1 GOT: DATA<38, 5529, len: 1000>
+log:    FT20-Server time 5553 node 1 SENDING: ACK<39, 38, 5529>
+log: FT20-ClienteGBN time 6529 node 0 TIMEOUT...
+log: FT20-ClienteGBN time 6529 node 0 SENDING: DATA<38, 6529, len: 1000>
+log: FT20-ClienteGBN time 7529 node 0 TIMEOUT...
+log: FT20-ClienteGBN time 7529 node 0 SENDING: DATA<38, 7529, len: 1000>
+log:    FT20-Server time 7553 node 1 GOT: DATA<38, 7529, len: 1000>
+log:    FT20-Server time 7553 node 1 SENDING: ACK<39, -1, 7529>
+log: FT20-ClienteGBN time 7573 node 0 GOT: ACK<39, -1, 7529>
+log: FT20-ClienteGBN time 7573 node 0 SENDING: DATA<48, 7573, len: 1000>
+log: FT20-ClienteGBN time 7574 node 0 SENDING: DATA<49, 7574, len: 1000>
+log:    FT20-Server time 7597 node 1 GOT: DATA<48, 7573, len: 1000>
+log:    FT20-Server time 7597 node 1 SENDING: ACK<39, 48, 7573>
+log: FT20-ClienteGBN time 7617 node 0 GOT: ACK<39, 48, 7573>
+log: FT20-ClienteGBN time 8617 node 0 TIMEOUT...
+log: FT20-ClienteGBN time 8617 node 0 SENDING: DATA<40, 8617, len: 1000>
+log:    FT20-Server time 8641 node 1 GOT: DATA<40, 8617, len: 1000>
+log:    FT20-Server time 8641 node 1 SENDING: ACK<48, 40, 8617>
+log: FT20-ClienteGBN time 8661 node 0 GOT: ACK<48, 40, 8617>
+log: FT20-ClienteGBN time 8661 node 0 SENDING: DATA<50, 8661, len: 1000>
+log: FT20-ClienteGBN time 8662 node 0 SENDING: DATA<51, 8662, len: 1000>
+log: FT20-ClienteGBN time 8663 node 0 SENDING: DATA<52, 8663, len: 1000>
+log: FT20-ClienteGBN time 8664 node 0 SENDING: DATA<53, 8664, len: 1000>
+log: FT20-ClienteGBN time 8665 node 0 SENDING: DATA<54, 8665, len: 1000>
+log: FT20-ClienteGBN time 8666 node 0 SENDING: DATA<55, 8666, len: 1000>
+log: FT20-ClienteGBN time 8667 node 0 SENDING: DATA<56, 8667, len: 1000>
+log: FT20-ClienteGBN time 8668 node 0 SENDING: DATA<57, 8668, len: 1000>
+log: FT20-ClienteGBN time 8669 node 0 SENDING: DATA<58, 8669, len: 1000>
+log:    FT20-Server time 8685 node 1 GOT: DATA<50, 8661, len: 1000>
+log:    FT20-Server time 8685 node 1 SENDING: ACK<48, 50, 8661>
+log:    FT20-Server time 8689 node 1 GOT: DATA<51, 8662, len: 1000>
+log:    FT20-Server time 8689 node 1 SENDING: ACK<48, 51, 8662>
+log:    FT20-Server time 8693 node 1 GOT: DATA<52, 8663, len: 1000>
+log:    FT20-Server time 8693 node 1 SENDING: ACK<48, 52, 8663>
+log:    FT20-Server time 8697 node 1 GOT: DATA<53, 8664, len: 1000>
+log:    FT20-Server time 8697 node 1 SENDING: ACK<48, 53, 8664>
+log:    FT20-Server time 8701 node 1 GOT: DATA<55, 8666, len: 1000>
+log:    FT20-Server time 8701 node 1 SENDING: ACK<48, 55, 8666>
+log:    FT20-Server time 8705 node 1 GOT: DATA<57, 8668, len: 1000>
+log:    FT20-Server time 8705 node 1 SENDING: ACK<48, 57, 8668>
+log: FT20-ClienteGBN time 8709 node 0 GOT: ACK<48, 51, 8662>
+log:    FT20-Server time 8709 node 1 GOT: DATA<58, 8669, len: 1000>
+log:    FT20-Server time 8709 node 1 SENDING: ACK<48, 58, 8669>
+log: FT20-ClienteGBN time 8713 node 0 GOT: ACK<48, 52, 8663>
+log: FT20-ClienteGBN time 8717 node 0 GOT: ACK<48, 53, 8664>
+log: FT20-ClienteGBN time 8721 node 0 GOT: ACK<48, 55, 8666>
+log: FT20-ClienteGBN time 8725 node 0 GOT: ACK<48, 57, 8668>
+log: FT20-ClienteGBN time 9725 node 0 TIMEOUT...
+log: FT20-ClienteGBN time 9725 node 0 SENDING: DATA<49, 9725, len: 1000>
+log:    FT20-Server time 9749 node 1 GOT: DATA<49, 9725, len: 1000>
+log:    FT20-Server time 9749 node 1 SENDING: ACK<53, 49, 9725>
+log: FT20-ClienteGBN time 9769 node 0 GOT: ACK<53, 49, 9725>
+log: FT20-ClienteGBN time 9769 node 0 SENDING: DATA<59, 9769, len: 1000>
+log: FT20-ClienteGBN time 9770 node 0 SENDING: DATA<60, 9770, len: 1000>
+log: FT20-ClienteGBN time 9771 node 0 SENDING: DATA<61, 9771, len: 1000>
+log: FT20-ClienteGBN time 9772 node 0 SENDING: DATA<62, 9772, len: 1000>
+log: FT20-ClienteGBN time 9773 node 0 SENDING: DATA<63, 9773, len: 1000>
+log:    FT20-Server time 9793 node 1 GOT: DATA<59, 9769, len: 1000>
+log:    FT20-Server time 9793 node 1 SENDING: ACK<53, 59, 9769>
+log:    FT20-Server time 9797 node 1 GOT: DATA<60, 9770, len: 1000>
+log:    FT20-Server time 9797 node 1 SENDING: ACK<53, 60, 9770>
+log:    FT20-Server time 9801 node 1 GOT: DATA<61, 9771, len: 1000>
+log:    FT20-Server time 9801 node 1 SENDING: ACK<53, 61, 9771>
+log:    FT20-Server time 9805 node 1 GOT: DATA<62, 9772, len: 1000>
+log:    FT20-Server time 9805 node 1 SENDING: ACK<53, 62, 9772>
+log:    FT20-Server time 9809 node 1 GOT: DATA<63, 9773, len: 1000>
+log:    FT20-Server time 9809 node 1 SENDING: ACK<53, 63, 9773>
+log: FT20-ClienteGBN time 9813 node 0 GOT: ACK<53, 59, 9769>
+log: FT20-ClienteGBN time 9817 node 0 GOT: ACK<53, 60, 9770>
+log: FT20-ClienteGBN time 9821 node 0 GOT: ACK<53, 61, 9771>
+log: FT20-ClienteGBN time 9825 node 0 GOT: ACK<53, 62, 9772>
+log: FT20-ClienteGBN time 9829 node 0 GOT: ACK<53, 63, 9773>
+log: FT20-ClienteGBN time 10829 node 0 TIMEOUT...
+log: FT20-ClienteGBN time 10829 node 0 SENDING: DATA<54, 10829, len: 1000>
+log: FT20-ClienteGBN time 11829 node 0 TIMEOUT...
+log: FT20-ClienteGBN time 11829 node 0 SENDING: DATA<54, 11829, len: 1000>
+log:    FT20-Server time 11853 node 1 GOT: DATA<54, 11829, len: 1000>
+log:    FT20-Server time 11853 node 1 SENDING: ACK<55, 54, 11829>
+log: FT20-ClienteGBN time 11873 node 0 GOT: ACK<55, 54, 11829>
+log: FT20-ClienteGBN time 11873 node 0 SENDING: DATA<64, 11873, len: 1000>
+log: FT20-ClienteGBN time 11874 node 0 SENDING: DATA<65, 11874, len: 1000>
+log:    FT20-Server time 11897 node 1 GOT: DATA<64, 11873, len: 1000>
+log:    FT20-Server time 11897 node 1 SENDING: ACK<55, 64, 11873>
+log:    FT20-Server time 11899 node 1 GOT: DATA<65, 11874, len: 645>
+log:    FT20-Server time 11899 node 1 SENDING: ACK<55, 65, 11874>
+log: FT20-ClienteGBN time 11917 node 0 GOT: ACK<55, 64, 11873>
+log: FT20-ClienteGBN time 11919 node 0 GOT: ACK<55, 65, 11874>
+log: FT20-ClienteGBN time 12919 node 0 TIMEOUT...
+log: FT20-ClienteGBN time 12919 node 0 SENDING: DATA<56, 12919, len: 1000>
+log:    FT20-Server time 12943 node 1 GOT: DATA<56, 12919, len: 1000>
+log:    FT20-Server time 12943 node 1 SENDING: ACK<65, 56, 12919>
+log: FT20-ClienteGBN time 12963 node 0 GOT: ACK<65, 56, 12919>
+log: FT20-ClienteGBN time 12963 node 0 SENDING: FIN<66, 12963>
+log:    FT20-Server time 12983 node 1 GOT: FIN<66, 12963>
+
++++++++++++++++++++++++++++++++++++++++++
+   FT20-Server STATS
+
+COUNTERS:
+Inbound: {FT20_FinPacket=1, FT20_DataPacket=67, bytes=68651, FT20_UploadPacket=1}
+Outbound: {bytes=2244, FT20_AckPacket=68}
+------------------------------------
+RTT/Timeout Stats:
+RTT (max/avg/min/#samples) : ?, ?, ?, ?
+Timeout (max/avg/min/#samples) : ?, ?, ?, ?
+timeout events: 0
+------------------------------------
+Transfer Rates:
+Inbound mean transfer rate: 42.30 Kbit/s
+Outbound mean transfer rate: 1.38 Kbit/s
++++++++++++++++++++++++++++++++++++++++++
+
+log:    FT20-Server time 12983 node 1 SENDING: ACK<66, 66, 12963>
+log: FT20-ClienteGBN time 13003 node 0 GOT: ACK<66, 66, 12963>
+log: FT20-ClienteGBN time 13003 node 0 All Done. Transfer complete...
+
++++++++++++++++++++++++++++++++++++++++++
+FT20-ClienteGBN STATS
+
+COUNTERS:
+Inbound: {bytes=1914, FT20_AckPacket=58}
+Outbound: {FT20_FinPacket=1, FT20_DataPacket=77, bytes=78941, FT20_UploadPacket=1}
+------------------------------------
+RTT/Timeout Stats:
+RTT (max/avg/min/#samples) : ?, ?, ?, ?
+Timeout (max/avg/min/#samples) : ?, ?, ?, ?
+timeout events: 12
+------------------------------------
+Transfer Rates:
+Inbound mean transfer rate: 1.18 Kbit/s
+Outbound mean transfer rate: 48.57 Kbit/s
++++++++++++++++++++++++++++++++++++++++++
+
+
+warning - 1 events not run; stoped too early?
+
+simulation ended - last processing step with clock = 600001
+
