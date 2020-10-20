@@ -18,7 +18,7 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 	private int BlockSize;
 	private int nextPacketSeqN, lastPacketSeqN;
 	private int firstPacketWindow, lastPacketWindow; // fist and last packets on the window
-	private int windowSize;
+	private int windowSize, timeout;
 
 	private State state;
 
@@ -34,6 +34,8 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 		BlockSize = Integer.parseInt(args[1]);
 		windowSize = Integer.parseInt(args[2]);
 		nextPacketSeqN = 0;
+		timeout = -1;
+		firstPacketWindow = 0;
 
 		state = State.BEGINNING;
 		lastPacketSeqN = (int) Math.ceil(file.length() / (double) BlockSize);
@@ -49,6 +51,10 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 		if ((nextPacketSeqN < lastPacketWindow && nextPacketSeqN >= firstPacketWindow)
 				&& nextPacketSeqN <= lastPacketSeqN) {
 			sendNextPacket(now);
+		}
+
+		if (timeout > 0) { // decrease timeout
+			timeout--;
 		}
 
 	}
@@ -67,8 +73,11 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 				super.sendPacket(now, SERVER, new FT20_FinPacket(nextPacketSeqN, now));
 				break;
 		}
+		if (timeout <= 0) { // no timeout setted yet
+			timeout = DEFAULT_TIMEOUT;
+		}
 
-		self.set_timeout(DEFAULT_TIMEOUT);
+		self.set_timeout(timeout);
 		
 
 	}
@@ -78,8 +87,21 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 		super.on_timeout(now);
 		// send the entire window from the beginning
 		nextPacketSeqN = firstPacketWindow;
+		timeout = DEFAULT_TIMEOUT;
 		sendNextPacket(now);
 
+	}
+
+	/**
+	 * Resets the timeout if the ack received is the expected ack. Puts the timeout
+	 * to de DEFAULT value
+	 * 
+	 * @param ack
+	 */
+	private void resetTimeOut(FT20_AckPacket ack) {
+		if (firstPacketWindow == ack.cSeqN) {
+			timeout = DEFAULT_TIMEOUT;
+		}
 	}
 
 	@Override
@@ -88,7 +110,10 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 			case BEGINNING:
 				state = State.UPLOADING;
 				nextPacketSeqN = 1;
+				resetTimeOut(ack);
+
 			case UPLOADING:
+				resetTimeOut(ack);
 				// move the window to the next packet from the cumulative ack
 				firstPacketWindow = ack.cSeqN + 1;
 				lastPacketWindow = firstPacketWindow + windowSize;
@@ -113,7 +138,7 @@ public class FT20ClientGBN extends FT20AbstractApplication implements FT20_Packe
 				return;
 		}
 		// rearm timeout after receiving a ack
-		self.set_timeout(DEFAULT_TIMEOUT);
+		self.set_timeout(timeout);
 	}
 
 	private FT20_DataPacket readDataPacket(File file, int seqN, int timestamp) {

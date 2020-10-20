@@ -12,17 +12,18 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 	};
 
 	static int DEFAULT_TIMEOUT = 1000;
-	private static final int RECEIVED_ACK = 1;
+	private static final int RECEIVED_ACK = -1;
 	private static final int NON_RECEIVED_ACK = 0;
+	
 
 	private File file;
 	private RandomAccessFile raf;
 	private int BlockSize;
 	private int nextPacketSeqN, lastPacketSeqN;
 	private int firstPacketWindow, lastPacketWindow; // fist and last packets on the window
-	private int windowSize;
+	private int windowSize, timeout;
 	private int[] window;
-	private int counter;
+	// private int counter;
 
 	private State state;
 
@@ -38,7 +39,9 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 		BlockSize = Integer.parseInt(args[1]);
 		windowSize = Integer.parseInt(args[2]);
 		nextPacketSeqN = 0;
-		window = new int[windowSize];
+		window = new int[windowSize]; 
+		timeout = -1;
+		
 
 		state = State.BEGINNING;
 		lastPacketSeqN = (int) Math.ceil(file.length() / (double) BlockSize);
@@ -59,6 +62,9 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 				&& nextPacketSeqN <= lastPacketSeqN) {
 			sendNextPacket(now);
 		}
+		if (timeout > 0) { // decrease timeout
+			timeout--;
+		}
 
 	}
 
@@ -76,7 +82,11 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 				super.sendPacket(now, SERVER, new FT20_FinPacket(nextPacketSeqN, now));
 				break;
 		}
-		self.set_timeout(DEFAULT_TIMEOUT);
+		if (timeout <= 0) { // no timeout setted yet
+			timeout = DEFAULT_TIMEOUT;
+		}
+
+		self.set_timeout(timeout);
 	}
 
 	@Override
@@ -90,8 +100,21 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 			if (window[0] != RECEIVED_ACK) {
 				super.sendPacket(now, SERVER, readDataPacket(file, firstPacketWindow, now));
 			}
-			self.set_timeout(DEFAULT_TIMEOUT);
+			timeout = DEFAULT_TIMEOUT;
+			self.set_timeout(timeout);
 			// runSend(now);
+		}
+	}
+
+	/**
+	 * Resets the timeout if the ack received is the expected ack. Puts the timeout
+	 * to de DEFAULT value
+	 * 
+	 * @param ack
+	 */
+	private void resetTimeOut(FT20_AckPacket ack) {
+		if (firstPacketWindow == ack.cSeqN) {
+			timeout = DEFAULT_TIMEOUT;
 		}
 	}
 
@@ -111,12 +134,13 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 				nextPacketSeqN = 1;
 				firstPacketWindow = ack.cSeqN + 1;
 				lastPacketWindow = firstPacketWindow + windowSize;
+				resetTimeOut(ack);
 				break;
 
 			case UPLOADING:
 				// move the window to the next packet from the cumulative ack
 				// firstPacketWindow = ack.cSeqN + 1;
-
+				resetTimeOut(ack);
 				int ackNum = ack.sSeqN - firstPacketWindow; // 0
 				int slide = ack.cSeqN + 1 - firstPacketWindow; // 10
 
@@ -142,7 +166,7 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 				return;
 		}
 		// rearm timeout after receiving a ack
-		self.set_timeout(DEFAULT_TIMEOUT);
+		self.set_timeout(timeout);
 	}
 
 	/**
