@@ -32,65 +32,51 @@ log:    FT20-Server time 76 node 1 SENDING: ACK<4, 4, 43>
 log:    FT20-Server time 80 node 1 GOT: DATA<5, 44, len: 1000>
 log:    FT20-Server time 80 node 1 SENDING: ACK<5, 5, 44>
 log: FT20-ClienteSR-DT time 84 node 0 GOT: ACK<1, 1, 40>
-44
 log: FT20-ClienteSR-DT time 84 node 0 SENDING: DATA<11, 84, len: 1000>
 log:    FT20-Server time 84 node 1 GOT: DATA<6, 45, len: 1000>
 log:    FT20-Server time 84 node 1 SENDING: ACK<6, 6, 45>
 log: FT20-ClienteSR-DT time 88 node 0 GOT: ACK<2, 2, 41>
-47
 log: FT20-ClienteSR-DT time 88 node 0 SENDING: DATA<12, 88, len: 1000>
 log:    FT20-Server time 88 node 1 GOT: DATA<8, 47, len: 1000>
 log:    FT20-Server time 88 node 1 SENDING: ACK<6, 8, 47>
 log: FT20-ClienteSR-DT time 92 node 0 GOT: ACK<3, 3, 42>
-50
 log: FT20-ClienteSR-DT time 92 node 0 SENDING: DATA<13, 92, len: 1000>
 log:    FT20-Server time 92 node 1 GOT: DATA<9, 48, len: 1000>
 log:    FT20-Server time 92 node 1 SENDING: ACK<6, 9, 48>
 log:    FT20-Server time 96 node 1 GOT: DATA<10, 49, len: 1000>
 log:    FT20-Server time 96 node 1 SENDING: ACK<6, 10, 49>
 log: FT20-ClienteSR-DT time 100 node 0 GOT: ACK<5, 5, 44>
-56
 log: FT20-ClienteSR-DT time 100 node 0 SENDING: DATA<14, 100, len: 1000>
 log: FT20-ClienteSR-DT time 101 node 0 SENDING: DATA<15, 101, len: 1000>
 log: FT20-ClienteSR-DT time 104 node 0 GOT: ACK<6, 6, 45>
-59
 log: FT20-ClienteSR-DT time 104 node 0 SENDING: DATA<16, 104, len: 1000>
 log: FT20-ClienteSR-DT time 108 node 0 GOT: ACK<6, 8, 47>
-61
 log:    FT20-Server time 108 node 1 GOT: DATA<11, 84, len: 1000>
 log:    FT20-Server time 108 node 1 SENDING: ACK<6, 11, 84>
 log: FT20-ClienteSR-DT time 112 node 0 GOT: ACK<6, 9, 48>
-64
 log:    FT20-Server time 112 node 1 GOT: DATA<12, 88, len: 1000>
 log:    FT20-Server time 112 node 1 SENDING: ACK<6, 12, 88>
 log: FT20-ClienteSR-DT time 116 node 0 GOT: ACK<6, 10, 49>
-67
 log:    FT20-Server time 116 node 1 GOT: DATA<13, 92, len: 1000>
 log:    FT20-Server time 116 node 1 SENDING: ACK<6, 13, 92>
 log:    FT20-Server time 124 node 1 GOT: DATA<14, 100, len: 1000>
 log:    FT20-Server time 124 node 1 SENDING: ACK<6, 14, 100>
 log: FT20-ClienteSR-DT time 128 node 0 GOT: ACK<6, 11, 84>
-44
 log:    FT20-Server time 128 node 1 GOT: DATA<15, 101, len: 1000>
 log:    FT20-Server time 128 node 1 SENDING: ACK<6, 15, 101>
 log:    FT20-Server time 132 node 1 GOT: DATA<16, 104, len: 1000>
 log:    FT20-Server time 132 node 1 SENDING: ACK<6, 16, 104>
 log: FT20-ClienteSR-DT time 136 node 0 GOT: ACK<6, 13, 92>
-44
 log: FT20-ClienteSR-DT time 136 node 0 TIMEOUT...
 log: FT20-ClienteSR-DT time 136 node 0 SENDING: DATA<12, 136, len: 1000>
 log: FT20-ClienteSR-DT time 144 node 0 GOT: ACK<6, 14, 100>
-44
 log: FT20-ClienteSR-DT time 147 node 0 TIMEOUT...
 log: FT20-ClienteSR-DT time 147 node 0 SENDING: DATA<7, 147, len: 1000>
 log: FT20-ClienteSR-DT time 148 node 0 GOT: ACK<6, 15, 101>
-47
 log: FT20-ClienteSR-DT time 152 node 0 GOT: ACK<6, 16, 104>
-48
 log:    FT20-Server time 160 node 1 GOT: DATA<12, 136, len: 1000>
 log:    FT20-Server time 160 node 1 SENDING: ACK<6, 12, 136>
 log: FT20-ClienteSR-DT time 180 node 0 GOT: ACK<6, 12, 136>
-44
 log: FT20-ClienteSR-DT time 235 node 0 TIMEOUT...
 log: FT20-ClienteSR-DT time 235 node 0 SENDING: DATA<7, 235, len: 1000>
 log:    FT20-Server time 259 node 1 GOT: DATA<7, 235, len: 1000>
@@ -125,36 +111,28 @@ log:    FT20-Server time 463 node 1 SENDING: ACK<20, 20, 430>
 log:    FT20-Server time 467 node 1 GOT: DATA<21, 431, len: 1000>
 log:    FT20-Server time 467 node 1 SENDING: ACK<21, 21, 431>
 log: FT20-ClienteSR-DT time 471 node 0 GOT: ACK<17, 17, 427>
-44
 log: FT20-ClienteSR-DT time 471 node 0 SENDING: DATA<27, 471, len: 1000>
 log:    FT20-Server time 471 node 1 GOT: DATA<22, 432, len: 1000>
 log:    FT20-Server time 471 node 1 SENDING: ACK<22, 22, 432>
 log: FT20-ClienteSR-DT time 475 node 0 GOT: ACK<18, 18, 428>
-47
 log: FT20-ClienteSR-DT time 475 node 0 SENDING: DATA<28, 475, len: 1000>
 log:    FT20-Server time 475 node 1 GOT: DATA<23, 433, len: 1000>
 log:    FT20-Server time 475 node 1 SENDING: ACK<23, 23, 433>
 log: FT20-ClienteSR-DT time 479 node 0 GOT: ACK<19, 19, 429>
-50
 log: FT20-ClienteSR-DT time 479 node 0 SENDING: DATA<29, 479, len: 1000>
 log:    FT20-Server time 479 node 1 GOT: DATA<24, 434, len: 1000>
 log:    FT20-Server time 479 node 1 SENDING: ACK<24, 24, 434>
 log: FT20-ClienteSR-DT time 483 node 0 GOT: ACK<20, 20, 430>
-53
 log: FT20-ClienteSR-DT time 483 node 0 SENDING: DATA<30, 483, len: 1000>
 log: FT20-ClienteSR-DT time 487 node 0 GOT: ACK<21, 21, 431>
-56
 log: FT20-ClienteSR-DT time 487 node 0 SENDING: DATA<31, 487, len: 1000>
 log: FT20-ClienteSR-DT time 491 node 0 GOT: ACK<22, 22, 432>
-59
 log: FT20-ClienteSR-DT time 491 node 0 SENDING: DATA<32, 491, len: 1000>
 log: FT20-ClienteSR-DT time 495 node 0 GOT: ACK<23, 23, 433>
-62
 log: FT20-ClienteSR-DT time 495 node 0 SENDING: DATA<33, 495, len: 1000>
 log:    FT20-Server time 495 node 1 GOT: DATA<27, 471, len: 1000>
 log:    FT20-Server time 495 node 1 SENDING: ACK<24, 27, 471>
 log: FT20-ClienteSR-DT time 499 node 0 GOT: ACK<24, 24, 434>
-65
 log: FT20-ClienteSR-DT time 499 node 0 SENDING: DATA<34, 499, len: 1000>
 log:    FT20-Server time 499 node 1 GOT: DATA<28, 475, len: 1000>
 log:    FT20-Server time 499 node 1 SENDING: ACK<24, 28, 475>
@@ -169,29 +147,21 @@ log: FT20-ClienteSR-DT time 511 node 0 SENDING: DATA<26, 511, len: 1000>
 log:    FT20-Server time 511 node 1 GOT: DATA<31, 487, len: 1000>
 log:    FT20-Server time 511 node 1 SENDING: ACK<24, 31, 487>
 log: FT20-ClienteSR-DT time 515 node 0 GOT: ACK<24, 27, 471>
-44
 log:    FT20-Server time 515 node 1 GOT: DATA<32, 491, len: 1000>
 log:    FT20-Server time 515 node 1 SENDING: ACK<24, 32, 491>
 log: FT20-ClienteSR-DT time 519 node 0 GOT: ACK<24, 28, 475>
-44
 log:    FT20-Server time 519 node 1 GOT: DATA<33, 495, len: 1000>
 log:    FT20-Server time 519 node 1 SENDING: ACK<24, 33, 495>
 log: FT20-ClienteSR-DT time 523 node 0 GOT: ACK<24, 29, 479>
-44
 log:    FT20-Server time 523 node 1 GOT: DATA<34, 499, len: 1000>
 log:    FT20-Server time 523 node 1 SENDING: ACK<24, 34, 499>
 log: FT20-ClienteSR-DT time 527 node 0 GOT: ACK<24, 30, 483>
-44
 log: FT20-ClienteSR-DT time 531 node 0 GOT: ACK<24, 31, 487>
-44
 log:    FT20-Server time 535 node 1 GOT: DATA<26, 511, len: 1000>
 log:    FT20-Server time 535 node 1 SENDING: ACK<24, 26, 511>
 log: FT20-ClienteSR-DT time 539 node 0 GOT: ACK<24, 33, 495>
-44
 log: FT20-ClienteSR-DT time 543 node 0 GOT: ACK<24, 34, 499>
-44
 log: FT20-ClienteSR-DT time 555 node 0 GOT: ACK<24, 26, 511>
-44
 log: FT20-ClienteSR-DT time 568 node 0 TIMEOUT...
 log: FT20-ClienteSR-DT time 568 node 0 SENDING: DATA<32, 568, len: 1000>
 log:    FT20-Server time 592 node 1 GOT: DATA<32, 568, len: 1000>
@@ -205,11 +175,9 @@ log:    FT20-Server time 664 node 1 SENDING: ACK<24, 32, 640>
 log: FT20-ClienteSR-DT time 669 node 0 TIMEOUT...
 log: FT20-ClienteSR-DT time 669 node 0 SENDING: DATA<25, 669, len: 1000>
 log: FT20-ClienteSR-DT time 684 node 0 GOT: ACK<24, 32, 640>
-44
 log:    FT20-Server time 693 node 1 GOT: DATA<25, 669, len: 1000>
 log:    FT20-Server time 693 node 1 SENDING: ACK<34, 25, 669>
 log: FT20-ClienteSR-DT time 713 node 0 GOT: ACK<34, 25, 669>
-44
 log: FT20-ClienteSR-DT time 713 node 0 SENDING: DATA<35, 713, len: 1000>
 log: FT20-ClienteSR-DT time 714 node 0 SENDING: DATA<36, 714, len: 1000>
 log: FT20-ClienteSR-DT time 715 node 0 SENDING: DATA<37, 715, len: 1000>
@@ -231,29 +199,23 @@ log:    FT20-Server time 749 node 1 SENDING: ACK<36, 39, 717>
 log:    FT20-Server time 753 node 1 GOT: DATA<40, 718, len: 1000>
 log:    FT20-Server time 753 node 1 SENDING: ACK<36, 40, 718>
 log: FT20-ClienteSR-DT time 757 node 0 GOT: ACK<35, 35, 713>
-44
 log: FT20-ClienteSR-DT time 757 node 0 SENDING: DATA<45, 757, len: 1000>
 log:    FT20-Server time 757 node 1 GOT: DATA<41, 719, len: 1000>
 log:    FT20-Server time 757 node 1 SENDING: ACK<36, 41, 719>
 log: FT20-ClienteSR-DT time 761 node 0 GOT: ACK<36, 36, 714>
-47
 log: FT20-ClienteSR-DT time 761 node 0 SENDING: DATA<46, 761, len: 1000>
 log:    FT20-Server time 761 node 1 GOT: DATA<42, 720, len: 1000>
 log:    FT20-Server time 761 node 1 SENDING: ACK<36, 42, 720>
 log: FT20-ClienteSR-DT time 765 node 0 GOT: ACK<36, 38, 716>
-49
 log:    FT20-Server time 765 node 1 GOT: DATA<43, 721, len: 1000>
 log:    FT20-Server time 765 node 1 SENDING: ACK<36, 43, 721>
 log: FT20-ClienteSR-DT time 769 node 0 GOT: ACK<36, 39, 717>
-52
 log:    FT20-Server time 769 node 1 GOT: DATA<44, 722, len: 1000>
 log:    FT20-Server time 769 node 1 SENDING: ACK<36, 44, 722>
 log: FT20-ClienteSR-DT time 777 node 0 GOT: ACK<36, 41, 719>
-58
 log: FT20-ClienteSR-DT time 780 node 0 TIMEOUT...
 log: FT20-ClienteSR-DT time 780 node 0 SENDING: DATA<37, 780, len: 1000>
 log: FT20-ClienteSR-DT time 781 node 0 GOT: ACK<36, 42, 720>
-61
 log: FT20-ClienteSR-DT time 784 node 0 TIMEOUT...
 log: FT20-ClienteSR-DT time 784 node 0 SENDING: DATA<40, 784, len: 1000>
 log:    FT20-Server time 785 node 1 GOT: DATA<46, 761, len: 1000>
@@ -261,11 +223,9 @@ log:    FT20-Server time 785 node 1 SENDING: ACK<36, 46, 761>
 log: FT20-ClienteSR-DT time 788 node 0 TIMEOUT...
 log: FT20-ClienteSR-DT time 788 node 0 SENDING: DATA<43, 788, len: 1000>
 log: FT20-ClienteSR-DT time 789 node 0 GOT: ACK<36, 44, 722>
-67
 log:    FT20-Server time 804 node 1 GOT: DATA<37, 780, len: 1000>
 log:    FT20-Server time 804 node 1 SENDING: ACK<44, 37, 780>
 log: FT20-ClienteSR-DT time 805 node 0 GOT: ACK<36, 46, 761>
-44
 log:    FT20-Server time 808 node 1 GOT: DATA<40, 784, len: 1000>
 log:    FT20-Server time 808 node 1 SENDING: ACK<44, -1, 784>
 log:    FT20-Server time 812 node 1 GOT: DATA<43, 788, len: 1000>
@@ -273,7 +233,6 @@ log:    FT20-Server time 812 node 1 SENDING: ACK<44, -1, 788>
 log: FT20-ClienteSR-DT time 823 node 0 TIMEOUT...
 log: FT20-ClienteSR-DT time 823 node 0 SENDING: DATA<45, 823, len: 1000>
 log: FT20-ClienteSR-DT time 824 node 0 GOT: ACK<44, 37, 780>
-44
 log: FT20-ClienteSR-DT time 824 node 0 SENDING: DATA<47, 824, len: 1000>
 log: FT20-ClienteSR-DT time 825 node 0 SENDING: DATA<48, 825, len: 1000>
 log: FT20-ClienteSR-DT time 826 node 0 SENDING: DATA<49, 826, len: 1000>
@@ -294,7 +253,6 @@ log:    FT20-Server time 859 node 1 SENDING: ACK<46, 51, 828>
 log:    FT20-Server time 863 node 1 GOT: DATA<52, 829, len: 1000>
 log:    FT20-Server time 863 node 1 SENDING: ACK<46, 52, 829>
 log: FT20-ClienteSR-DT time 867 node 0 GOT: ACK<46, 45, 823>
-44
 log: FT20-ClienteSR-DT time 867 node 0 SENDING: DATA<55, 867, len: 1000>
 log:    FT20-Server time 867 node 1 GOT: DATA<53, 830, len: 1000>
 log:    FT20-Server time 867 node 1 SENDING: ACK<46, 53, 830>
@@ -302,15 +260,10 @@ log: FT20-ClienteSR-DT time 868 node 0 SENDING: DATA<56, 868, len: 1000>
 log:    FT20-Server time 871 node 1 GOT: DATA<54, 831, len: 1000>
 log:    FT20-Server time 871 node 1 SENDING: ACK<46, 54, 831>
 log: FT20-ClienteSR-DT time 875 node 0 GOT: ACK<46, 49, 826>
-49
 log: FT20-ClienteSR-DT time 879 node 0 GOT: ACK<46, 51, 828>
-51
 log: FT20-ClienteSR-DT time 883 node 0 GOT: ACK<46, 52, 829>
-54
 log: FT20-ClienteSR-DT time 887 node 0 GOT: ACK<46, 53, 830>
-57
 log: FT20-ClienteSR-DT time 891 node 0 GOT: ACK<46, 54, 831>
-60
 log:    FT20-Server time 891 node 1 GOT: DATA<55, 867, len: 1000>
 log:    FT20-Server time 891 node 1 SENDING: ACK<46, 55, 867>
 log:    FT20-Server time 895 node 1 GOT: DATA<56, 868, len: 1000>
@@ -318,11 +271,9 @@ log:    FT20-Server time 895 node 1 SENDING: ACK<46, 56, 868>
 log: FT20-ClienteSR-DT time 910 node 0 TIMEOUT...
 log: FT20-ClienteSR-DT time 910 node 0 SENDING: DATA<47, 910, len: 1000>
 log: FT20-ClienteSR-DT time 911 node 0 GOT: ACK<46, 55, 867>
-44
 log: FT20-ClienteSR-DT time 912 node 0 TIMEOUT...
 log: FT20-ClienteSR-DT time 912 node 0 SENDING: DATA<48, 912, len: 1000>
 log: FT20-ClienteSR-DT time 915 node 0 GOT: ACK<46, 56, 868>
-47
 log: FT20-ClienteSR-DT time 915 node 0 TIMEOUT...
 log: FT20-ClienteSR-DT time 915 node 0 SENDING: DATA<50, 915, len: 1000>
 log:    FT20-Server time 934 node 1 GOT: DATA<47, 910, len: 1000>
@@ -336,7 +287,6 @@ log: FT20-ClienteSR-DT time 958 node 0 SENDING: DATA<57, 958, len: 1000>
 log: FT20-ClienteSR-DT time 959 node 0 SENDING: DATA<58, 959, len: 1000>
 log: FT20-ClienteSR-DT time 960 node 0 SENDING: DATA<59, 960, len: 1000>
 log: FT20-ClienteSR-DT time 962 node 0 GOT: ACK<56, 50, 915>
-47
 log: FT20-ClienteSR-DT time 962 node 0 SENDING: DATA<60, 962, len: 1000>
 log: FT20-ClienteSR-DT time 963 node 0 SENDING: DATA<61, 963, len: 1000>
 log: FT20-ClienteSR-DT time 964 node 0 SENDING: DATA<62, 964, len: 1000>
@@ -354,31 +304,22 @@ log:    FT20-Server time 994 node 1 SENDING: ACK<60, 60, 962>
 log:    FT20-Server time 998 node 1 GOT: DATA<61, 963, len: 1000>
 log:    FT20-Server time 998 node 1 SENDING: ACK<61, 61, 963>
 log: FT20-ClienteSR-DT time 1002 node 0 GOT: ACK<57, 57, 958>
-44
 log:    FT20-Server time 1002 node 1 GOT: DATA<62, 964, len: 1000>
 log:    FT20-Server time 1002 node 1 SENDING: ACK<62, 62, 964>
 log: FT20-ClienteSR-DT time 1006 node 0 GOT: ACK<58, 58, 959>
-47
 log:    FT20-Server time 1006 node 1 GOT: DATA<63, 965, len: 1000>
 log:    FT20-Server time 1006 node 1 SENDING: ACK<63, 63, 965>
 log: FT20-ClienteSR-DT time 1010 node 0 GOT: ACK<59, 59, 960>
-50
 log:    FT20-Server time 1010 node 1 GOT: DATA<64, 966, len: 1000>
 log:    FT20-Server time 1010 node 1 SENDING: ACK<64, 64, 966>
 log:    FT20-Server time 1012 node 1 GOT: DATA<65, 967, len: 645>
 log:    FT20-Server time 1012 node 1 SENDING: ACK<65, 65, 967>
 log: FT20-ClienteSR-DT time 1014 node 0 GOT: ACK<60, 60, 962>
-52
 log: FT20-ClienteSR-DT time 1018 node 0 GOT: ACK<61, 61, 963>
-55
 log: FT20-ClienteSR-DT time 1022 node 0 GOT: ACK<62, 62, 964>
-58
 log: FT20-ClienteSR-DT time 1026 node 0 GOT: ACK<63, 63, 965>
-61
 log: FT20-ClienteSR-DT time 1030 node 0 GOT: ACK<64, 64, 966>
-64
 log: FT20-ClienteSR-DT time 1032 node 0 GOT: ACK<65, 65, 967>
-65
 log: FT20-ClienteSR-DT time 1032 node 0 SENDING: FIN<66, 1032>
 log:    FT20-Server time 1052 node 1 GOT: FIN<66, 1032>
 

@@ -5,6 +5,8 @@ import cnss.simulator.*;
 
 public class FT20ClientSR_DT extends FT20AbstractApplication implements FT20_PacketHandler {
 
+	private static final double BETA = 0.25;
+	private static final double ALPHA = 0.125;
 	static int SERVER = 1;
 
 	enum State {
@@ -23,7 +25,7 @@ public class FT20ClientSR_DT extends FT20AbstractApplication implements FT20_Pac
 	private int[] window;
 	private int[] time;
 	private int timeOut;
-	private float rtt;
+	private double rtt;
 	private double v;
 
 	private State state;
@@ -135,11 +137,12 @@ public class FT20ClientSR_DT extends FT20AbstractApplication implements FT20_Pac
 
 				if (ackNum >= 0) { // se não for um ack antigo
 					window[ackNum] = RECEIVED_ACK;
+
 					int sampleRTT = now - time[ackNum];
-					v = (0.75 * v) + Math.abs(sampleRTT - rtt) * 0.25;
-					rtt = (float) (rtt * 0.875 + sampleRTT * 0.125);
+					v = computeVarianceRTT(sampleRTT);
+					rtt = computeMeanRTT(sampleRTT);
+					
 					timeOut = (int) (rtt + 4.0*v);
-					System.out.println((int) sampleRTT);
 					super.tallyRTT((int) rtt);
 					super.tallyTimeout(timeOut);
 					moveWindow(ackNum, slide);
@@ -169,6 +172,14 @@ public class FT20ClientSR_DT extends FT20AbstractApplication implements FT20_Pac
 		}
 		// rearm timeout after receiving a ack
 
+	}
+
+	private double computeMeanRTT(int sampleRTT) {
+		return (rtt * (1-ALPHA) + sampleRTT * ALPHA);
+	}
+
+	private double computeVarianceRTT(int sampleRTT) {
+		return (1-BETA) * v + Math.abs(sampleRTT - rtt) * BETA;
 	}
 
 	/**
