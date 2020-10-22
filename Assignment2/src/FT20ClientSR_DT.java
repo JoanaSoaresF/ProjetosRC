@@ -5,6 +5,7 @@ import cnss.simulator.*;
 
 public class FT20ClientSR_DT extends FT20AbstractApplication implements FT20_PacketHandler {
 
+	private static final double VARIANCE_WEIGHT = 4.0;
 	private static final double BETA = 0.25;
 	private static final double ALPHA = 0.125;
 	static int SERVER = 1;
@@ -141,8 +142,8 @@ public class FT20ClientSR_DT extends FT20AbstractApplication implements FT20_Pac
 					int sampleRTT = now - time[ackNum];
 					v = computeVarianceRTT(sampleRTT);
 					rtt = computeMeanRTT(sampleRTT);
-					
-					timeOut = (int) (rtt + 4.0*v);
+
+					timeOut = (int) (rtt + VARIANCE_WEIGHT*v);
 					super.tallyRTT((int) rtt);
 					super.tallyTimeout(timeOut);
 					moveWindow(ackNum, slide);
