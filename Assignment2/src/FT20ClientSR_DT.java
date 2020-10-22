@@ -138,7 +138,8 @@ public class FT20ClientSR_DT extends FT20AbstractApplication implements FT20_Pac
 					int sampleRTT = now - time[ackNum];
 					v = (0.75 * v) + Math.abs(sampleRTT - rtt) * 0.25;
 					rtt = (float) (rtt * 0.875 + sampleRTT * 0.125);
-					timeOut = (int) (rtt + v);
+					timeOut = (int) (rtt + 4.0*v);
+					System.out.println((int) sampleRTT);
 					super.tallyRTT((int) rtt);
 					super.tallyTimeout(timeOut);
 					moveWindow(ackNum, slide);
