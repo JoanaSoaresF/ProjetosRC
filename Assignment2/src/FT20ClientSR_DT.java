@@ -3,7 +3,7 @@ import java.io.*;
 import ft20.*;
 import cnss.simulator.*;
 
-public class FT20ClientSR extends FT20AbstractApplication implements FT20_PacketHandler {
+public class FT20ClientSR_DT extends FT20AbstractApplication implements FT20_PacketHandler {
 
 	static int SERVER = 1;
 
@@ -11,7 +11,7 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 		BEGINNING, UPLOADING, FINISHING
 	};
 
-	static int DEFAULT_TIMEOUT = 1000;
+	static int DEFAULT_TIMEOUT = 100;
 	private static final int RECEIVED_ACK = -1;
 
 	private File file;
@@ -21,11 +21,15 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 	private int firstPacketWindow, lastPacketWindow; // fist and last packets on the window
 	private int windowSize;
 	private int[] window;
+	private int[] time;
+	private int timeOut;
+	private float rtt;
+	private double v;
 
 	private State state;
 
-	public FT20ClientSR() {
-		super(true, "FT20-ClienteSR");
+	public FT20ClientSR_DT() {
+		super(true, "FT20-ClienteSR-DT");
 	}
 
 	public int initialise(int now, int node_id, Node nodeObj, String[] args) {
@@ -37,8 +41,16 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 		windowSize = Integer.parseInt(args[2]);
 		nextPacketSeqN = 0;
 		window = new int[windowSize];
-		for (int i = 0; i < windowSize; i++)
+		rtt = now;
+		v = 0;
+
+		time = new int[windowSize];
+		timeOut = DEFAULT_TIMEOUT;
+
+		for (int i = 0; i < windowSize; i++) {
 			window[i] = RECEIVED_ACK;
+			time[i] = now;
+		}
 
 		state = State.BEGINNING;
 		lastPacketSeqN = (int) Math.ceil(file.length() / (double) BlockSize);
@@ -63,7 +75,7 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 		// window
 		if (i >= windowSize && (nextPacketSeqN < lastPacketWindow && nextPacketSeqN >= firstPacketWindow)
 				&& nextPacketSeqN <= lastPacketSeqN) {
-			window[nextPacketSeqN - firstPacketWindow] = DEFAULT_TIMEOUT;
+			window[nextPacketSeqN - firstPacketWindow] = timeOut;
 			sendNextPacket(now);
 		}
 
@@ -72,17 +84,18 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 	private void sendNextPacket(int now) {
 		switch (state) {
 			case BEGINNING:
+				rtt = now;
 				super.sendPacket(now, SERVER, new FT20_UploadPacket(file.getName(), now));
-				self.set_timeout(DEFAULT_TIMEOUT);
+				self.set_timeout(timeOut);
 				break;
 			case UPLOADING:
 				super.sendPacket(now, SERVER, readDataPacket(file, nextPacketSeqN, now));
-				// increment the next packet to send
-				nextPacketSeqN++;
+				time[nextPacketSeqN - firstPacketWindow] = now;
+				nextPacketSeqN++;// increment the next packet to send
 				break;
 			case FINISHING:
 				super.sendPacket(now, SERVER, new FT20_FinPacket(nextPacketSeqN, now));
-				self.set_timeout(DEFAULT_TIMEOUT);
+				self.set_timeout(timeOut);
 				break;
 		}
 
@@ -98,7 +111,8 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 	public void on_timeout(int now, int p) {
 		super.on_timeout(now);
 		super.sendPacket(now, SERVER, readDataPacket(file, firstPacketWindow + p, now));
-		window[p] = DEFAULT_TIMEOUT; // arm new timeout
+		time[p] = now;
+		window[p] = timeOut; // arm new timeout
 
 	}
 
@@ -113,11 +127,20 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 				break;
 
 			case UPLOADING:
-				int ackNum = ack.sSeqN - firstPacketWindow; 
-				int slide = ack.cSeqN + 1 - firstPacketWindow; 
+				int ackNum = ack.sSeqN - firstPacketWindow;
+				int slide = ack.cSeqN + 1 - firstPacketWindow;
+				if (ack.sSeqN == 1) { // if ack of the first packet then define adaptive timeout.
+					rtt = now - time[ackNum];
+				}
 
 				if (ackNum >= 0) { // se não for um ack antigo
 					window[ackNum] = RECEIVED_ACK;
+					int sampleRTT = now - time[ackNum];
+					v = (0.75 * v) + Math.abs(sampleRTT - rtt) * 0.25;
+					rtt = (float) (rtt * 0.875 + sampleRTT * 0.125);
+					timeOut = (int) (rtt + v);
+					super.tallyRTT((int) rtt);
+					super.tallyTimeout(timeOut);
 					moveWindow(ackNum, slide);
 				} else if (slide > 0) {
 					// move the window to the next packet from the cumulative ack
@@ -158,10 +181,15 @@ public class FT20ClientSR extends FT20AbstractApplication implements FT20_Packet
 	 */
 	private void moveWindow(int ackNum, int slide) {
 		if (slide > 0) {
-			for (int i = 0; i < windowSize - slide; i++) // 0
+			for (int i = 0; i < windowSize - slide; i++) {// 0
 				window[i] = window[i + slide];
-			for (int i = windowSize - slide; i < windowSize; i++)
+				time[i] = time[i + slide];
+			}
+			for (int i = windowSize - slide; i < windowSize; i++) {
 				window[i] = RECEIVED_ACK;
+				time[i] = 0;
+
+			}
 			firstPacketWindow += slide;
 			lastPacketWindow = firstPacketWindow + windowSize;
 
