@@ -85,7 +85,7 @@ public class HttpLazyServer {
 	 * sendFile: when available, sends the file in the URL to the client
 	 * 
 	 */
-	private static void sendFile(String fileName, long[] ranges, OutputStream out)
+	private static void sendFile(String fileName, int[] ranges, OutputStream out)
 			throws IOException {
 		// strips the leading "/"
 		String name = fileName.substring(1);
@@ -97,7 +97,7 @@ public class HttpLazyServer {
 		else if ( !f.canRead() ) sendsSimplePage ("File \""+fileName+"\" cannot be read",out);
 		else {
 			// we are going to send something
-			long fileSize = f.length();
+			int fileSize = (int) f.length();
 			long rest = 0;
 			if (ranges[0] == -1 && ranges[1] == -1 ) { // special case: no ranges 
 				ranges[1] = fileSize-1;
