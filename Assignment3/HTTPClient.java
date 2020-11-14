@@ -1,31 +1,34 @@
 import java.io.*;
 import java.net.*;
 
-public class HTTPClient {
+public class HTTPClient extends Thread {
 	private static final int BUF_SIZE = 512;
 	private static final int MAX_RETRY = 3;
-	private static final int REQUEST_SIZE = 10000;
+	private static final int REQUEST_SIZE = 100000;
 
 	private static Stats stat;
 	private URL url;
 	private int startRange;
 	private int endRange;
 	private int size;
-	private boolean next;
 	private FileOutputStream fos;
 	private RandomAccessFile raf;
 	private OutputStream out;
 	private InputStream in;
 	private int cicle;
 	private boolean done;
+	private boolean connected;
+	private Socket sock;
 
-	public HTTPClient(URL url, int startRange, int endRange, File file, int totalsize) {
+	public HTTPClient(URL url, int startRange, int endRange, File file, int totalsize, Stats stat) {
 		this.url = url;
 		this.startRange = startRange;
 		this.endRange = endRange;
 		this.size = totalsize;
 		this.cicle = 0;
+		this.stat = stat;
 		done = false;
+		this.connected = false;
 		try {
 			raf = new RandomAccessFile(file, "rw");
 			raf.setLength(startRange);
@@ -56,6 +59,7 @@ public class HTTPClient {
 
 	}
 
+	@Override
 	public void run() {
 
 		int port = url.getPort() == -1 ? 80 : url.getPort();
@@ -64,83 +68,82 @@ public class HTTPClient {
 			Socket sock = new Socket(url.getHost(), port);
 			out = sock.getOutputStream();
 			in = sock.getInputStream();
-			//request(port, path);
-			/*for (int i = cicle -1; startRange + i * REQUEST_SIZE <= endRange; i++){
-				downloadFile(url.getHost(), port, path, i);
-				cicle++;
-
-			}*/
+			// request(port, path);
+			/*
+			 * for (int i = cicle -1; startRange + i * REQUEST_SIZE <= endRange; i++){
+			 * downloadFile(url.getHost(), port, path, i); cicle++;
+			 * 
+			 * }
+			 */
 			int i = cicle;
-			while ( startRange + i * REQUEST_SIZE <= endRange){
+			while (startRange + i * REQUEST_SIZE <= endRange) {
 				cicle = i;
 				downloadFile(url.getHost(), port, path, i);
 				i++;
 			}
-			
-			if(!done)
-				run();
 
+			if (!done)
+				run();
 
 			fos.close();
 			raf.close();
 			sock.close();
-		} catch(SocketException e){
-			//connect(port, path,  url.getHost());
-			//request(port, path);
-			System.out.println("Erro aqui"+e.getMessage());
+		} catch (SocketException e) {
+			// connect(port, path, url.getHost());
+			// request(port, path);
+			System.out.println("Erro aqui" + e.getMessage());
 			cicle--;
 			run();
-			
+
 		} catch (IOException e) {
 
 			e.printStackTrace();
-		} 
-		
-    }
+		}
+
+	}
 
 	private void request(int port, String path) throws IOException {
-		//for (int i = 0; startRange + i * REQUEST_SIZE <= endRange; i++)
-		//	downloadFile(url.getHost(), port, path, i);
-		int i = cicle-1;
-		while ( startRange + i * REQUEST_SIZE <= endRange){
+		// for (int i = 0; startRange + i * REQUEST_SIZE <= endRange; i++)
+		// downloadFile(url.getHost(), port, path, i);
+		int i = cicle - 1;
+		while (startRange + i * REQUEST_SIZE <= endRange) {
 			downloadFile(url.getHost(), port, path, i);
 			i++;
 			cicle++;
 		}
 	}
-    
-	public void downloadFile(String host, int port, String path, int i) throws IOException {
-		
-		/*Socket sock = new Socket(url.getHost(), port);
-		
 
-		OutputStream out = sock.getOutputStream();
-		InputStream	in = sock.getInputStream();*/
+	public void downloadFile(String host, int port, String path, int i) throws UnknownHostException, IOException {
 
-		int start = i*REQUEST_SIZE;
-		int end = (i+1)*REQUEST_SIZE-1;
-
-
-		if(end > endRange - startRange)
-			end = endRange - startRange;
-		/*else if (startRange + end + REQUEST_SIZE-1 >size)
-			end = size-startRange;
 		/*
-			System.out.println("start: "+start);
-			System.out.println("end: "+end);
-			System.out.println("startRange: "+startRange);
-			System.out.println("start+startRange: "+start+startRange);
-			System.out.println("size: "+size);
-			System.out.println(start <= end && start+startRange < size);
-		*/
-		if(start <= end && start+startRange < size){
-			String request = String.format(
-				"GET %s HTTP/1.0\r\n"+
-				"Host: %s\r\n"+
-				"User-Agent: X-RC2020 HttpClient\r\n"+
-				"Range: bytes=%d-%d\r\n\r\n", path, host, startRange + start, startRange + end);
+		 * Socket sock = new Socket(url.getHost(), port);
+		 * 
+		 * 
+		 * OutputStream out = sock.getOutputStream(); InputStream in =
+		 * sock.getInputStream();
+		 */
+
+		int start = i * REQUEST_SIZE;
+		int end = (i + 1) * REQUEST_SIZE - 1;
+
+		if (end > endRange - startRange)
+			end = endRange - startRange;
+		/*
+		 * else if (startRange + end + REQUEST_SIZE-1 >size) end = size-startRange; /*
+		 * System.out.println("start: "+start); System.out.println("end: "+end);
+		 * System.out.println("startRange: "+startRange);
+		 * System.out.println("start+startRange: "+start+startRange);
+		 * System.out.println("size: "+size); System.out.println(start <= end &&
+		 * start+startRange < size);
+		 */
+		if (start <= end && start + startRange < size) {
+			String request = String.format("GET %s HTTP/1.0\r\n" + "Host: %s\r\n"
+					+ "User-Agent: X-RC2020 HttpClient\r\n" + "Range: bytes=%d-%d\r\n\r\n", path, host,
+					startRange + start, startRange + end);
 
 			out.write(request.getBytes());
+	
+			
 
 			System.out.println("\nSent Request:\n-------------\n"+request);		
 			System.out.println("Got Reply:");
@@ -157,7 +160,14 @@ public class HTTPClient {
 				System.out.println(answerLine);
 				
 				String[] head = Http.parseHttpHeader(answerLine);
-				if(false){
+				if((head[0].toLowerCase()).equals("Content-Length".toLowerCase())){
+					int a = Integer.parseInt(head[1]);
+					
+					if(a<end-start+1 && startRange + end < this.size-1){
+						System.out.printf("Arnold dentro : %d   %d   %d   %d\n", a, (end-start), (startRange + end), this.size);
+						downloadFile(host, port, path, i);	
+					}
+
 
 				} else if((head[0].toLowerCase()).equals("Content-Range".toLowerCase())){
 					String [] r = head[1].split(" ");
@@ -166,7 +176,7 @@ public class HTTPClient {
 
 					range[0] = Integer.parseInt(r1[0]);
 					range[1] = Integer.parseInt(r1[1]);
-					if(range[1] >= endRange-1)
+					if(range[1] >= endRange-1 || range[1] >= this.size-1)
 						done = true;
 				}
 				answerLine = Http.readLine(in);
@@ -174,6 +184,8 @@ public class HTTPClient {
 			
 
 			if ( reply[1].equals("200") || reply[1].equals("206")) {
+
+				stat.newRequest(end-start);
 
 				System.out.println("\nReply Body:\n--------------");
 				long time0 = System.currentTimeMillis();

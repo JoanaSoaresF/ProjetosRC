@@ -31,6 +31,7 @@ public class GetFile {
 	static File file;
 
 	public static void main(String[] args) throws Exception {
+		stat = new Stats();
 		if (args.length < 1) {
 			System.out.println("Usage: java GetFile url_to_access");
 			System.exit(0);
@@ -42,14 +43,22 @@ public class GetFile {
 		String[] aux = url.split("/");
 		String filename = aux[aux.length - 1];
 		file = new File("./copy-of-" + filename);
+		HTTPClient [] cc = new HTTPClient[args.length];
 
-		int sizeOfRequest = (int) size / (args.length) +1;
+		int sizeOfRequest = (int) size / (args.length) + 1;
 		for(int i = 0; i<args.length; i++){
 			url = args[i];
 			URL u = new URL(url);
-			HTTPClient cc = new HTTPClient(u, i*sizeOfRequest, (i+1)*(sizeOfRequest)-1, file, size);
-			cc.run();
+			cc[i] = new HTTPClient(u, i*sizeOfRequest, (i+1)*(sizeOfRequest)-1, file, size, stat);
+			cc[i].start();
+			
 		}
+		
+		for(int i = 0; i<args.length; i++){
+			cc[i].join();	
+		}
+		
+		stat.printReport();
 		
 	}
 
