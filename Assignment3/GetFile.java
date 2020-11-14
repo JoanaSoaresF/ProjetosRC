@@ -1,15 +1,11 @@
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.RandomAccessFile;
 import java.net.Socket;
 import java.net.URL;
 import java.net.UnknownHostException;
-import java.nio.file.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
-import java.util.*;
 
 
 /**
@@ -62,59 +58,6 @@ public class GetFile {
 		
 	}
 
-	// Implement here to download the file requested in the URL
-	// and write the file in the client side.
-	// In the end print te requires detatistics
-
-	private static void downloadFile(String host, int port, String path) throws UnknownHostException, IOException {
-
-		// TODO dowload de partes do ficheiro separadamente
-
-		String filename = path.substring(path.lastIndexOf('/') + 1);
-		if (filename.equals(""))
-			filename = "index.html";
-
-		Socket sock = new Socket(host, port);
-
-		OutputStream out = sock.getOutputStream();
-		InputStream in = sock.getInputStream();
-		String request = String.format(
-				"GET %s HTTP/1.0\r\n" + 
-				"Host: %s\r\n" + 
-				"User-Agent: X-RC2020 SimpleHttpClient\r\n\r\n", path, host);
-
-		out.write(request.getBytes());
-
-		System.out.println("\nSent Request:\n-------------\n" + request);
-		System.out.println("Got Reply:");
-		System.out.println("\nReply Header:\n--------------");
-
-		String answerLine = Http.readLine(in); // first line is always present
-		System.out.println(answerLine);
-		String[] reply = Http.parseHttpReply(answerLine);
-		long[] range = null;
-
-		answerLine = Http.readLine(in);
-		while (!answerLine.equals("")) {
-			System.out.println(answerLine);
-			String[] head = Http.parseHttpHeader(answerLine);
-			answerLine = Http.readLine(in);
-		}
-
-		if (reply[1].equals("200")) {
-
-			System.out.println("\nReply Body:\n--------------");
-			long time0 = System.currentTimeMillis();
-			int n;
-			byte[] buffer = new byte[BUF_SIZE];
-
-			while ((n = in.read(buffer)) >= 0) {
-				System.out.write(buffer, 0, n);
-			}
-		} else
-			System.out.println("Ooops, received status:" + reply[1]);
-	}
-
 	private static int headRequest(URL url) throws UnknownHostException, IOException {
 		int s = -1;
 
@@ -161,6 +104,3 @@ public class GetFile {
 	}
 }
 
-
-
-// can add other private stuff as needed
