@@ -1,9 +1,10 @@
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.RandomAccessFile;
 import java.net.Socket;
 import java.net.URL;
 import java.net.UnknownHostException;
-
+import java.nio.file.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,10 +23,12 @@ public class GetFile {
 	private static final int BUF_SIZE = 512;
 	private static final int MAX_RETRY = 3;
 	
-	private static final int REQUEST_SIZE = 10;
+	//private static final int REQUEST_SIZE = 10;
 
 
 	private static Stats stat;
+	private static FileOutputStream fos;
+	static File file;
 
 	public static void main(String[] args) throws Exception {
 		if (args.length < 1) {
@@ -33,23 +36,24 @@ public class GetFile {
 			System.exit(0);
 		}
 		int size = headRequest(new URL(args[0]));
-		int j= 0;
-		while(j * REQUEST_SIZE < size){
-			for (int i = 0; i < args.length; i++) {
+		System.out.println(size);
 
-				// TODO lancar threads para vários servidores
-				String url = args[0];
-				URL u = new URL(url);
-				// Assuming URL of the form http://server-name:port/path ....
-				int port = u.getPort() == -1 ? 80 : u.getPort();
-				String path = u.getPath() == "" ? "/" : u.getPath();
+		String url = args[0];
+		String[] aux = url.split("/");
+		String filename = aux[aux.length - 1];
+		file = new File("./copy-of-" + filename);
 
-				downloadFile(u.getHost(), port, path);
-				j++;
-				Thread thread = new Thread(new HTTPClient(u, j*size, (j+1)*size));
-			}
+		int sizeOfRequest = (int) size / (args.length) +1;
+		System.out.println("size = "+size+"  __  ceil: "+sizeOfRequest);
+		for(int i = 0; i<args.length; i++){
+			url = args[i];
+			URL u = new URL(url);
+			HTTPClient cc = new HTTPClient(u, i*sizeOfRequest, (i+1)*(sizeOfRequest)-1, file, size);
+			System.out.println("xxx"+i*sizeOfRequest);
+			System.out.println("xxx"+(i+1)*sizeOfRequest);
+			cc.run();
 		}
-
+		
 	}
 
 	// Implement here to download the file requested in the URL
@@ -116,9 +120,10 @@ public class GetFile {
 		OutputStream out = sock.getOutputStream();
 		InputStream in = sock.getInputStream();
 		String request = String.format(
-			"HEAD %s HTTP/1.0\r\n"+
+			"GET %s HTTP/1.0\r\n"+
 			"Host: %s\r\n"+
-			"User-Agent: X-RC2020 HttpClient\r\n\r\n", path, url.getHost());
+			"User-Agent: X-RC2020 HttpClient\r\n\r\n"+
+            "Range: bytes=%d-%d\r\n\r\n", path, url.getHost(), 0, 1);
 			
 			out.write(request.getBytes());
 			String answerLine = Http.readLine(in);
@@ -126,7 +131,7 @@ public class GetFile {
 
 		while ( !answerLine.equals("") ) {
 			
-			if(reply[0].equals("Content-Length:")){
+			if((reply[0].toLowerCase()).equals("Content-Length".toLowerCase())){
 
 				return Integer.parseInt(reply[1]);
 			}
@@ -134,10 +139,7 @@ public class GetFile {
 			answerLine = Http.readLine(in);
 			reply = Http.parseHttpHeader(answerLine);
 		}
-
-
-
-		return 0;
+		return -1;
 	}
 }
 

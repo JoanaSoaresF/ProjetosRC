@@ -1,0 +1,527 @@
+203
+size = 203  __  ceil: 102
+xxx0
+xxx102
+Chego aqui0
+end: 9
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=0-9
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:19 WET 2020
+Server: X-Lazy-Server-RC2019
+XAlmost-Accept-Ranges: bytes
+Content-Range: bytes 0-9/*
+Content-Length: 10
+
+Reply Body:
+--------------
+end: 19
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=10-19
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Lazy-Server-RC2019
+XAlmost-Accept-Ranges: bytes
+Content-Range: bytes 10-19/*
+Content-Length: 10
+
+Reply Body:
+--------------
+end: 29
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=20-29
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Lazy-Server-RC2019
+XAlmost-Accept-Ranges: bytes
+Content-Range: bytes 20-29/*
+Content-Length: 10
+
+Reply Body:
+--------------
+end: 39
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=30-39
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Lazy-Server-RC2019
+XAlmost-Accept-Ranges: bytes
+Content-Range: bytes 30-39/*
+Content-Length: 10
+
+Reply Body:
+--------------
+end: 49
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=40-49
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Lazy-Server-RC2019
+XAlmost-Accept-Ranges: bytes
+Content-Range: bytes 40-49/*
+Content-Length: 10
+
+Reply Body:
+--------------
+end: 59
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=50-59
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Lazy-Server-RC2019
+XAlmost-Accept-Ranges: bytes
+Content-Range: bytes 50-59/*
+Content-Length: 10
+
+Reply Body:
+--------------
+end: 69
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=60-69
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Lazy-Server-RC2019
+XAlmost-Accept-Ranges: bytes
+Content-Range: bytes 60-69/*
+Content-Length: 10
+
+Reply Body:
+--------------
+end: 79
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=70-79
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Lazy-Server-RC2019
+XAlmost-Accept-Ranges: bytes
+Content-Range: bytes 70-79/*
+Content-Length: 10
+
+Reply Body:
+--------------
+end: 89
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=80-89
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Lazy-Server-RC2019
+XAlmost-Accept-Ranges: bytes
+Content-Range: bytes 80-89/*
+Content-Length: 10
+
+Reply Body:
+--------------
+end: 99
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=90-99
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Lazy-Server-RC2019
+XAlmost-Accept-Ranges: bytes
+Content-Range: bytes 90-99/*
+Content-Length: 10
+
+Reply Body:
+--------------
+end: 109
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=100-101
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Lazy-Server-RC2019
+XAlmost-Accept-Ranges: bytes
+Content-Range: bytes 100-101/*
+Content-Length: 2
+
+Reply Body:
+--------------
+101
+xxx102
+xxx204
+Chego aqui102
+end: 9
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=102-111
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 10
+Content-Range: bytes 102-111/203
+
+Reply Body:
+--------------
+end: 19
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=112-121
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 10
+Content-Range: bytes 112-121/203
+
+Reply Body:
+--------------
+end: 29
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=122-131
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 10
+Content-Range: bytes 122-131/203
+
+Reply Body:
+--------------
+end: 39
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=132-141
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 10
+Content-Range: bytes 132-141/203
+
+Reply Body:
+--------------
+end: 49
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=142-151
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 10
+Content-Range: bytes 142-151/203
+
+Reply Body:
+--------------
+end: 59
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=152-161
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 10
+Content-Range: bytes 152-161/203
+
+Reply Body:
+--------------
+end: 69
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=162-171
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 10
+Content-Range: bytes 162-171/203
+
+Reply Body:
+--------------
+end: 79
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=172-181
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 10
+Content-Range: bytes 172-181/203
+
+Reply Body:
+--------------
+end: 89
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=182-191
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 10
+Content-Range: bytes 182-191/203
+
+Reply Body:
+--------------
+end: 99
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=192-201
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 10
+Content-Range: bytes 192-201/203
+
+Reply Body:
+--------------
+end: 109
+
+Sent Request:
+-------------
+GET /index.html HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=202-203
+
+
+Got Reply:
+
+Reply Header:
+--------------
+HTTP/1.0 206 Partial Content
+Date: Sat Nov 14 13:31:20 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 1
+Content-Range: bytes 202-202/203
+
+Reply Body:
+--------------
+203

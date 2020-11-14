@@ -6,6 +6,21 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - GetFile",
+            "request": "launch",
+            "mainClass": "GetFile",
+            "projectName": "ProjetosRC_7944c5e2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GetFile",
+            "request": "launch",
+            "mainClass": "Assignment3/exemplo3/GetFile",
+            "projectName": "ProjetosRC_7944c5e2",
+            "args": "http://localhost:8080/index.html"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Simulator",
             "request": "launch",
             "mainClass": "cnss.simulator.Simulator",

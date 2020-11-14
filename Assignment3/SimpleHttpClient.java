@@ -44,7 +44,7 @@ public class SimpleHttpClient {
 		OutputStream out = sock.getOutputStream();
 		InputStream in = sock.getInputStream();
 		String request = String.format(
-			"GET %s HTTP/1.0\r\n"+
+			"HEAD %s HTTP/1.0\r\n"+
 			"Host: %s\r\n"+
 			"User-Agent: X-RC2020 SimpleHttpClient\r\n\r\n", path, host);
 

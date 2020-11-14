@@ -56,7 +56,7 @@ public class HttpLazyServer {
 		try {
 			InputStream in = s.getInputStream();
 			OutputStream out = s.getOutputStream();
-			int[] ranges = { -1,-1 }; // useless but anyway
+			long[] ranges = { -1,-1 }; // useless but anyway
 			String line = Http.readLine(in);
 			System.out.println("\nGot: \n\n"+line);
 			String[] request = Http.parseHttpRequest(line);
@@ -85,7 +85,7 @@ public class HttpLazyServer {
 	 * sendFile: when available, sends the file in the URL to the client
 	 * 
 	 */
-	private static void sendFile(String fileName, int[] ranges, OutputStream out)
+	private static void sendFile(String fileName, long[] ranges, OutputStream out)
 			throws IOException {
 		// strips the leading "/"
 		String name = fileName.substring(1);
@@ -97,7 +97,7 @@ public class HttpLazyServer {
 		else if ( !f.canRead() ) sendsSimplePage ("File \""+fileName+"\" cannot be read",out);
 		else {
 			// we are going to send something
-			int fileSize = (int) f.length();
+			long fileSize = f.length();
 			long rest = 0;
 			if (ranges[0] == -1 && ranges[1] == -1 ) { // special case: no ranges 
 				ranges[1] = fileSize-1;
@@ -164,27 +164,24 @@ public class HttpLazyServer {
 	}
 
 
-	/**
+		/**
 	 * MAIN - accept and handle client connections
 	 */
 
-	public static void main(String[] args) throws IOException {
-		ServerSocket ss = new ServerSocket( PORT );
-		for (;;) {
-			try {
-				System.out.println("\nHttp lazy server ready at port "+PORT+ " waiting for request ...");
-				System.out.println("I only accept range requests in the form \"Range: bytes=x-y\"");
-				System.out.println("I only accept to send at most "+MAX_BYTES+ " in each reply\n");
+	public static void main(String[] args) {
+        	int port = args.length == 1 ? Integer.valueOf( args[0 ]) : PORT;
+		try(ServerSocket ss = new ServerSocket( port )) {
+            		for (;;) {
+                    		System.out.println("\nHttp lazy server ready at port "+port+ " waiting for request ...");
+                    		System.out.println("I only accept range requests in the form \"Range: bytes=x-y\"");
+                    		System.out.println("I only accept to send at most "+MAX_BYTES+ " in each reply\n");
 				Socket clientSock = ss.accept();
 				processClientRequest( clientSock );
 				clientSock.close();
-			} catch (Exception e ) {
-				ss.close();
-				System.err.println("Http lazy server is going down :(");
-				e.printStackTrace();
-				System.exit(-1);
 			}
+		} catch (Exception e ) {
+			System.err.println("Http lazy server is going down :(");
+			e.printStackTrace();
 		}
 	}
-
 }
