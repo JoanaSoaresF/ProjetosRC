@@ -45,6 +45,8 @@ public class GetFile {
 		for(int i = 0; i<args.length; i++){
 			url = args[i];
 			URL u = new URL(url);
+			System.out.println(i*sizeOfRequest);
+			System.out.println((i+1)*(sizeOfRequest)-1);
 			cc[i] = new HTTPClient(u, i*sizeOfRequest, (i+1)*(sizeOfRequest)-1, file, size, stat);
 			cc[i].start();
 			

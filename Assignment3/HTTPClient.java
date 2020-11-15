@@ -3,7 +3,7 @@ import java.net.*;
 
 public class HTTPClient extends Thread {
 	private static final int BUF_SIZE = 512;
-	private static final int REQUEST_SIZE = 100000;
+	private static final int REQUEST_SIZE = 2000000;
 
 	private Stats stat;
 	private URL url;
@@ -16,6 +16,9 @@ public class HTTPClient extends Thread {
 	private InputStream in;
 	private int cicle;
 	private boolean done;
+	private int seek;
+
+	int aux = 0;
 
 	private Socket sock;
 
@@ -35,7 +38,6 @@ public class HTTPClient extends Thread {
 			this.fos = new FileOutputStream(raf.getFD());
 
 		} catch (Exception e) {
-			System.out.println("Erro aqui2");
 			e.printStackTrace();
 		}
 
@@ -54,7 +56,16 @@ public class HTTPClient extends Thread {
 			int i = cicle;
 			while (startRange + i * REQUEST_SIZE <= endRange) {
 				cicle = i;
-				downloadFile(url.getHost(), port, path, i);
+
+				int start = i * REQUEST_SIZE;
+				int end = (i + 1) * REQUEST_SIZE - 1;
+
+				if (end > endRange - startRange)
+						end = endRange - startRange;
+
+				start += startRange;
+				end+= startRange;
+				downloadFile(url.getHost(), path, start, end);
 				i++;
 			}
 
@@ -65,7 +76,6 @@ public class HTTPClient extends Thread {
 			raf.close();
 			sock.close();
 		} catch (SocketException e) {
-			System.out.println("Erro aqui" + e.getMessage());
 			cicle--;
 			run();
 
@@ -76,18 +86,12 @@ public class HTTPClient extends Thread {
 
 	}
 
-	public void downloadFile(String host, int port, String path, int i) throws UnknownHostException, IOException {
-
-		int start = i * REQUEST_SIZE;
-		int end = (i + 1) * REQUEST_SIZE - 1;
-
-		if (end > endRange - startRange)
-			end = endRange - startRange;
-		
-		if (start <= end && start + startRange < size) {
+	public void downloadFile(String host, String path, int start, int end) throws UnknownHostException, IOException {
+	
+		if (start <= end && start <= size) {
 			String request = String.format("GET %s HTTP/1.0\r\n" + "Host: %s\r\n"
 					+ "User-Agent: X-RC2020 HttpClient\r\n" + "Range: bytes=%d-%d\r\n\r\n", path, host,
-					startRange + start, startRange + end);
+					start, end);
 
 		
 			out.write(request.getBytes());
@@ -100,20 +104,22 @@ public class HTTPClient extends Thread {
 			System.out.println(answerLine);
 			String[] reply = Http.parseHttpReply(answerLine);
 			int[] range  = new int[2];
+			int sended = 0;
 
 			answerLine = Http.readLine(in);
 
 			while (!answerLine.equals("") ) {
 				System.out.println(answerLine);
 				
+				
 				String[] head = Http.parseHttpHeader(answerLine);
 				if((head[0].toLowerCase()).equals("Content-Length".toLowerCase())){
-					int a = Integer.parseInt(head[1]);
+					sended = Integer.parseInt(head[1]);
 					
-					if(a<end-start+1 && startRange + end < this.size-1){
+					/*if(a<end-start+1 && startRange + end < this.size-1){
 						System.out.printf("Arnold dentro : %d   %d   %d   %d\n", a, (end-start), (startRange + end), this.size);
 						downloadFile(host, port, path, i);	
-					}
+					}*/
 
 
 				} else if((head[0].toLowerCase()).equals("Content-Range".toLowerCase())){
@@ -121,10 +127,17 @@ public class HTTPClient extends Thread {
 					String [] r1 = r[1].split("-");
 					r1[1]=r1[1].split("/")[0];
 
+					
+
 					range[0] = Integer.parseInt(r1[0]);
 					range[1] = Integer.parseInt(r1[1]);
-					if(range[1] >= endRange-1 || range[1] >= this.size-1)
+					//raf.seek(range[0]);
+
+					if(range[1]>aux)
+						aux = range[1];
+					if(range[1] >= endRange || range[1] >= this.size-1)
 						done = true;
+						
 				}
 				answerLine = Http.readLine(in);
 			}
@@ -132,21 +145,47 @@ public class HTTPClient extends Thread {
 
 			if ( reply[1].equals("200") || reply[1].equals("206")) {
 
-				stat.newRequest(end-start);
+				stat.newRequest(end-start+1);
 
 				System.out.println("\nReply Body:\n--------------");
-				long time0 = System.currentTimeMillis();
 				int n;
 				byte[] buffer = new byte[BUF_SIZE];
+	
+			
 				
-				int m = range[0];
+				if(range[1]<end && range[1] < this.size-1){
+					System.out.println("Entra2");
+					in.readAllBytes();
+					downloadFile(host, path,  start, end);
+				} else {
+					while( (n = in.read(buffer)) >= 0 ) {
 				
-				while( (n = in.read(buffer)) >= 0 ) {
-					fos.write(buffer, 0, n);
-					m+=n;
+						//raf.seek(range[0]);
+						fos.write(buffer, 0, n);
+	
+					}
+
 				}
+
+				/*if(range[0]>start) {
+					System.out.println("Entra1");
+					//raf.seek(start);
+					downloadFile(host, path, start, range[0]-1);
 				
+				}
+
+				if(range[1]<end && end < this.size-1) {
+					System.out.println("Entra2");
+					raf.seek(range[1]+1);
+					downloadFile(host, path, range[1]+1, end);
+
+				}*/
 			}	
+		} else { 
+			System.out.println(start);
+			System.out.println(this.size);
+			System.out.println(aux);
+			done = true;
 		}
 	}	   
 }
