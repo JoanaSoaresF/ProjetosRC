@@ -4,26 +4,21 @@ import java.net.Socket;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 
 /**
  * A really simple HTTP Client
  * 
- * @author You
+ * @author Goncalo Lourenco 55780
+ * @author Joana Faria 55754
  *
  */
 
 public class GetFile {
 	private static final int BUF_SIZE = 512;
 	private static final int MAX_RETRY = 3;
-	
-	//private static final int REQUEST_SIZE = 10;
-
-
 	private static Stats stat;
-	private static FileOutputStream fos;
 	static File file;
 
 	public static void main(String[] args) throws Exception {
@@ -33,23 +28,21 @@ public class GetFile {
 			System.exit(0);
 		}
 		int size = headRequest(new URL(args[0]));
-		System.out.println(size);
-
+	
 		String url = args[0];
 		String[] aux = url.split("/");
 		String filename = aux[aux.length - 1];
 		file = new File("./copy-of-" + filename);
+		file.delete();
+		file.createNewFile();
 		HTTPClient [] cc = new HTTPClient[args.length];
 
 		int sizeOfRequest = (int) size / (args.length) + 1;
 		for(int i = 0; i<args.length; i++){
 			url = args[i];
 			URL u = new URL(url);
-			System.out.println(i*sizeOfRequest);
-			System.out.println((i+1)*(sizeOfRequest)-1);
 			cc[i] = new HTTPClient(u, i*sizeOfRequest, (i+1)*(sizeOfRequest)-1, file, size, stat);
-			cc[i].start();
-			
+			cc[i].start();	
 		}
 		
 		for(int i = 0; i<args.length; i++){
@@ -98,7 +91,6 @@ public class GetFile {
 							s = range;
 					}
 			}
-			//String[] head = Http.parseHttpHeader(answerLine);
 			answerLine = Http.readLine(in);
 			reply = Http.parseHttpHeader(answerLine);
 		}
