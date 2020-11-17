@@ -1,0 +1,22 @@
+2 000 000
+==========================================================
+Transfer stats:
+Total time elapsed (s):		55.379
+Download size (bytes):		85008670
+End-to-end bandwidth (Kbytes/s):	1535.0
+Number of requests:		46
+Avg. reply length (bytes):	1848015
+Avg. request duration (ms):	1203.9
+==========================================================
+
+
+1 000 000
+==========================================================
+Transfer stats:
+Total time elapsed (s):		46.386
+Download size (bytes):		85008670
+End-to-end bandwidth (Kbytes/s):	1832.6
+Number of requests:		88
+Avg. reply length (bytes):	966008
+Avg. request duration (ms):	527.1
+==========================================================

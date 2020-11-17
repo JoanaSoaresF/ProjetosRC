@@ -27,33 +27,64 @@ public class GetFile {
 			System.out.println("Usage: java GetFile url_to_access");
 			System.exit(0);
 		}
-		int size = headRequest(new URL(args[0]));
-	
+
 		String url = args[0];
+		URL u = new URL(url);
+		int size = fileSize(u);
+		System.out.println(size);
+		createFile(url);
+
+		RequestSingleServer[] servers = new RequestSingleServer[args.length];
+
+		int sizeOfRequest = (int) size / (args.length) + 1;
+		for (int i = 0; i < args.length; i++) {
+			url = args[i];
+			u = new URL(url);
+			int startRange = i * sizeOfRequest;
+			int endRange = (i + 1) * (sizeOfRequest) - 1;
+			System.out.println("Thread "+i+ " s: " + startRange + " e: " + endRange);
+			servers[i] = new RequestSingleServer(u, startRange, endRange, file, size, stat);
+			servers[i].start();
+		}
+
+		for (int i = 0; i < args.length; i++) {
+			servers[i].join();
+		}
+
+		stat.printReport();
+
+	}
+
+	private static void createFile(String url) throws IOException {
 		String[] aux = url.split("/");
 		String filename = aux[aux.length - 1];
 		file = new File("./copy-of-" + filename);
 		file.delete();
 		file.createNewFile();
-		HTTPClient [] cc = new HTTPClient[args.length];
-
-		int sizeOfRequest = (int) size / (args.length) + 1;
-		for(int i = 0; i<args.length; i++){
-			url = args[i];
-			URL u = new URL(url);
-			cc[i] = new HTTPClient(u, i*sizeOfRequest, (i+1)*(sizeOfRequest)-1, file, size, stat);
-			cc[i].start();	
-		}
-		
-		for(int i = 0; i<args.length; i++){
-			cc[i].join();	
-		}
-		
-		stat.printReport();
-		
 	}
 
-	private static int headRequest(URL url) throws UnknownHostException, IOException {
+	private static int fileSize(URL url) {
+		int size = -1;
+		
+		try {
+			int port = url.getPort() == -1 ? 80 : url.getPort();
+			Socket sock = new Socket(url.getHost(), port);
+			OutputStream out = sock.getOutputStream();
+			InputStream in = sock.getInputStream();
+
+			HTTPClient c = new HTTPClient(url);
+			size = c.getFileSize(out, in);
+			sock.close();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return size;
+		
+	}
+}
+
+	/*private static int headRequest(URL url) throws UnknownHostException, IOException {
 		int s = -1;
 
 		int port = url.getPort() == -1 ? 80 : url.getPort();
@@ -96,5 +127,11 @@ public class GetFile {
 		}
 		return s;
 	}
-}
+
+
+
+	
+*/
+
+
 
