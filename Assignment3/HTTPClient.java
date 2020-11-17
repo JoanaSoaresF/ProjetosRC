@@ -8,7 +8,7 @@ import java.net.*;
 */
 public class HTTPClient extends Thread{
 	private static final int BUF_SIZE = 512;
-	private static final int REQUEST_SIZE = 2000000;
+	private static final int REQUEST_SIZE = 1000000;
 
 	private Stats stat;
 	private URL url;
@@ -78,6 +78,7 @@ public class HTTPClient extends Thread{
 			raf.close();
 			sock.close();
 		} catch (SocketException e) {
+			System.out.println("socket: " + e.getMessage());
 			cycle--;
 			run();
 
@@ -101,23 +102,31 @@ public class HTTPClient extends Thread{
 	public void downloadFile(String host, int port,String path, int start, int end) throws UnknownHostException, IOException {
 	
 		if (start <= end && start <= size) {
-
-			if(sock.isClosed()){
-				connect(port);
-			}
-
 			String request = String.format("GET %s HTTP/1.0\r\n" 
 			+ "Host: %s\r\n"
 			+ "User-Agent: X-RC2020 HttpClient\r\n" 
 			+ "Range: bytes=%d-%d\r\n\r\n", path, host, start, end);
 
-			out.write(request.getBytes());
+	
+			if (sock.isClosed()) {
+				System.out.println("closed");
+				connect(port);
+			}
+			
+			out.write(request.getBytes());	
 	
 			System.out.println("\nSent Request:\n-------------\n"+request);		
 			System.out.println("Got Reply:");
 			System.out.println("\nReply Header:\n--------------");
 			
 			String answerLine = Http.readLine(in);  // first line is always present
+			if(answerLine.equals("")){
+				System.out.println("resposta vazia");
+				connect(port);
+				out.write(request.getBytes());
+				answerLine = Http.readLine(in);	
+			}
+
 			System.out.println(answerLine);
 			String[] reply = Http.parseHttpReply(answerLine);
 			int[] range  = new int[2];
@@ -151,10 +160,12 @@ public class HTTPClient extends Thread{
 				}
 				
 				if(range[1]<end && range[1] < this.size-1){
+					System.out.println("entra1");
 					connect(port);
 					downloadFile(host, port, path,  range[1]+1, end);
 				} 
 				if(range[0]>start) {
+					System.out.println("entra2");
 					raf.seek(start);
 					connect(port);
 					downloadFile(host, port, path, start, end);

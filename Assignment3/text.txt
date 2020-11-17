@@ -1,10 +1,10 @@
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=0-1999999
+Range: bytes=0-999999
 
 
 Got Reply:
@@ -14,39 +14,10 @@ Reply Header:
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=21252168-23252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=42504336-44504335
-
-
-Got Reply:
-HTTP/1.0 206 Partial Content
-
-Reply Header:
---------------
-Date: Mon Nov 16 15:09:16 WET 2020
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=63756504-65756503
+Range: bytes=4331223-5331222
 
 
 Got Reply:
@@ -54,52 +25,26 @@ Got Reply:
 Reply Header:
 --------------
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:16 WET 2020
-Date: Mon Nov 16 15:09:16 WET 2020
 HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 11:51:43 WET 2020
+Date: Tue Nov 17 11:51:43 WET 2020
 Server: X-Tricky-Server-RC2018
-Date: Mon Nov 16 15:09:16 WET 2020
-Server: X-Tricky-Server-RC2018
-Server: X-Tricky-Server-RC2018
-Connection: close
 Server: X-Tricky-Server-RC2018
 Connection: close
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Connection: close
-Content-Length: 2000000
 XAlmost-Accept-Ranges: bytes
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 42504336-44504335/85008670
-XAlmost-Accept-Ranges: bytes
-Content-Range: bytes 63756504-65756503/85008670
-Content-Length: 2000000
-Content-Length: 2000000
-Content-Range: bytes 0-1999999/85008670
-Content-Range: bytes 21252168-23252167/85008670
+Content-Length: 1000000
+Content-Length: 1000000
+Content-Range: bytes 0-999999/17324890
+Content-Range: bytes 4331223-5331222/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=65756504-67756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=65756504-67756503
+Range: bytes=8662446-9662445
 
 
 Got Reply:
@@ -107,69 +52,19 @@ Got Reply:
 Reply Header:
 --------------
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:19 WET 2020
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=44504336-46504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-Server: X-Tricky-Server-RC2018
-
-Connection: close
-Socket
-XAlmost-Accept-Ranges: bytes
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=44504336-46504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-Content-Length: 2000000
-HTTP/1.0 206 Partial Content
-Content-Range: bytes 65756504-67756503/85008670
-Date: Mon Nov 16 15:09:20 WET 2020
+Date: Tue Nov 17 11:51:43 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 44504336-46504335/85008670
+Content-Length: 1000000
+Content-Range: bytes 8662446-9662445/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=2000000-3999999
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=2000000-3999999
+Range: bytes=12993669-13993668
 
 
 Got Reply:
@@ -177,1415 +72,356 @@ Got Reply:
 Reply Header:
 --------------
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:20 WET 2020
+Date: Tue Nov 17 11:51:43 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 2000000-3999999/85008670
+Content-Length: 1000000
+Content-Range: bytes 12993669-13993668/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=23252168-25252167
+Range: bytes=1000000-1999999
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=23252168-25252167
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:20 WET 2020
+Date: Tue Nov 17 11:51:45 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 23252168-25252167/85008670
+Content-Length: 1000000
+Content-Range: bytes 1000000-1999999/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=67756504-69756503
+Range: bytes=5331223-6331222
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=67756504-69756503
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:23 WET 2020
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=46504336-48504335
-
-
-Got Reply:
-
-Reply Header:
---------------
+Date: Tue Nov 17 11:51:45 WET 2020
 Server: X-Tricky-Server-RC2018
-
 Connection: close
-Socket
 XAlmost-Accept-Ranges: bytes
+Content-Length: 1000000
+Content-Range: bytes 5331223-6331222/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=46504336-48504335
+Range: bytes=13993669-14993668
 
 
 Got Reply:
 
 Reply Header:
 --------------
-Content-Length: 2000000
+resposta vazia
 HTTP/1.0 206 Partial Content
-Content-Range: bytes 67756504-69756503/85008670
-Date: Mon Nov 16 15:09:23 WET 2020
+Date: Tue Nov 17 11:51:46 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 46504336-48504335/85008670
+Content-Length: 1000000
+Content-Range: bytes 13993669-14993668/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=4000000-5999999
+Range: bytes=9662446-10662445
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=4000000-5999999
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:23 WET 2020
+Date: Tue Nov 17 11:51:46 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 4000000-5999999/85008670
+Content-Length: 1000000
+Content-Range: bytes 9662446-10662445/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=25252168-27252167
+Range: bytes=2000000-2999999
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=25252168-27252167
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:25 WET 2020
+Date: Tue Nov 17 11:51:46 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 1267184
-Content-Range: bytes 25252168-26519351/85008670
+Content-Length: 1000000
+Content-Range: bytes 2000000-2999999/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=69756504-71756503
+Range: bytes=6331223-7331222
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=69756504-71756503
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:27 WET 2020
+Date: Tue Nov 17 11:51:47 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 69756504-71756503/85008670
+Content-Length: 1000000
+Content-Range: bytes 6331223-7331222/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=48504336-50504335
+Range: bytes=3000000-3999999
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=48504336-50504335
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:27 WET 2020
+Date: Tue Nov 17 11:51:47 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 48504336-50504335/85008670
-Entra2
+Content-Length: 1000000
+Content-Range: bytes 3000000-3999999/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=26519352-27252167
+Range: bytes=14993669-15993668
 
 
 Got Reply:
 
 Reply Header:
 --------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:28 WET 2020
+Date: Tue Nov 17 11:51:48 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 732816
-Content-Range: bytes 26519352-27252167/85008670
+Content-Length: 1000000
+Content-Range: bytes 14993669-15993668/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=6000000-7999999
+Range: bytes=7331223-8331222
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=6000000-7999999
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:28 WET 2020
+Date: Tue Nov 17 11:51:48 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 6000000-7999999/85008670
+Content-Length: 1000000
+Content-Range: bytes 7331223-8331222/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=27252168-29252167
+Range: bytes=10662446-11662445
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=27252168-29252167
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:30 WET 2020
+Date: Tue Nov 17 11:51:48 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 27252168-29252167/85008670
+Content-Length: 1000000
+Content-Range: bytes 10662446-11662445/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=71756504-73756503
+Range: bytes=4000000-4331222
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=71756504-73756503
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:32 WET 2020
+Date: Tue Nov 17 11:51:49 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 71756504-73756503/85008670
+Content-Length: 331223
+Content-Range: bytes 4000000-4331222/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=50504336-52504335
+Range: bytes=8331223-8662445
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=50504336-52504335
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:32 WET 2020
+Date: Tue Nov 17 11:51:50 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 50504336-52504335/85008670
+Content-Length: 331223
+Content-Range: bytes 8331223-8662445/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=8000000-9999999
+Range: bytes=15993669-16993668
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=8000000-9999999
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:32 WET 2020
+Date: Tue Nov 17 11:51:50 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 1622995
-Content-Range: bytes 8000000-9622994/85008670
-Entra2
+Content-Length: 1000000
+Content-Range: bytes 15993669-16993668/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=9622995-9999999
+Range: bytes=11662446-12662445
 
 
 Got Reply:
 
 Reply Header:
 --------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:34 WET 2020
+Date: Tue Nov 17 11:51:50 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 377005
-Content-Range: bytes 9622995-9999999/85008670
+Content-Length: 1000000
+Content-Range: bytes 11662446-12662445/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=29252168-31252167
+Range: bytes=16993669-17324891
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=29252168-31252167
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:34 WET 2020
+Date: Tue Nov 17 11:51:52 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 29252168-31252167/85008670
+Content-Length: 331221
+Content-Range: bytes 16993669-17324889/17324890
 
 Sent Request:
 -------------
-GET /IFB.mp4 HTTP/1.0
+GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=10000000-11999999
+Range: bytes=12662446-12993668
 
 
 Got Reply:
 
 Reply Header:
 --------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=10000000-11999999
-
-
-Got Reply:
-
-Reply Header:
---------------
+resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:34 WET 2020
+Date: Tue Nov 17 11:51:53 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 10000000-11999999/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=73756504-75756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=73756504-75756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:36 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 73756504-75756503/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=52504336-54504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=52504336-54504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:36 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1088208
-Content-Range: bytes 52504336-53592543/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=12000000-13999999
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=12000000-13999999
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:37 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 12000000-13999999/85008670
-Entra2
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=53592544-54504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:38 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 911792
-Content-Range: bytes 53592544-54504335/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=31252168-33252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=31252168-33252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:38 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 31252168-33252167/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=54504336-56504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=54504336-56504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:39 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 54504336-56504335/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=14000000-15999999
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=14000000-15999999
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:40 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1757968
-Content-Range: bytes 14000000-15757967/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=75756504-77756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=75756504-77756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:41 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1498221
-Content-Range: bytes 75756504-77254724/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=33252168-35252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=33252168-35252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:41 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 33252168-35252167/85008670
-Entra2
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=15757968-15999999
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:43 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 242032
-Content-Range: bytes 15757968-15999999/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=16000000-17999999
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=16000000-17999999
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:43 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 16000000-17999999/85008670
-Entra2
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=77254725-77756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:44 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 501779
-Content-Range: bytes 77254725-77756503/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=56504336-58504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=56504336-58504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:44 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 56504336-58504335/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=77756504-79756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=77756504-79756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:44 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 77756504-79756503/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=35252168-37252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=35252168-37252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:45 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 35252168-37252167/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=18000000-19999999
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=18000000-19999999
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:46 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 18000000-19999999/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=37252168-39252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=37252168-39252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:47 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 37252168-39252167/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=58504336-60504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=58504336-60504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:49 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=20000000-21252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=20000000-21252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-Content-Range: bytes 58504336-60504335/85008670
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:49 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1252168
-Content-Range: bytes 20000000-21252167/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=79756504-81756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=79756504-81756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:49 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 79756504-81756503/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=39252168-41252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=39252168-41252167
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:50 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 39252168-41252167/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=41252168-42504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=41252168-42504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:52 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1252168
-Content-Range: bytes 41252168-42504335/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=60504336-62504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=60504336-62504335
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:54 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 60504336-62504335/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=81756504-83756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-Socket
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=81756504-83756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:54 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 2000000
-Content-Range: bytes 81756504-83756503/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=62504336-63756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=62504336-63756503
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:59 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1252168
-Content-Range: bytes 62504336-63756503/85008670
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=83756504-85008671
-
-
-Got Reply:
-
-Reply Header:
---------------
-
-
-Sent Request:
--------------
-GET /IFB.mp4 HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=83756504-85008671
-
-
-Got Reply:
-
-Reply Header:
---------------
-HTTP/1.0 206 Partial Content
-Date: Mon Nov 16 15:09:59 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1252166
-Content-Range: bytes 83756504-85008669/85008670
+Content-Length: 331223
+Content-Range: bytes 12662446-12993668/17324890
 
 ==========================================================
 Transfer stats:
-Total time elapsed (s):		46.278
-Download size (bytes):		87774096
-End-to-end debit (Kbytes/s):	1896.7
-Number of requests:		49
-Avg. request duration (ms):	944.4
+Total time elapsed (s):		10.838
+Download size (bytes):		17324892
+End-to-end bandwidth (Kbytes/s):	1598.5
+Number of requests:		20
+Avg. reply length (bytes):	866245
+Avg. request duration (ms):	541.9
 ==========================================================
 
