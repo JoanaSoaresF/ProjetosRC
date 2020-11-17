@@ -24,20 +24,6 @@ Got Reply:
 
 Reply Header:
 --------------
-HTTP/1.0 206 Partial Content
-HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:43 WET 2020
-Date: Tue Nov 17 11:51:43 WET 2020
-Server: X-Tricky-Server-RC2018
-Server: X-Tricky-Server-RC2018
-Connection: close
-Connection: close
-XAlmost-Accept-Ranges: bytes
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1000000
-Content-Length: 1000000
-Content-Range: bytes 0-999999/17324890
-Content-Range: bytes 4331223-5331222/17324890
 
 Sent Request:
 -------------
@@ -52,12 +38,12 @@ Got Reply:
 Reply Header:
 --------------
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:43 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1000000
-Content-Range: bytes 8662446-9662445/17324890
+HTTP/1.0 206 Partial Content
+HTTP/1.0 206 Partial Content
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:23:59 WET 2020
+HTTP/1.0 206 Partial Content
+HTTP/1.0 206 Partial Content
 
 Sent Request:
 -------------
@@ -71,34 +57,31 @@ Got Reply:
 
 Reply Header:
 --------------
-HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:43 WET 2020
 Server: X-Tricky-Server-RC2018
+Date: Tue Nov 17 12:23:59 WET 2020
+Connection: close
+Server: X-Tricky-Server-RC2018
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:23:59 WET 2020
+HTTP/1.0 206 Partial Content
 Connection: close
 XAlmost-Accept-Ranges: bytes
+Date: Tue Nov 17 12:23:59 WET 2020
+Server: X-Tricky-Server-RC2018
+Server: X-Tricky-Server-RC2018
+XAlmost-Accept-Ranges: bytes
 Content-Length: 1000000
+Content-Length: 1000000
+Connection: close
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Range: bytes 0-999999/17324890
+Content-Range: bytes 4331223-5331222/17324890
+Content-Length: 1000000
+XAlmost-Accept-Ranges: bytes
 Content-Range: bytes 12993669-13993668/17324890
-
-Sent Request:
--------------
-GET /amor.txt HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=1000000-1999999
-
-
-Got Reply:
-
-Reply Header:
---------------
-resposta vazia
-HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:45 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
 Content-Length: 1000000
-Content-Range: bytes 1000000-1999999/17324890
+Content-Range: bytes 8662446-9662445/17324890
 
 Sent Request:
 -------------
@@ -113,13 +96,6 @@ Got Reply:
 Reply Header:
 --------------
 resposta vazia
-HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:45 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1000000
-Content-Range: bytes 5331223-6331222/17324890
 
 Sent Request:
 -------------
@@ -135,12 +111,12 @@ Reply Header:
 --------------
 resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:46 WET 2020
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:01 WET 2020
+HTTP/1.0 206 Partial Content
 Server: X-Tricky-Server-RC2018
+HTTP/1.0 206 Partial Content
 Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1000000
-Content-Range: bytes 13993669-14993668/17324890
 
 Sent Request:
 -------------
@@ -155,8 +131,18 @@ Got Reply:
 Reply Header:
 --------------
 resposta vazia
+XAlmost-Accept-Ranges: bytes
+Date: Tue Nov 17 12:24:01 WET 2020
+Content-Length: 1000000
+Server: X-Tricky-Server-RC2018
+Content-Range: bytes 5331223-6331222/17324890
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 1000000
+Content-Range: bytes 13993669-14993668/17324890
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:46 WET 2020
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:01 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
@@ -168,7 +154,7 @@ Sent Request:
 GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=2000000-2999999
+Range: bytes=1000000-1999999
 
 
 Got Reply:
@@ -177,12 +163,13 @@ Reply Header:
 --------------
 resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:46 WET 2020
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:01 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
 Content-Length: 1000000
-Content-Range: bytes 2000000-2999999/17324890
+Content-Range: bytes 1000000-1999999/17324890
 
 Sent Request:
 -------------
@@ -198,33 +185,13 @@ Reply Header:
 --------------
 resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:47 WET 2020
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:02 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
 Content-Length: 1000000
 Content-Range: bytes 6331223-7331222/17324890
-
-Sent Request:
--------------
-GET /amor.txt HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=3000000-3999999
-
-
-Got Reply:
-
-Reply Header:
---------------
-resposta vazia
-HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:47 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1000000
-Content-Range: bytes 3000000-3999999/17324890
 
 Sent Request:
 -------------
@@ -240,33 +207,13 @@ Reply Header:
 --------------
 resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:48 WET 2020
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:02 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
 Content-Length: 1000000
 Content-Range: bytes 14993669-15993668/17324890
-
-Sent Request:
--------------
-GET /amor.txt HTTP/1.0
-Host: localhost
-User-Agent: X-RC2020 HttpClient
-Range: bytes=7331223-8331222
-
-
-Got Reply:
-
-Reply Header:
---------------
-resposta vazia
-HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:48 WET 2020
-Server: X-Tricky-Server-RC2018
-Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 1000000
-Content-Range: bytes 7331223-8331222/17324890
 
 Sent Request:
 -------------
@@ -282,7 +229,8 @@ Reply Header:
 --------------
 resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:48 WET 2020
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:02 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
@@ -294,7 +242,7 @@ Sent Request:
 GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=4000000-4331222
+Range: bytes=2000000-2999999
 
 
 Got Reply:
@@ -303,19 +251,20 @@ Reply Header:
 --------------
 resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:49 WET 2020
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:03 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
-Content-Length: 331223
-Content-Range: bytes 4000000-4331222/17324890
+Content-Length: 1000000
+Content-Range: bytes 2000000-2999999/17324890
 
 Sent Request:
 -------------
 GET /amor.txt HTTP/1.0
 Host: localhost
 User-Agent: X-RC2020 HttpClient
-Range: bytes=8331223-8662445
+Range: bytes=7331223-8331222
 
 
 Got Reply:
@@ -324,12 +273,10 @@ Reply Header:
 --------------
 resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:50 WET 2020
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:03 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
-XAlmost-Accept-Ranges: bytes
-Content-Length: 331223
-Content-Range: bytes 8331223-8662445/17324890
 
 Sent Request:
 -------------
@@ -343,9 +290,13 @@ Got Reply:
 
 Reply Header:
 --------------
+XAlmost-Accept-Ranges: bytes
 resposta vazia
+Content-Length: 1000000
+Content-Range: bytes 7331223-8331222/17324890
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:50 WET 2020
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:03 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
@@ -366,12 +317,57 @@ Reply Header:
 --------------
 resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:50 WET 2020
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:04 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
 Content-Length: 1000000
 Content-Range: bytes 11662446-12662445/17324890
+
+Sent Request:
+-------------
+GET /amor.txt HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=3000000-3999999
+
+
+Got Reply:
+
+Reply Header:
+--------------
+resposta vazia
+HTTP/1.0 206 Partial Content
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:05 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 1000000
+Content-Range: bytes 3000000-3999999/17324890
+
+Sent Request:
+-------------
+GET /amor.txt HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=8331223-8662445
+
+
+Got Reply:
+
+Reply Header:
+--------------
+resposta vazia
+HTTP/1.0 206 Partial Content
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:05 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 331223
+Content-Range: bytes 8331223-8662445/17324890
 
 Sent Request:
 -------------
@@ -387,7 +383,8 @@ Reply Header:
 --------------
 resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:52 WET 2020
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:06 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
@@ -408,20 +405,43 @@ Reply Header:
 --------------
 resposta vazia
 HTTP/1.0 206 Partial Content
-Date: Tue Nov 17 11:51:53 WET 2020
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:06 WET 2020
 Server: X-Tricky-Server-RC2018
 Connection: close
 XAlmost-Accept-Ranges: bytes
 Content-Length: 331223
 Content-Range: bytes 12662446-12993668/17324890
 
+Sent Request:
+-------------
+GET /amor.txt HTTP/1.0
+Host: localhost
+User-Agent: X-RC2020 HttpClient
+Range: bytes=4000000-4331222
+
+
+Got Reply:
+
+Reply Header:
+--------------
+resposta vazia
+HTTP/1.0 206 Partial Content
+HTTP/1.0 206 Partial Content
+Date: Tue Nov 17 12:24:07 WET 2020
+Server: X-Tricky-Server-RC2018
+Connection: close
+XAlmost-Accept-Ranges: bytes
+Content-Length: 331223
+Content-Range: bytes 4000000-4331222/17324890
+
 ==========================================================
 Transfer stats:
-Total time elapsed (s):		10.838
+Total time elapsed (s):		8.941
 Download size (bytes):		17324892
-End-to-end bandwidth (Kbytes/s):	1598.5
+End-to-end bandwidth (Kbytes/s):	1937.7
 Number of requests:		20
 Avg. reply length (bytes):	866245
-Avg. request duration (ms):	541.9
+Avg. request duration (ms):	447.1
 ==========================================================
 

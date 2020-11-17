@@ -120,7 +120,7 @@ public class HTTPClient extends Thread{
 			System.out.println("\nReply Header:\n--------------");
 			
 			String answerLine = Http.readLine(in);  // first line is always present
-			if(answerLine.equals("")){
+			while(answerLine.equals("")){
 				System.out.println("resposta vazia");
 				connect(port);
 				out.write(request.getBytes());
@@ -131,7 +131,7 @@ public class HTTPClient extends Thread{
 			String[] reply = Http.parseHttpReply(answerLine);
 			int[] range  = new int[2];
 		
-			answerLine = Http.readLine(in);
+			//answerLine = Http.readLine(in);
 
 			while (!answerLine.equals("") ) {
 				System.out.println(answerLine);
