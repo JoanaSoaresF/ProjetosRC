@@ -31,7 +31,6 @@ public class GetFile {
 		String url = args[0];
 		URL u = new URL(url);
 		int size = fileSize(u);
-		System.out.println(size);
 		createFile(url);
 
 		RequestSingleServer[] servers = new RequestSingleServer[args.length];
@@ -42,7 +41,6 @@ public class GetFile {
 			u = new URL(url);
 			int startRange = i * sizeOfRequest;
 			int endRange = (i + 1) * (sizeOfRequest) - 1;
-			System.out.println("Thread "+i+ " s: " + startRange + " e: " + endRange);
 			servers[i] = new RequestSingleServer(u, startRange, endRange, file, size, stat);
 			servers[i].start();
 		}

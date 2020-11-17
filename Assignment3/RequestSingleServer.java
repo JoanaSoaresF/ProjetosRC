@@ -9,8 +9,7 @@ import java.net.*;
 public class RequestSingleServer extends Thread {
     
     //constants
-    private static final int BUF_SIZE = 512;
-	private static final int REQUEST_SIZE = 500000;
+	public static final int REQUEST_SIZE = 750000;
 
     //variables
     private URL url;
@@ -38,6 +37,7 @@ public class RequestSingleServer extends Thread {
         done = 0;
         myTask = endRange - startRange + 1;
         port = url.getPort() == -1 ? 80 : url.getPort();
+        sock=null;
 
 		try {
 			raf = new RandomAccessFile(file, "rw");
@@ -48,7 +48,6 @@ public class RequestSingleServer extends Thread {
 			e.printStackTrace();
         }
         
-
     }
     
     @Override
@@ -64,36 +63,27 @@ public class RequestSingleServer extends Thread {
             while(done < myTask && startRange+done < size){
 
                 //connect socket
-                while(!connect()){};
+                if(sock == null || !sock.isClosed())
+                    while(!connect()){};
                 
-                int len = 0;
+                byte[] reply = null;
                 
                 if (end > endRange)
                         end = endRange;
 
-
-                    
                 if(start <= end && start < size){
-                    len = client.partialRequest(out, in, start, end);
+                    reply = client.partialRequest(out, in, start, end);
                     
                 } 
                 
-                if(len>=0){
-                    int written = writeOnFile();
-                    if(len-1==written){
-                        done+=len;
+                if(reply!=null){
+                    writeOnFile(reply);
+                    int len = reply.length;
+                    done+=len;
                         start+=len;
                         end+=len;
-                        stat.newRequest(len); 
-                    } else {
-                        raf.seek(start);
-                    }
-                    System.out.println("arnold "+len+"   written   " + written);
+                        stat.newRequest(len);
                 } 
-                /*else {
-                    smallerRequest(start, end);
-                }*/
-                
             }
 
 			fos.close();
@@ -104,22 +94,14 @@ public class RequestSingleServer extends Thread {
 		} 
 
     }
-    private int writeOnFile() {
+    private void writeOnFile(byte[] reply) {
 
-        int written = -1;
         try {
-            int n;
-            byte[] buffer = new byte[BUF_SIZE];
-            while( (n = in.read(buffer)) >= 0 ) {
-                fos.write(buffer, 0, n);
-                written += n;
-            }
-            
+            fos.write(reply, 0, reply.length);
+           
         } catch (Exception e) {
            e.printStackTrace();
         }
-
-        return written;
       
     }
     
@@ -134,24 +116,6 @@ public class RequestSingleServer extends Thread {
             return false;
 		}
 		
-    }
-
-    private void smallerRequest(int start, int end){
-       try{
-            int medium = (int)(start+end/2); 
-            int len = client.partialRequest(out, in, start, medium);
-            if(len > 0){
-                done+=len;
-                len = client.partialRequest(out, in, medium, end);
-                if(len > 0){
-                    done+=len;
-                }
-            }
-
-        } catch (Exception e) {
-            connect();
-            smallerRequest(start, end);
-        }
     }
 
 }
