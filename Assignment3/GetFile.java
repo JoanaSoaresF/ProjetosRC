@@ -66,7 +66,7 @@ public class GetFile {
 			OutputStream out = sock.getOutputStream();
 			InputStream in = sock.getInputStream();
 
-			HTTPClient c = new HTTPClient(url);
+			HTTPClient c = new HTTPClient(url, stat);
 			size = c.getFileSize(out, in);
 			sock.close();
 

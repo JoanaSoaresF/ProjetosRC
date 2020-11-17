@@ -16,8 +16,8 @@ public class RequestSingleServer extends Thread {
     private int startRange;
     private int endRange;
     private int size;
-    private Stats stat;
     private HTTPClient client;
+    private Stats stat;
     private int done, myTask;
     private int port;
 
@@ -55,7 +55,7 @@ public class RequestSingleServer extends Thread {
 
         try {
 
-            client = new HTTPClient(url);
+            client = new HTTPClient(url, stat);
 
             int start = startRange;
             int end = startRange + REQUEST_SIZE - 1;
@@ -83,7 +83,6 @@ public class RequestSingleServer extends Thread {
                     done += len;
                     start += len;
                     end += len;
-                    stat.newRequest(len);
                 }
             }
 

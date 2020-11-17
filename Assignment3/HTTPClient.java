@@ -13,11 +13,13 @@ public class HTTPClient {
 	private URL url;
 	private String path;
 	private String host;
+	private Stats stat;
 
-	public HTTPClient(URL url) {
+	public HTTPClient(URL url, Stats stat) {
 		this.url = url;
 		path = url.getPath() == "" ? "/" : url.getPath();
 		host = url.getHost();
+		this.stat = stat;
 
 	}
 
@@ -86,6 +88,7 @@ public class HTTPClient {
 					left = 0;
 				}
 			}
+			stat.newRequest(written);
 			if (written < sended) {
 				return null;
 			}
