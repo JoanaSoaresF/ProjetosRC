@@ -79,7 +79,7 @@ public class HTTPClient {
 			int left = sended;
 			byte[] aux = new byte[BUF_SIZE];
 
-			while ((n = in.read(aux)) >= 0) {
+			while ((n = in.read(aux)) >= 0 && left > 0) {
 				for (int i = 0; i < n; i++)
 					bytesSended[written + i] = aux[i];
 				written += n;

@@ -1,11 +1,11 @@
 
 ==========================================================
 Transfer stats:
-Total time elapsed (s):		43.083
+Total time elapsed (s):		61.645
 Download size (bytes):		85008670
-End-to-end bandwidth (Kbytes/s):	1973.1
+End-to-end bandwidth (Kbytes/s):	1379.0
 Number of requests:		116
 Avg. reply length (bytes):	732833
-Avg. request duration (ms):	371.4
+Avg. request duration (ms):	531.4
 ==========================================================
 
