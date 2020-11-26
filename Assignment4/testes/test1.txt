@@ -157,13 +157,13 @@ Pkt stats for node 5 time 39000 -  s 12 r 0 d 0 f 12
   (node:4 ifc:1) r 0 s 0 <--> (node:5 ifc:0) r 0 s 0
   (node:5 ifc:1) r 9 s 3 <--> (node:0 ifc:2) r 3 s 9
   (node:5 ifc:2) r 3 s 9 <--> (node:9 ifc:0) r 9 s 3
-Pkt stats for node 6 time 39000 -  s 9 r 3 d 6 f 9
+Pkt stats for node 6 time 39000 -  s 3 r 3 d 6 f 9
   (node:1 ifc:2) r 3 s 9 <--> (node:6 ifc:0) r 9 s 3
-Pkt stats for node 7 time 39000 -  s 9 r 3 d 6 f 9
+Pkt stats for node 7 time 39000 -  s 3 r 3 d 6 f 9
   (node:2 ifc:2) r 3 s 9 <--> (node:7 ifc:0) r 9 s 3
-Pkt stats for node 8 time 39000 -  s 9 r 3 d 6 f 9
+Pkt stats for node 8 time 39000 -  s 3 r 3 d 6 f 9
   (node:4 ifc:2) r 3 s 9 <--> (node:8 ifc:0) r 9 s 3
-Pkt stats for node 9 time 39000 -  s 9 r 3 d 6 f 9
+Pkt stats for node 9 time 39000 -  s 3 r 3 d 6 f 9
   (node:5 ifc:2) r 3 s 9 <--> (node:9 ifc:0) r 9 s 3
 
 warning - 2 events not run; stoped too early?
