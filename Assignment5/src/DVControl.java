@@ -2,6 +2,12 @@
 // use the distance-vector (DV) routing algorithm
 
 import cnss.simulator.*;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.Map.Entry;
+
 import cnss.lib.*;
 
 public class DVControl extends AbstractControlAlgorithm {
@@ -36,6 +42,7 @@ public class DVControl extends AbstractControlAlgorithm {
 	// interval
 
 	// YOUR VARIABLES HERE, NAMELY THE ROUTING TABLE
+	private Map<Integer, DVRoutingTableEntry> rt;
 
 	public DVControl() {
 		super("dv control");
@@ -78,7 +85,9 @@ public class DVControl extends AbstractControlAlgorithm {
 				+ preverse + "," + expire);
 
 		// DV CODE HERE:
-		// TODO
+		rt = new HashMap<>();
+		DVRoutingTableEntry init = new DVRoutingTableEntry(nodeId, LOCAL, 0, now);
+		rt.put(nodeId, init);
 
 		return UPDATE_INTERVAL; // do not touch this line
 	}
@@ -96,8 +105,30 @@ public class DVControl extends AbstractControlAlgorithm {
 
 		// DV CODE HERE:
 		// TODO
-
+		int tot = rt.size();
+		int[] announcements = constructAnnouncements();
+		DVControlPayload payload = new DVControlPayload(tot, announcements);
+		Packet p = nodeObj.createControlPacket(nodeId, Packet.ONEHOP, payload.toByteArray());
+		for(int i = 0; i<nInterfaces;i++) {	
+			if(links[i].isUp())
+				nodeObj.send(p, i);
+		}
 	}
+
+	private int[] constructAnnouncements() {
+		int tot = rt.size();
+		int[] announcements = new int[tot*2]; //((destination, metric))
+		Entry<Integer, DVRoutingTableEntry> [] entries = (Entry<Integer, DVRoutingTableEntry>[]) rt.entrySet().toArray();
+		for(int j = 0; j<tot*2; j+=2) {
+			Entry<Integer, DVRoutingTableEntry> aux = entries[j];
+			int destination = aux.getKey();
+			int metric = aux.getValue().getMetric();
+			announcements[j] = destination;
+			announcements[j+1] = metric;	
+		}
+		return announcements;
+	}
+
 
 	/**
 	 * Given a packet from another node, forward it to the appropriate interfaces
