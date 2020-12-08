@@ -1,0 +1,325 @@
+Loading configuration : configs/config5.1.txt
+Reading file
+Created Node 0: 2 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 1: 2 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 2: 2 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 3: 2 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Created Node 4: 2 interf.s, ctr code: DVControl app code: cnss.lib.EmptyApp
+Added link to node 0 - Link (Node1:0 I1:0)<-->(Node2:1 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:0 I1:0)<-->(Node2:1 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 1 - Link (Node1:1 I1:1)<-->(Node2:2 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:1 I1:1)<-->(Node2:2 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 2 - Link (Node1:2 I1:1)<-->(Node2:3 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:2 I1:1)<-->(Node2:3 I2:0) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 3 - Link (Node1:3 I1:1)<-->(Node2:4 I2:1) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:3 I1:1)<-->(Node2:4 I2:1) bwd: 100000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 0 - Link (Node1:0 I1:1)<-->(Node2:4 I2:0) bwd: 30000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+Added link to node 4 - Link (Node1:0 I1:1)<-->(Node2:4 I2:0) bwd: 30000000 bps lat: 10 ms error: 0.0 jit: 0.0 up
+
+simulation starts - first processing step with clock = 0
+
+trace: dv control time 0 node 0 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 1 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 2 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 3 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+trace: dv control time 0 node 4 starting w/ period / trig. upds / shpr / expire: 1000,false,false,false
+
+Pkt stats for node 0 time 1 -  s 0 r 0 d 0 f 0
+ u (node:0 ifc:0) r 0 s 0 <--> (node:1 ifc:0) r 0 s 0
+ u (node:0 ifc:1) r 0 s 0 <--> (node:4 ifc:0) r 0 s 0
+
+Pkt stats for node 1 time 1 -  s 0 r 0 d 0 f 0
+ u (node:0 ifc:0) r 0 s 0 <--> (node:1 ifc:0) r 0 s 0
+ u (node:1 ifc:1) r 0 s 0 <--> (node:2 ifc:0) r 0 s 0
+
+Pkt stats for node 2 time 1 -  s 0 r 0 d 0 f 0
+ u (node:1 ifc:1) r 0 s 0 <--> (node:2 ifc:0) r 0 s 0
+ u (node:2 ifc:1) r 0 s 0 <--> (node:3 ifc:0) r 0 s 0
+
+Pkt stats for node 3 time 1 -  s 0 r 0 d 0 f 0
+ u (node:2 ifc:1) r 0 s 0 <--> (node:3 ifc:0) r 0 s 0
+ u (node:3 ifc:1) r 0 s 0 <--> (node:4 ifc:1) r 0 s 0
+
+Pkt stats for node 4 time 1 -  s 0 r 0 d 0 f 0
+ u (node:0 ifc:1) r 0 s 0 <--> (node:4 ifc:0) r 0 s 0
+ u (node:3 ifc:1) r 0 s 0 <--> (node:4 ifc:1) r 0 s 0
+
+Router 0 time 1
+d 0 i -1 m 0 lu 0
+
+Router 1 time 1
+d 1 i -1 m 0 lu 0
+
+Router 2 time 1
+d 2 i -1 m 0 lu 0
+
+Router 3 time 1
+d 3 i -1 m 0 lu 0
+
+Router 4 time 1
+d 4 i -1 m 0 lu 0
+
+Pkt stats for node 0 time 500 -  s 0 r 0 d 0 f 0
+ u (node:0 ifc:0) r 0 s 0 <--> (node:1 ifc:0) r 0 s 0
+ u (node:0 ifc:1) r 0 s 0 <--> (node:4 ifc:0) r 0 s 0
+
+Pkt stats for node 1 time 500 -  s 0 r 0 d 0 f 0
+ u (node:0 ifc:0) r 0 s 0 <--> (node:1 ifc:0) r 0 s 0
+ u (node:1 ifc:1) r 0 s 0 <--> (node:2 ifc:0) r 0 s 0
+
+Pkt stats for node 2 time 500 -  s 0 r 0 d 0 f 0
+ u (node:1 ifc:1) r 0 s 0 <--> (node:2 ifc:0) r 0 s 0
+ u (node:2 ifc:1) r 0 s 0 <--> (node:3 ifc:0) r 0 s 0
+
+Pkt stats for node 3 time 500 -  s 0 r 0 d 0 f 0
+ u (node:2 ifc:1) r 0 s 0 <--> (node:3 ifc:0) r 0 s 0
+ u (node:3 ifc:1) r 0 s 0 <--> (node:4 ifc:1) r 0 s 0
+
+Pkt stats for node 4 time 500 -  s 0 r 0 d 0 f 0
+ u (node:0 ifc:1) r 0 s 0 <--> (node:4 ifc:0) r 0 s 0
+ u (node:3 ifc:1) r 0 s 0 <--> (node:4 ifc:1) r 0 s 0
+
+Router 0 time 500
+d 0 i -1 m 0 lu 0
+
+Router 1 time 500
+d 1 i -1 m 0 lu 0
+
+Router 2 time 500
+d 2 i -1 m 0 lu 0
+
+Router 3 time 500
+d 3 i -1 m 0 lu 0
+
+Router 4 time 500
+d 4 i -1 m 0 lu 0
+
+Pkt stats for node 0 time 1500 -  s 2 r 2 d 0 f 0
+ u (node:0 ifc:0) r 1 s 1 <--> (node:1 ifc:0) r 1 s 1
+ u (node:0 ifc:1) r 1 s 1 <--> (node:4 ifc:0) r 1 s 1
+
+Pkt stats for node 1 time 1500 -  s 2 r 2 d 0 f 0
+ u (node:0 ifc:0) r 1 s 1 <--> (node:1 ifc:0) r 1 s 1
+ u (node:1 ifc:1) r 1 s 1 <--> (node:2 ifc:0) r 1 s 1
+
+Pkt stats for node 2 time 1500 -  s 2 r 2 d 0 f 0
+ u (node:1 ifc:1) r 1 s 1 <--> (node:2 ifc:0) r 1 s 1
+ u (node:2 ifc:1) r 1 s 1 <--> (node:3 ifc:0) r 1 s 1
+
+Pkt stats for node 3 time 1500 -  s 2 r 2 d 0 f 0
+ u (node:2 ifc:1) r 1 s 1 <--> (node:3 ifc:0) r 1 s 1
+ u (node:3 ifc:1) r 1 s 1 <--> (node:4 ifc:1) r 1 s 1
+
+Pkt stats for node 4 time 1500 -  s 2 r 2 d 0 f 0
+ u (node:0 ifc:1) r 1 s 1 <--> (node:4 ifc:0) r 1 s 1
+ u (node:3 ifc:1) r 1 s 1 <--> (node:4 ifc:1) r 1 s 1
+
+Router 0 time 1500
+d 0 i -1 m 0 lu 0
+d 1 i 0 m 1 lu 1010
+d 4 i 1 m 3 lu 1010
+
+Router 1 time 1500
+d 0 i 0 m 1 lu 1010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m 1 lu 1010
+
+Router 2 time 1500
+d 1 i 0 m 1 lu 1010
+d 2 i -1 m 0 lu 0
+d 3 i 1 m 1 lu 1010
+
+Router 3 time 1500
+d 2 i 0 m 1 lu 1010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 1010
+
+Router 4 time 1500
+d 0 i 0 m 3 lu 1010
+d 3 i 1 m 1 lu 1010
+d 4 i -1 m 0 lu 0
+
+Router 0 time 2500
+d 0 i -1 m 0 lu 0
+d 1 i 0 m 1 lu 2010
+d 2 i 0 m 2 lu 2010
+d 3 i 1 m 4 lu 2010
+d 4 i 1 m 3 lu 2010
+
+Router 1 time 2500
+d 0 i 0 m 1 lu 2010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m 1 lu 2010
+d 3 i 1 m 2 lu 2010
+d 4 i 0 m 4 lu 2010
+
+Router 2 time 2500
+d 0 i 0 m 2 lu 2010
+d 1 i 0 m 1 lu 2010
+d 2 i -1 m 0 lu 0
+d 3 i 1 m 1 lu 2010
+d 4 i 1 m 2 lu 2010
+
+Router 3 time 2500
+d 0 i 1 m 4 lu 2010
+d 1 i 0 m 2 lu 2010
+d 2 i 0 m 1 lu 2010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 2010
+
+Router 4 time 2500
+d 0 i 0 m 3 lu 2010
+d 1 i 0 m 4 lu 2010
+d 2 i 1 m 2 lu 2010
+d 3 i 1 m 1 lu 2010
+d 4 i -1 m 0 lu 0
+
+Router 0 time 3500
+d 0 i -1 m 0 lu 0
+d 1 i 0 m 1 lu 3010
+d 2 i 0 m 2 lu 3010
+d 3 i 0 m 3 lu 3010
+d 4 i 1 m 3 lu 3010
+
+Router 1 time 3500
+d 0 i 0 m 1 lu 3010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m 1 lu 3010
+d 3 i 1 m 2 lu 3010
+d 4 i 1 m 3 lu 3010
+
+Router 2 time 3500
+d 0 i 0 m 2 lu 3010
+d 1 i 0 m 1 lu 3010
+d 2 i -1 m 0 lu 0
+d 3 i 1 m 1 lu 3010
+d 4 i 1 m 2 lu 3010
+
+Router 3 time 3500
+d 0 i 0 m 3 lu 3010
+d 1 i 0 m 2 lu 3010
+d 2 i 0 m 1 lu 3010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 3010
+
+Router 4 time 3500
+d 0 i 0 m 3 lu 3010
+d 1 i 1 m 3 lu 3010
+d 2 i 1 m 2 lu 3010
+d 3 i 1 m 1 lu 3010
+d 4 i -1 m 0 lu 0
+
+Router 0 time 13500
+d 0 i -1 m 0 lu 0
+d 1 i 0 m 1 lu 13010
+d 2 i 0 m 2 lu 13010
+d 3 i 0 m 3 lu 13010
+d 4 i 1 m 3 lu 13010
+
+Router 1 time 13500
+d 0 i 0 m 1 lu 13010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m 1 lu 13010
+d 3 i 1 m 2 lu 13010
+d 4 i 1 m 3 lu 13010
+
+Router 2 time 13500
+d 0 i 0 m 2 lu 13010
+d 1 i 0 m 1 lu 13010
+d 2 i -1 m 0 lu 0
+d 3 i 1 m 1 lu 13010
+d 4 i 1 m 2 lu 13010
+
+Router 3 time 13500
+d 0 i 0 m 3 lu 13010
+d 1 i 0 m 2 lu 13010
+d 2 i 0 m 1 lu 13010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 13010
+
+Router 4 time 13500
+d 0 i 0 m 3 lu 13010
+d 1 i 1 m 3 lu 13010
+d 2 i 1 m 2 lu 13010
+d 3 i 1 m 1 lu 13010
+d 4 i -1 m 0 lu 0
+
+Router 0 time 14500
+d 0 i -1 m 0 lu 0
+d 1 i 0 m 1 lu 14010
+d 2 i 0 m 2 lu 14010
+d 3 i 0 m 3 lu 14010
+d 4 i 1 m 3 lu 14010
+
+Router 1 time 14500
+d 0 i 0 m 1 lu 14010
+d 1 i -1 m 0 lu 0
+d 2 i 1 m 1 lu 14010
+d 3 i 1 m 2 lu 14010
+d 4 i 1 m 3 lu 14010
+
+Router 2 time 14500
+d 0 i 0 m 2 lu 14010
+d 1 i 0 m 1 lu 14010
+d 2 i -1 m 0 lu 0
+d 3 i 1 m 1 lu 14010
+d 4 i 1 m 2 lu 14010
+
+Router 3 time 14500
+d 0 i 0 m 3 lu 14010
+d 1 i 0 m 2 lu 14010
+d 2 i 0 m 1 lu 14010
+d 3 i -1 m 0 lu 0
+d 4 i 1 m 1 lu 14010
+
+Router 4 time 14500
+d 0 i 0 m 3 lu 14010
+d 1 i 1 m 3 lu 14010
+d 2 i 1 m 2 lu 14010
+d 3 i 1 m 1 lu 14010
+d 4 i -1 m 0 lu 0
+--> node 0 time 14500 traceroute to: 3
+--> node 3 time 14530 received traceroute:  0 -> 1 -> 2 -> 3
+--> node 1 at 14650 interface 1 going down
+trace: dv control time 14650 node 1 interface 1 link down
+--> node 2 at 14650 interface 0 going down
+trace: dv control time 14650 node 2 interface 0 link down
+--> node 0 time 14800 traceroute to: 3
+
+Pkt stats for node 0 time 15500 -  s 34 r 30 d 0 f 2
+ u (node:0 ifc:0) r 15 s 17 <--> (node:1 ifc:0) r 17 s 15
+ u (node:0 ifc:1) r 15 s 15 <--> (node:4 ifc:0) r 15 s 15
+
+Pkt stats for node 1 time 15500 -  s 30 r 29 d 1 f 2
+ u (node:0 ifc:0) r 15 s 17 <--> (node:1 ifc:0) r 17 s 15
+ d (node:1 ifc:1) r 14 s 15 <--> (node:2 ifc:0) r 15 s 14
+
+Pkt stats for node 2 time 15500 -  s 30 r 29 d 0 f 1
+ d (node:1 ifc:1) r 14 s 15 <--> (node:2 ifc:0) r 15 s 14
+ u (node:2 ifc:1) r 15 s 16 <--> (node:3 ifc:0) r 16 s 15
+
+Pkt stats for node 3 time 15500 -  s 30 r 31 d 0 f 0
+ u (node:2 ifc:1) r 15 s 16 <--> (node:3 ifc:0) r 16 s 15
+ u (node:3 ifc:1) r 15 s 15 <--> (node:4 ifc:1) r 15 s 15
+
+Pkt stats for node 4 time 15500 -  s 30 r 30 d 0 f 0
+ u (node:0 ifc:1) r 15 s 15 <--> (node:4 ifc:0) r 15 s 15
+ u (node:3 ifc:1) r 15 s 15 <--> (node:4 ifc:1) r 15 s 15
+
+Router 0 time 15500
+d 0 i -1 m 0 lu 0
+d 1 i 0 m 1 lu 15010
+d 2 i 1 m 5 lu 15010
+d 3 i 1 m 4 lu 15010
+d 4 i 1 m 3 lu 15010
+
+Router 1 time 15500
+d 0 i 0 m 1 lu 15010
+d 1 i -1 m 0 lu 0
+d 2 i 0 m 3 lu 15010
+d 3 i 0 m 4 lu 15010
+d 4 i 0 m 4 lu 15010
+
+Router 2 time 15500
+d 0 i 1 m 4 lu 15010
+d 1 i 1 m 3 lu 15010
