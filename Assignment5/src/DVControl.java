@@ -109,16 +109,52 @@ public class DVControl extends AbstractControlAlgorithm {
 		// trace(now, "on clock tick ");
 
 		// DV CODE HERE:
+		if(expire) {
+			checkStaleEntries(now);
+		}
+		
+
 		sendAnnouncements();
 	}
 
+	private void checkStaleEntries(int now) {
+		int tot = rt.size();
+		Set<Entry<Integer, DVRoutingTableEntry>> entries = rt.entrySet();
+		Iterator<Entry<Integer, DVRoutingTableEntry>> it = entries.iterator();
+		int[] delete = new int[tot];
+		int toDel = 0;
+		while( it.hasNext()) {
+			Entry<Integer, DVRoutingTableEntry> aux = it.next();
+			int time = aux.getValue().getTime();
+			int metric = aux.getValue().getMetric();
+			if(time + 3*UPDATE_INTERVAL< now && metric>=INFINITY){
+				delete[toDel++] = aux.getKey();
+			}
+		}
+		deleteStaleEntries(toDel, delete);
+		
+		
+	}
+	
+	private void deleteStaleEntries(int toDel, int[]delete) {
+		for(int i = 0; i< toDel; i++){
+			rt.remove(delete[i]);
+		}	
+	}
+	
+	
 	private void sendAnnouncements() {
 		int tot = rt.size();
 		int[] announcements = constructAnnouncements();
 		DVControlPayload payload = new DVControlPayload(tot, announcements);
 		Packet p = nodeObj.createControlPacket(nodeId, Packet.ONEHOP, payload.toByteArray());
 		for (int i = 0; i < nInterfaces; i++) {
-			if (links[i].isUp()){
+			if (links[i].isUp()) {
+				if (preverse) {
+					announcements = constructAnnouncements(i);
+					payload = new DVControlPayload(tot, announcements);
+					p = nodeObj.createControlPacket(nodeId, Packet.ONEHOP, payload.toByteArray());
+				}
 				nodeObj.send(p, i);
 			}
 		}
@@ -139,11 +175,27 @@ public class DVControl extends AbstractControlAlgorithm {
 		return announcements;
 	}
 
-	/**
-	 * rt.forEach((k,v) -> help()) help(int k, DVRoutingTableEntry v, int[]
-	 * announcements, int j){ int metric = v.getMetric(); announcements[j] =
-	 * destination; announcements[j+1] = metric; j+=2; }
-	 */
+	private int[] constructAnnouncements(int sendI) {
+		int tot = rt.size();
+		int[] announcements = new int[tot * 2]; // ((destination, metric))
+		Set<Entry<Integer, DVRoutingTableEntry>> entries = rt.entrySet();
+		Iterator<Entry<Integer, DVRoutingTableEntry>> it = entries.iterator();
+		for (int j = 0; j < tot * 2 && it.hasNext(); j += 2) {
+			Entry<Integer, DVRoutingTableEntry> aux = it.next();
+			int destination = aux.getKey();
+			int interfaceTo = aux.getValue().getInterface();
+			int metric;
+			if (sendI == interfaceTo) {
+				metric = INFINITY;
+			} else {
+				metric = aux.getValue().getMetric();
+			}
+
+			announcements[j] = destination;
+			announcements[j + 1] = metric;
+		}
+		return announcements;
+	}
 
 	/**
 	 * Given a packet from another node, forward it to the appropriate interfaces
@@ -187,7 +239,7 @@ public class DVControl extends AbstractControlAlgorithm {
 		if (triggered) {
 			sendAnnouncements();
 		}
-		
+
 	}
 
 	/**
@@ -207,24 +259,24 @@ public class DVControl extends AbstractControlAlgorithm {
 		links[iface].setState(false);
 		Collection<DVRoutingTableEntry> entries = rt.values();
 		Iterator<DVRoutingTableEntry> it = entries.iterator();
-		//int n = 0;
-		//int[] announcements = new int[rt.size()*2];
+		// int n = 0;
+		// int[] announcements = new int[rt.size()*2];
 		boolean update = false;
 		while (it.hasNext()) {
 			DVRoutingTableEntry e = it.next();
-			if (e.getInterface() == iface && e.getTime()<INFINITY) {
+			if (e.getInterface() == iface && e.getTime() < INFINITY) {
 				e.setMetric(INFINITY);
-				//e.setTime(now);
-				/*announcements[n] = e.getDestination();
-				announcements[n+1] = INFINITY;
-				n+=2;*/
+				// e.setTime(now);
+				/*
+				 * announcements[n] = e.getDestination(); announcements[n+1] = INFINITY; n+=2;
+				 */
 				update = true;
 			}
 
 		}
 		if (triggered) {
-			//triggeredAnnouncement(announcements, n/2);
-			if(update) {
+			// triggeredAnnouncement(announcements, n/2);
+			if (update) {
 				sendAnnouncements();
 			}
 		}
@@ -249,19 +301,19 @@ public class DVControl extends AbstractControlAlgorithm {
 		int reachability = getInterfaceMetric(iface);
 		boolean sendAll = false;
 
-		//int[] send = new int[t*2];
-		//int n = 0;
+		// int[] send = new int[t*2];
+		// int n = 0;
 
 		for (int i = 0; i < t * 2; i += 2) {
 			int destination = announcements[i];
 			int metric = announcements[i + 1];
-			//int newMetric = 0;
+			// int newMetric = 0;
 			DVRoutingTableEntry e;
 			if (!rt.containsKey(destination)) {
 				e = new DVRoutingTableEntry(destination, iface, metric + reachability, now);
 				rt.put(destination, e);
-				//newMetric = metric + reachability;
-				sendAll =true;
+				// newMetric = metric + reachability;
+				sendAll = true;
 			} else {
 				e = rt.get(destination);
 				int distance = e.getMetric();
@@ -269,84 +321,78 @@ public class DVControl extends AbstractControlAlgorithm {
 					e.setInterface(iface);
 					e.setMetric(metric + reachability);
 					e.setTime(now);
-					//newMetric = metric + reachability;
-					sendAll =true;
+					// newMetric = metric + reachability;
+					sendAll = true;
 
 				} else if (distance < metric + reachability && e.getInterface() == iface) {
-					if(metric<INFINITY) {
+					if (metric < INFINITY) {
 						e.setMetric(metric + reachability);
 						e.setTime(now);
-						//newMetric = metric + reachability;
-						sendAll =true;
-						
-					} else if(distance<INFINITY){
+						// newMetric = metric + reachability;
+						sendAll = true;
+
+					} else if (distance < INFINITY) {
 						e.setMetric(INFINITY);
 						e.setTime(now);
-						//newMetric = INFINITY;
-						sendAll =true;
+						// newMetric = INFINITY;
+						sendAll = true;
 
 					}
-					
-				} else if (distance == metric + reachability  && e.getInterface() == iface) {
-					//e.setInterface(iface);
+
+				} else if (distance == metric + reachability && e.getInterface() == iface) {
+					// e.setInterface(iface);
 					e.setTime(now);
-					//newMetric = 0;
+					// newMetric = 0;
 
 				}
-			
+
 			}
-			
-			/*if(newMetric!=0) {
-				send[n] = e.getDestination();
-				send[n+1] = newMetric;
-				n+=2;
-			}
-			newMetric = 0;*/
-			
-			/*if (triggered) {
-				if(newMetric != 0) {
-					triggeredAnnouncement(destination, newMetric);
-					newMetric = 0;
-				}	
-			}*/
+
+			/*
+			 * if(newMetric!=0) { send[n] = e.getDestination(); send[n+1] = newMetric; n+=2;
+			 * } newMetric = 0;
+			 */
+
+			/*
+			 * if (triggered) { if(newMetric != 0) { triggeredAnnouncement(destination,
+			 * newMetric); newMetric = 0; } }
+			 */
 
 		}
-		
-		/*if(triggered ) {
-			if(sendAll)
-				sendAnnouncements();
-			else if(n>0)
-				triggeredAnnouncement(send, n/2);
-		}*/
-		if(triggered) {
-			if(sendAll)
+
+		/*
+		 * if(triggered ) { if(sendAll) sendAnnouncements(); else if(n>0)
+		 * triggeredAnnouncement(send, n/2); }
+		 */
+		if (triggered) {
+			if (sendAll)
 				sendAnnouncements();
 		}
 	}
 
 	private void triggeredAnnouncement(int destination, int metric) {
-		int[] announcement = {destination, metric};
+		int[] announcement = { destination, metric };
 		DVControlPayload payload = new DVControlPayload(1, announcement);
 		Packet p = nodeObj.createControlPacket(nodeId, Packet.ONEHOP, payload.toByteArray());
 		for (int i = 0; i < nInterfaces; i++) {
-			if (links[i].isUp()){
+			if (links[i].isUp()) {
 				nodeObj.send(p, i);
 			}
 		}
 
 	}
 
-	private void triggeredAnnouncement(int [] announcement, int size) {
+	private void triggeredAnnouncement(int[] announcement, int size) {
 		DVControlPayload payload = new DVControlPayload(size, announcement);
 		Packet p = nodeObj.createControlPacket(nodeId, Packet.ONEHOP, payload.toByteArray());
 		for (int i = 0; i < nInterfaces; i++) {
-			if (links[i].isUp()){
+			if (links[i].isUp()) {
 				nodeObj.send(p, i);
 			}
 		}
 
 	}
-	
+
 	public void showControlState(int now) {
 		trace(now, "has no extra state to show");
 	}
